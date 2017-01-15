@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  price: MyString
+  list_price: 1
+  number_of_sheets: 1
+  serial_number: 1
+  shipping_method: 1
+  ticketing_state: 1
+  postage: 1
+  nsk: 1
+  ticket_name: 1
+  ticket_name_yes_no: 1
+  seat_in_detail: MyText
+  docide_promptly: 1
+  othertext: MyText
+
+two:
+  price: MyString
+  list_price: 1
+  number_of_sheets: 1
+  serial_number: 1
+  shipping_method: 1
+  ticketing_state: 1
+  postage: 1
+  nsk: 1
+  ticket_name: 1
+  ticket_name_yes_no: 1
+  seat_in_detail: MyText
+  docide_promptly: 1
+  othertext: MyText

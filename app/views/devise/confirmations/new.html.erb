@@ -1,0 +1,22 @@
+<br />
+<br />
+<div class="mail-box">
+<h1>確認メールの再送信</h1>
+
+<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field-login">
+    <%= f.label :email %><br />
+  </div>
+    <div class="text-menu-login">
+      <br />
+    <%= f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %><span style="color:#ff0000;">&emsp;<small>*必須</small></span>
+  </div>
+  <br />
+
+  <div class="actions">
+    <%= f.submit "送信",:class => "submit-button" %>
+  </div>
+<% end %>
+</div>

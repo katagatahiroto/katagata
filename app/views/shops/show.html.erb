@@ -1,0 +1,178 @@
+<br />
+<% content_for :title do %>
+<%= @shop.airt_name %>のチケット詳細ページ
+<% end %>
+<br />
+<div class="box200 clearfix">
+  <div class="box300 clearfix">
+    <h3><span style="color:#FFFFFF;">出品チケット詳細情報</span></h3>
+  </div>
+        <table id="tablebox-show_sub">
+          <tr class="header">
+            <th class="box1000-left">内容</th>
+            <th class="tablebox111-right">情報</th>
+          </tr>
+          <tr class="datas">
+            <td class="box999-show">アーティスト<br />チケット名</td>
+            <td class="tablebox111-show"><span style="color:#0000CC;"><%= @shop.airt_name %></span></td>
+          </tr>
+          <tr>
+            <td class="box999-show">公演名</td>
+            <td class="tablebox111-show"><span style="color:red;"><%= @shop.live_tour_name %></span></td>
+          </tr>
+          <tr>
+            <td class="box999-show">公演日/時間</td>
+            <td class="tablebox111-show"><%= @shop.day_date %>&nbsp;/&nbsp;<%= @shop.time_date %>〜</td>
+          </tr>
+          <tr>
+            <td class="box999-show">会場（場所）</td>
+            <td class="tablebox111-show"><span style="color:#0000CC;"><%= @shop.plase %></span></td>
+          </tr>
+          <tr>
+            <td class="box999-show">席の種類</td>
+            <td class="tablebox111-show"><%= @shop.seat_i18n %></td>
+          </tr>
+          <tr>
+            <td class="box999-show">席の詳細内容</td>
+            <td class="tablebox111-show"><%= @shop.seat_in_detail %></td>
+          </tr>
+          <tr>
+            <td class="box999-show">購入元</td>
+            <td class="tablebox111-show"><%= @shop.nsk_i18n %></td>
+          </tr>
+          <tr>
+            <td class="box999-show">チケット状態</td>
+            <td class="tablebox111-show"><%= @shop.ticketing_state_i18n %></td>
+          </tr>
+          <tr>
+            <td class="box999-show">名義</td>
+            <td class="tablebox111-show"><%= @shop.ticket_name_i18n %>&emsp;&nbsp;<%= @shop.ticket_name_yes_no_i18n %></td>
+          </tr>
+          <tr>
+            <td class="box999-show">受渡し方法</td>
+            <td class="tablebox111-show"><%= @shop.shipping_method_i18n %></td>
+          </tr>
+          <tr>
+            <td class="box999-show">発送予定時期</td>
+            <td class="tablebox111-show"><span style="color:red;"><%= @shop.docide_promptly_i18n %></span></td>
+          </tr>
+          <tr>
+            <td class="box999-show">チケットID</td>
+            <td class="tablebox111-show"><%= @shop.id %></td>
+          </tr>
+          <tr>
+            <td class="box999-show">チケット画像</td>
+            <td class="tablebox111-show">
+            <div align="center">
+              <% if @shop.image? %>
+                <%= image_tag @shop.image.url(:thumb) %>
+                 <% else %>
+                <%= image_tag "Noimage.png", :size => "200x150" ,:class => "noimage" %>
+              <% end %>
+            </div>
+            </td>
+          </tr>
+        </table>
+
+        <table id="tablebox-show_sub-right">
+          <tr class="header">
+            <th class="box1000-left">内容</th>
+            <th class="tablebox111-right">出品者情報</th>
+          </tr>
+          <tr>
+            <td class="box999-show">&nbsp;名前<br /> (あだ名)</td>
+            <td class="tablebox111-show"><%= @shop.user.nickname %>&emsp;&emsp;出品者ID&nbsp;<%= @shop.user.id %></td>
+          </tr>
+          <tr>
+            <td class="box999-show">発送先地域</td>
+            <td class="tablebox111-show"><%= @shop.user.big_address %><%= @shop.user.subaddress %></td>
+          </tr>
+          <tr>
+            <td class="box999-show">販売価格/枚数</td>
+            <td class="tablebox111-show"><%= number_with_delimiter(@shop.price) %>円&nbsp;/枚&emsp;&emsp;<%= @shop.number_of_sheets_i18n %>枚</td>
+          </tr>
+          <tr>
+            <td class="box999-show">チケット<br />合計金額</td>
+            <td class="tablebox111-show">(<%= @shop.number_of_sheets_i18n %>枚分)合計金額&nbsp;<strong><%= number_with_delimiter(@getprice) %>円</strong>&emsp;<small><%= @shop.postage_i18n %></small></td>
+          </tr>
+          <tr>
+            <td class="box999-show">メッセージ</td>
+            <td class="tablebox111-show"><%= @shop.othertext %></td>
+          </tr>
+
+        </table>
+        <br />
+        <table id="tablebox-show_sub-right">
+          <tr class="header">
+            <th class="box1000-left1105">取引内容</th>
+            <th class="tablebox111-right1105">決済情報</th>
+          </tr>
+
+          <tr>
+            <td class="box999-showcopy">取引手数料<br />(購入者側)</td>
+            <td class="tablebox111-showcopy">
+              8,000円以下の場合は一律&nbsp;<span style="color:red;">400円</span><small>(税込)</small><br />
+              8,001円以上の場合は一律&nbsp;<span style="color:red;">４％</span><small>(税込)</small><br />
+            </td>
+          </tr>
+
+          <tr>
+            <td class="box999-showcopy">決済<br />システム料<br />(購入者のみ)</td>
+            <td class="tablebox111-showcopy">
+              一律&nbsp;<span style="color:red;">4%</span><small>税込(全てのお支払い方法に共通)</small><br />
+              <span style="color:red;">＊チケット代金総額 </span><small>(送料を含まない)</small>
+            </td>
+          </tr>
+
+            <tr>
+            <td class="box999-showcopy">請求内約<br />(購入者側)</td>
+            <td class="tablebox111-showcopy">
+              チケット代金&emsp;&emsp;<small>+</small>&nbsp;<strong><%= number_with_delimiter(@getprice) %></strong><small>円</small><br />
+              取引手数料&emsp;&emsp;&emsp;<small>+</small>&nbsp;<strong><%= number_with_delimiter( @otherprice.round) %></strong><small>円</small><br />
+              決済システム料&emsp;<small>+</small>&nbsp;<strong><%= number_with_delimiter( @taxprice.round) %></strong><small>円</small><br />
+              送料&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<small>+</small>&nbsp;<strong><%= @postageon %></strong><small>円</small>&emsp;&emsp;&emsp;&emsp;&emsp;<small><span style="color:red;">*小数点第1位四捨五入</span></small>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="box999-showcopy">お支払い<br />代金総額</td>
+            <td class="tablebox111-showcopy"><strong><%= number_with_delimiter( @buyprice_sent.round) %>円</strong>&emsp;<small><span style="color:red;">&nbsp;＊お支払い代金総額に加算済</span></small></td>
+          </tr>
+        </table>
+
+<br />
+ <div class="box200-300-under">
+
+       <h1><%= link_to '購入', users_path ,:class=>"button-buybuy",:style=>'color:#FFFFFF;' %></h1>
+<% if current_user %>
+   <div class=" commets-box">
+    <div class="commets-box-under">
+       <p>相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣い等は利用制限や退会処分となる事があります。ログイン済みの場合のみ使用可能です。</p>
+    </div>
+          <div class="box300-under">
+             <h3><span style="color:#FFFFFF;">出品チケットへの質問・コメント</span></h3>
+          </div>
+
+            <% if current_user %>
+            <%= form_tag("/shops/#{@shop.id}/questions", method: :post) do %>
+           <textarea cols="30" name="text" placeholder="コメントする" rows="2" class="textarea-question"></textarea>
+  <br /><br />
+           <input type="submit" value="質問する" class="submit-button">
+           <% end %>
+           <% end %>
+   </div>
+<% end %>
+       <div class="comments">
+         <% if current_user %>
+            <h4>＜コメント一覧＞</h4>
+             <% if @questions %>
+              <% @questions.each do |question| %>
+               <p><strong><%= question.user.nickname %>：</strong><%= question.text %></p>
+               <time><%= time_ago_in_words question.created_at %></time>
+               <% end %>
+             <% end %>
+         <% end %>
+      </div>
+
+</div>
+  </div>

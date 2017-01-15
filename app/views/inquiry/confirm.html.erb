@@ -1,0 +1,36 @@
+<% content_for :title do %>
+お問い合わせフォーム | チケット売買ならTicket Ring
+<% end %>
+
+<div class="page-box">
+<div class="page-header">
+  <h1>お問い合わせ</h1>
+</div>
+
+<%= form_for @inquiry, :url => inquiry_thanks_path do |f| %>
+
+ <table id="tablebox-show-right">
+          <tr class="header">
+            <th class="box1000-left">内容</th>
+            <th class="tablebox111-right">情報</th>
+          </tr>
+          <tr class="datas">
+            <td class="box999-show">名前<%= f.hidden_field :name %></td>
+            <td class="tablebox111-show"><%= @inquiry.name %></td>
+          </tr>
+          <tr>
+            <td class="box999-show">メールアドレス<%= f.hidden_field :email %></td>
+            <td class="tablebox111-show"> <%= @inquiry.email %></td>
+          </tr>
+          <tr>
+            <td class="box999-show">選択内容<%= f.hidden_field :typeselect %></td>
+            <td class="tablebox111-show"> <%= @inquiry.typeselect %></td>
+          </tr>
+          <tr>
+            <td class="box999-show">お問い合わせ内容<%= f.hidden_field :message %></td>
+            <td class="tablebox111-show"><%= simple_format(@inquiry.message) %></td>
+          </tr>
+  </table>
+  <%= f.submit '送信', :class => 'btn btn-primary' %>
+<% end %>
+</div>

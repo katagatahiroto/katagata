@@ -1,0 +1,2 @@
+module QuetionsHelper
+end

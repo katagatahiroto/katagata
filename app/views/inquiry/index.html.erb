@@ -1,0 +1,46 @@
+<% content_for :title do %>
+お問い合わせ | 送信画面
+<% end %>
+
+<%= form_for @inquiry, :url => inquiry_confirm_path do |f| %>
+<div class="page-box">
+  <div class="page-header">
+    <h1>お問い合わせ</h1>
+  </div>
+
+  <% if @inquiry.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+      <strong>入力内容にエラーがあります</strong>
+      <ul>
+        <% @inquiry.errors.each do |attr, msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <table id="tablebox-show-right">
+          <tr class="header">
+            <th class="box1000-left">内容</th>
+            <th class="tablebox111-right">問い合わせ情報</th>
+          </tr>
+          <tr class="datas">
+            <td class="box999-show">名前（必須）</td>
+            <td class="tablebox111-show"><%= f.text_field :name %></td>
+          </tr>
+          <tr>
+            <td class="box999-show">メールアドレス（必須）</td>
+            <td class="tablebox111-show"><%= f.text_field :email %></td>
+          </tr>
+          <tr>
+            <td class="box999-show">内容選択<br />（必須）</td>
+            <td class="tablebox111-show"><%= f.select :typeselect, {ー問い合わせ内容ー: "", アーティスト名追加: "アーティスト名追加", イベント名追加: "イベント名追加", 会場名追加: "会場名追加", 質問・要望: "質問・要望", その他: "その他"}, autofocus: true %></td>
+          </tr>
+          <tr>
+            <td class="box999-show">お問い合わせ<br />内容詳細</td>
+            <td class="tablebox111-show"><%= f.text_area :message ,placeholder: 'お問い合わせの内容によっては対応できないことがありますので、予めご了承ください。チケット売買、チケット仲介は、あんしん・安全な取引が可能な『チケリン』で検索!!'%></td>
+          </tr>
+  </table>
+  <%= f.submit '送信', :class => 'btn btn-primary' %>
+<% end %>
+</div>

@@ -1,0 +1,472 @@
+ja:
+  attributes:
+    email: メールアドレス
+    password: パスワード
+    group_id: グループ名
+    user: ユーザー
+    price: 販売（出品）価格
+    list_price: 定価以下又は定価以上
+    number_of_sheets: 販売枚数
+    shipping_method: 発注方法（発送方法）
+    ticketing_state: 発券状態
+    serial_number: 送料なし
+    postage: 送料
+    nsk: チケットの購入元
+    ticket_name: チケット名義
+    ticket_name_yes_no: 名義の塗り潰しの有無
+    docide_promptly: チケットの発送予定時期
+    seat: 席の種類
+    name: 漢字（フルネーム）
+    kana: カタカナでお名前(フルネーム)
+    nickname: お好きなニックネーム
+    number: 郵便番号（数字ハイフン無し）
+    big_address: 都道府県
+    subaddress: 区市町村
+    littleaddress: 番地以下
+    branch_name: 振込先の支店名
+    tel: 電話番号（半角数字）
+    account_name: 振込先の口座名義(カタカナ表記)
+    account_type: 振込先の預金口座タイプ
+    account_number: 振込先、口座番号
+    bankname: 振込先の金融機関名
+    current_password: ご登録済みのパスワード
+    plase: 会場
+    live_tour_name: 公演名
+    time_date: 開演・公演時間
+    day_date: 開演・公演日
+    airt_name: アーティスト・チケット名
+    close_date: 終了日
+
+  date:
+    abbr_day_names:
+    - 日
+    - 月
+    - 火
+    - 水
+    - 木
+    - 金
+    - 土
+    abbr_month_names:
+    -
+    - 1月
+    - 2月
+    - 3月
+    - 4月
+    - 5月
+    - 6月
+    - 7月
+    - 8月
+    - 9月
+    - 10月
+    - 11月
+    - 12月
+    day_names:
+    - 日曜日
+    - 月曜日
+    - 火曜日
+    - 水曜日
+    - 木曜日
+    - 金曜日
+    - 土曜日
+    formats:
+      default: ! '%Y/%m/%d'
+      long: ! '%Y年%m月%d日(%a)'
+      short: ! '%m/%d'
+    month_names:
+    -
+    - 1月
+    - 2月
+    - 3月
+    - 4月
+    - 5月
+    - 6月
+    - 7月
+    - 8月
+    - 9月
+    - 10月
+    - 11月
+    - 12月
+    order:
+    - :year
+    - :month
+    - :day
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: 約1時間
+        other: 約%{count}時間
+      about_x_months:
+        one: 約1ヶ月
+        other: 約%{count}ヶ月
+      about_x_years:
+        one: 約1年
+        other: 約%{count}年
+      almost_x_years:
+        one: 1年弱
+        other: ! '%{count}年弱'
+      half_a_minute: 30秒前後
+      less_than_x_minutes:
+        one: 1分以内
+        other: ! '%{count}分未満'
+      less_than_x_seconds:
+        one: 1秒以内
+        other: ! '%{count}秒未満'
+      over_x_years:
+        one: 1年以上
+        other: ! '%{count}年以上'
+      x_days:
+        one: 1日
+        other: ! '%{count}日'
+      x_minutes:
+        one: 1分
+        other: ! '%{count}分'
+      x_months:
+        one: 1ヶ月
+        other: ! '%{count}ヶ月'
+      x_seconds:
+        one: 1秒
+        other: ! '%{count}秒'
+    prompts:
+      day: 日
+      hour: 時
+      minute: 分
+      month: 月
+      second: 秒
+      year: 年
+  errors:
+    format: ! '%{attribute}%{message}'
+    messages:
+      accepted: を受諾してください。
+      blank: がありません。フォーマットに従い記入、又は選択して下さい。
+      present: は入力しないでください。
+      confirmation: と%{attribute}の入力が一致しません。
+      empty: を入力してください。
+      equal_to: は%{count}にしてください。
+      even: は偶数にしてください。
+      exclusion: は予約されています。
+      greater_than: は%{count}より大きい値にしてください。
+      greater_than_or_equal_to: は%{count}以上の値にしてください。
+      inclusion: は一覧にありません。
+      invalid: は不正な値です。
+      less_than: は%{count}より小さい値にしてください。
+      less_than_or_equal_to: は%{count}以下の値にしてください。
+      not_a_number: は数値で入力してください。
+      not_an_integer: は整数で入力してください。
+      odd: は奇数にしてください。
+      record_invalid: バリデーションに失敗しました。 %{errors}
+      restrict_dependent_destroy: ! '%{record}が存在しているので削除できません。'
+      taken: はすでに存在します。
+      too_long: は%{count}文字以内で入力してください。
+      too_short: は%{count}文字以上で入力してください。
+      wrong_length: は%{count}文字で入力してください。
+      other_than: "は%{count}以外の値にしてください。"
+    template:
+      body: 次の項目を確認してください。
+      header:
+        one: ! '%{model}にエラーが発生しました。'
+        other: ! '%{model}に%{count}個のエラーが発生しました。'
+  helpers:
+    select:
+      prompt: 選択してください。
+    submit:
+      create: 登録する
+      submit: 出品する
+      update: 変更する
+  number:
+    currency:
+      format:
+        delimiter: ! ','
+        format: ! '%n%u'
+        precision: 0
+        separator: .
+        significant: false
+        strip_insignificant_zeros: false
+        unit: 円
+    format:
+      delimiter: ! ','
+      precision: 3
+      separator: .
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: ! '%n %u'
+        units:
+          billion: 十億
+          million: 百万
+          quadrillion: 千兆
+          thousand: 千
+          trillion: 兆
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: ! '%n%u'
+        units:
+          byte: バイト
+          gb: ギガバイト
+          kb: キロバイト
+          mb: メガバイト
+          tb: テラバイト
+    percentage:
+      format:
+        delimiter: ''
+        format: "%n%"
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: と
+      two_words_connector: と
+      words_connector: と
+  time:
+    am: 午前
+    formats:
+      default: ! '%Y/%m/%d %H:%M:%S'
+      long: ! '%Y年%m月%d日(%a) %H時%M分%S秒 %z'
+      short: ! '%y/%m/%d %H:%M'
+    pm: 午後
+    # 追加分
+  enums:
+    shop:
+      list_price:
+        under_list: ☆定価以下☆
+        over_list: 定価以上
+      number_of_sheets:
+        one_ticket: 1
+        two_ticket: 2
+        three_ticket: 3
+        fore_ticket: 4
+      serial_number:
+        nasi_number: 送料なし
+      shipping_method:
+        post: 郵便
+        electron_ticket: 電子チケット
+        store_ticket: コンビニ発券
+        hand_sent: 手渡し
+      seat:
+        arena: アリーナ
+        stand: スタンド
+        other_seat: 未分類
+      ticketing_state:
+        have: 所持（発券済み）
+        not_have: 未到着・未発券
+      postage:
+        postage_in: 送料込み
+        postage_out: 送料別（510円）
+        no_postage: 無し(手渡し・電子チケット)
+      nsk:
+       ticket_agency: プレガイド
+       funclub: ファンクラブ
+       organizer: 主催者
+       other: その他
+      ticket_name:
+        no_name: 名義無し
+        female_name: 男性名義
+        male_name: 女性名義
+        other_sex: 不明
+      ticket_name_yes_no:
+        name_yes: 名義塗り潰し無し
+        name_no: 名義塗り潰し有り
+      docide_promptly:
+        within_24_hours: 24時間以内
+        within_3day: 2~3日以内
+        within_7day: 4~7日以内
+        other_day: 未到着・その他
+      seat:
+        arena: アリーナ席
+        stand: スタンド席
+        other_seat: その他の席
+      genre_id:
+        japan_live: 国内ライブ・コンサート
+        foreign_countries: 海外ライブ・コンサート
+        livefes: 音楽フェス・イベント
+        theater: 演劇・宝塚・ミュージカル
+        spotr_live: スポーツ
+    user:
+      identification:
+        ok: 本人確認提出済み
+        not: 未提出又は再提出
+      number_of_sheets:
+        one_ticket: 1
+        two_ticket: 2
+        three_ticket: 3
+        fore_ticket: 4
+      big_address:
+        hokaido: 北海道
+        aomori: 青森県
+        iwate: 岩手県
+        akita: 秋田県
+        miyagi: 宮城県
+        fukusima: 福島県
+        yamagata: 山形県
+        ibaraki: 茨城県
+        tochigi: 栃木県
+        gunma: 群馬県
+        saitama: 埼玉県
+        chiba: 千葉県
+        tokyo: 東京都
+        kanagawa: 神奈川県
+        niigata: 新潟県
+        toyama: 富山県
+        isikawa: 石川県
+        fukui: 福井県
+        yamanasi: 山梨県
+        nagano: 長野県
+        gifu: 岐阜県
+        sizuoka: 静岡県
+        aichi: 愛知県
+        mie: 三重県
+        siga: 滋賀県
+        kyoto: 京都府
+        osaka: 大阪府
+        hyogo: 兵庫県
+        nara: 奈良県
+        wakayama: 和歌山県
+        totori: 鳥取県
+        simane: 島根県
+        okayama: 岡山県
+        hirosima: 広島県
+        yamaguchi: 山口県
+        tokusima: 徳島県
+        kagawa: 香川県
+        ehime: 愛媛県
+        kochi: 高知県
+        fukuoka: 福岡県
+        saga: 佐賀県
+        nagasaki: 長崎県
+        kumamoto: 熊本県
+        oita: 大分県
+        miyazaki: 宮崎県
+        kagosima: 鹿児島県
+        okinawa : 沖縄県
+      bankname:
+        ufj: 三菱東京UFJ銀行
+        mizuho: みずほ銀行
+        mitui: 三井住友銀行
+        risona: りそな銀行
+        risonasaitama: 埼玉りそな銀行
+        rakuten: 楽天銀行
+        yucho: ゆうちょ銀行
+        sbi: 住信SBIネット銀行
+        jpnet: ジャパンネット銀行
+        seven: セブン銀行
+        sony: ソニー銀行
+        sinsei: 新生銀行
+        yokohama: 横浜銀行
+        fukuo: ふくおかフィナンシャルグループ
+        chibag: 千葉銀行
+        sizuokag: 静岡銀行
+        hokuhoku: ほくほくフィナンシャルグループ
+        hachi: 八十二銀行
+        yamaguchig: 山口フィナンシャルグループ
+        jyoyo: 常陽銀行
+        wcity: 西日本シティ銀行
+        hokuyo: 北洋銀行
+        suruga: スルガ銀行
+        gunmag: 群馬銀行
+        hirosimag: 広島銀行
+        kyushu: 九州フィナンシャルグループ
+        chugoku: 中国銀行
+        aozora: あおぞら銀行
+        ogaki: 大垣共立銀行
+        iyo: 伊予銀行
+        nanajyu: 七十七銀行
+        jyuroku: 十六銀行
+        kyotog: 京都銀行
+        ikeda: 池田泉州銀行
+        asikaga: 足利銀行
+        daiyon: 第四銀行
+        sigag: 滋賀銀行
+        sanin: 山陰合同銀行
+        kansaiaban: 関西アーバン銀行
+        higo: 肥後銀行
+        hyakugo: 百五銀行
+        kiyou: 紀陽銀行
+        hyakujyuyon: 百十四銀行
+        tyg: 東京ＴＹフィナンシャルグループ
+        kagosimag: 鹿児島銀行
+        nanto: 南都銀行
+        toho: 東邦銀行
+        kitaguni: 北國銀行
+        musasino: 武蔵野銀行
+        keiyo: 京葉銀行
+        aho: 阿波銀行
+        minato: みなと銀行
+        nagoya: 名古屋銀行
+        tomoni: トモニホールディングス
+        oitag: 大分銀行
+        ryokyu: 琉球銀行
+        tochigg: 栃木銀行
+        hokuriku: 北越銀行
+        akitag: 秋田銀行
+        fida: フィデアホールディングス
+        yamanasig: 山梨中央銀行
+        miyazakig: 宮崎銀行
+        chibakogyog: 千葉興業銀行
+        okinawag: 沖縄銀行
+        michinokug: みちのく銀行
+        jyuhachi: 十八銀行
+        aomorig: 青森銀行
+        sagag: 佐賀銀行
+        aichig: 愛知銀行
+        fukuig: 福井銀行
+        sikoku: 四国銀行
+        iwateg: 岩手銀行
+        tomin: 東京都民銀行
+        yamagatag: 山形銀行
+        tukubag: 筑波銀行
+        wjapan: 東日本銀行
+        ehimeg: 愛媛銀行
+        jimotog: じもとホールディングス
+        yachiyog: 八千代銀行
+        towag: 東和銀行
+        daisan: 第三銀行
+        chukyog: 中京銀行
+        :toyama1g: 富山第一銀行
+        simizug: 清水銀行
+        njapan: 北日本銀行
+        kochig: 高知銀行
+        naganog: 長野銀行
+        daikog: 大光銀行
+        tomato: トマト銀行
+        sjapan: 南日本銀行
+        chikuho: 筑邦銀行
+        fukusimag: 福島銀行
+        miyazakitaiyo: 宮崎太陽銀行
+        totorig: 鳥取銀行
+        tohokug: 東北銀行
+        daitog: 大東銀行
+        toyamag: 富山銀行
+        simaneg: 島根銀行
+        fukuokachuo: 福岡中央銀行
+        houwa: 豊和銀行
+        hokutog: 北都銀行
+        shonai: 荘内銀行
+        mieg: 三重銀行
+        kinkiosaka: 近畿大阪銀行
+        tajimag: 但馬銀行
+        fukuokag: 福岡銀行
+        skyushug: 北九州銀行
+        sinwa: 親和銀行
+        okinawakaiho: 沖縄海邦銀行
+        sendaig: 仙台銀行
+        kirayaka: きらやか銀行
+        starg: 東京スター銀行
+        kanagawag: 神奈川銀行
+        fukuhog: 福邦銀行
+        taishog: 大正銀行
+        momigi: もみじ銀行
+        sikyog: 西京銀行
+        kagawag: 香川銀行
+        tokusimag: 徳島銀行
+        sagakyoei: 佐賀共栄銀行
+        nagasakig: 長崎銀行
+        kumamotog: 熊本銀行
+      account_type:
+        normal: 普通口座
+        current: 当座口座

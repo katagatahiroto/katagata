@@ -1,0 +1,37 @@
+<br />
+<br />
+<div class="changepass">
+ <h1>パスワード変更画面</h1>
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+  <%= f.hidden_field :reset_password_token %>
+
+
+     <div class="field-login">
+      <%= f.label :password, "新しいパスワード" %><br />
+    <% if @minimum_password_length %>
+    <% end %>
+    </div>
+      <div class="text-menu-login">
+      <br />
+         <%= f.password_field :password, autofocus: true, autocomplete: "off",placeholder: "   ＊6桁以上のパスワードで登録"  %><span style="color:#ff0000;">&emsp;<small>*必須</small></span>
+     </div>
+      <br />
+
+
+     <div class="field-login">
+      <%= f.label :パスワードの再入力 %><br />
+    </div>
+      <div class="text-menu-login">
+      <br />
+      <%= f.password_field :password_confirmation, autocomplete: "off" ,placeholder: "  確認の為、パスワードを再入力"%><span style="color:#ff0000;">&emsp;<small>*必須</small></span>
+     </div>
+      <br />
+
+
+  <div class="actions">
+    <%= f.submit "パスワード変更" ,:class => "submit-button" %>
+  </div>
+<% end %>
+</div>
