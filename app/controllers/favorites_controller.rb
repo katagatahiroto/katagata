@@ -10,6 +10,20 @@ class FavoritesController < ApplicationController
   #     redirect_to shops_path
   #   end
   # end
+  
+  # お気に入り登録(ajax)
+  def mark
+    @shop = Shop.find(params[:shop_id])
+    favorite = current_user.favorites.build(shop_id: @shop.id)
+    favorite.save
+  end
+  
+  # お気に入り削除(ajax)
+  def unmark
+    @shop = Shop.find(params[:shop_id])
+    favorite = current_user.favorites.find_by(shop_id: @shop.id)
+    favorite.destroy
+  end
 
   # #お気に入り削除用アクション
   # def destroy
