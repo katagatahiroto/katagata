@@ -36,7 +36,7 @@ class User < ActiveRecord::Base
   has_many :shops, dependent: :destroy
   has_many :questions, dependent: :destroy
   has_many :favorites, dependent: :destroy
-  # has_many :shops, through: :favorites #追加
+  has_many :favorite_shops, through: :favorites, source: :shop
 
 end
 

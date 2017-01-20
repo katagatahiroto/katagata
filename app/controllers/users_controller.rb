@@ -21,9 +21,8 @@ class UsersController < ApplicationController
       @money = current_user.momey
       @identification = current_user.identification
       @shops = current_user.shops.page(params[:page]).per(5).order("created_at DESC")
-      # @user = User.find(params[:id]) #追加
-      # #特定のユーザーが登録したお気に入りを全て取得する
-      # @favorites = Favorite.where("user_id = ?", @user) #追加
+      #特定のユーザーが登録したお気に入りを全て取得する
+      @favorite_shops = current_user.favorite_shops.page(params[:favorite_page]).per(5).order("created_at DESC")
     end
 
     def index
