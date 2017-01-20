@@ -24,7 +24,7 @@ class ShopsController < ApplicationController
   # GET /shops/1
   # GET /shops/1.json
   def show
-      @shops = Shop.all
+      #@shops = Shop.all
       @questions = @shop.questions.includes(:user)
   end
 
