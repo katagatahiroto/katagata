@@ -1,0 +1,3 @@
+
+$('#favorite-mark').html('<%= escape_javascript(render("favorites/favorite_mark", shop: @shop)) %>');
+$('#favorite-count').html('<%= escape_javascript(render("favorites/favorite_count", shop: @shop, favorites: @shop.favorites)) %>');

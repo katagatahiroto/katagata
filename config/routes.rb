@@ -15,6 +15,10 @@ Rails.application.routes.draw do
   get  'users/:id'  => 'users#index'
   root 'home#top'
   get '/about' => 'home#about'
+
+  post   '/favorite/:shop_id' => 'favorites#mark', as: 'favorites_mark'     # お気に入りの追加
+  delete '/favorite/:shop_id' => 'favorites#unmark', as: 'favorites_unmark' # お気に入りの解除
+
   get 'home/puraibashi'
   get 'home/torihikihou'
   get 'home/kiyaku'

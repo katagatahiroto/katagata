@@ -1,0 +1,13 @@
+<% if current_user %>
+  <% if current_user.favorites.exists?(shop_id: shop.id) %>
+    <%= link_to image_tag("favorite_mark.png"), favorites_unmark_path(shop.id), method: 'delete', remote: true %>
+  <% else %>
+    <%= link_to favorites_mark_path(shop.id), method: 'post', remote: true do %>
+      <%= image_tag("favorite_unmark.png") %>
+      <span class="unmark_popup">検討リストに追加する</span>
+    <% end %>
+  <% end %>
+<% else %>
+  <%= image_tag("favorite_unmark.png") %>
+<% end %>
+

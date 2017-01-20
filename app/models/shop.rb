@@ -2,7 +2,7 @@ class Shop < ActiveRecord::Base
   belongs_to :user
   has_many :questions              #commentsテーブルとのアソシエーション
   mount_uploader :image, ImageUploader
-  # has_many :favorites #User:Favorite => 1:多 追加
+  has_many :favorites, dependent: :destroy #User:Favorite => 1:多 追加
   # has_many :users, through: :favorites #追加
 
 
