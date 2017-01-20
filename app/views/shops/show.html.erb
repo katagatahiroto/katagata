@@ -3,6 +3,13 @@
 <%= @shop.airt_name %>のチケット詳細ページ
 <% end %>
 <br />
+
+<!-- TODO : お気に入りの位置を見直す -->
+<div>
+  <span id="favorite-mark"><%= render 'favorites/favorite_mark', shop: @shop %></span>
+  <span id="favorite-count"><%= render 'favorites/favorite_count', shop: @shop, favorites: @shop.favorites %></span>
+</div>
+
 <div class="box200 clearfix">
   <div class="box300 clearfix">
     <h3><span style="color:#FFFFFF;">出品チケット詳細情報</span></h3>
