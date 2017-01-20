@@ -1,0 +1,15 @@
+<% if current_user and current_user.favorites.exists?(shop_id: shop.id) %>
+  <% # お気に入り色 %>
+  <span style="color: #0074c3;">
+<% else %>
+  <span style="color: #cccccc;">
+<% end %>
+
+<% count = favorites.count %>
+<% if count > 0 %>
+  <%= count %>
+<% else %>
+  &nbsp;
+<% end %>
+
+</span>
