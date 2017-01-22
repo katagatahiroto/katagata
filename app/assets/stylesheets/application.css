@@ -1942,10 +1942,16 @@ background-color: #F5FFFA;
   padding-bottom: 1px;
   width: 32px;
   height: 30px;
-
-
 }
 
+.btn-show{
+  text-align: center;
+  background-color: #fbf2e8;
+  border-radius: 10px;
+  margin-left: -10px;
+  height: 57px;
+  box-shadow: 4px 3px 0 0 #ebe7dc;
+}
 /* お気に入り */
 #favorite-mark {
   position: relative;
