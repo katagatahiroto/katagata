@@ -106,8 +106,10 @@
           <tr>
             <td class="box999-show">検討リスト追加<br />検討者数</td>
             <td class="tablebox111-show">
+               <div class="btn-show">
                <span id="favorite-mark"><%= render 'favorites/favorite_mark', shop: @shop %></span>
-               <span id="favorite-count"><%= render 'favorites/favorite_count', shop: @shop, favorites: @shop.favorites %></span></td>
+               <span id="favorite-count"><%= render 'favorites/favorite_count', shop: @shop, favorites: @shop.favorites %></span>
+             </div></td>
           </tr>
 
         </table>
