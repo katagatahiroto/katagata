@@ -1934,6 +1934,11 @@ background-color: #F5FFFA;
 /* お気に入り */
 #favorite-mark {
   position: relative;
+  top: 5px;
+}
+
+#favorite-count {
+  position: relative;
 }
 /* ポップアップメッセージ */
 #favorite-mark .unmark_popup {
@@ -1947,7 +1952,8 @@ background-color: #F5FFFA;
   display: block;
   position: absolute;
   width: 12em;
-  top: 40px;
+  top: 10px;
+  left: -5px;
   background: none repeat scroll 0 0 #FFEDBE;
   border: 1px solid #FFD88C;
   padding: 0.5em;
