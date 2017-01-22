@@ -1931,14 +1931,30 @@ background-color: #F5FFFA;
   }
 }
 
+.btn2{
+  background-color: #ffedbe;
+  margin-top: -1px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  font: #069;
+  box-shadow: 4px 3px 0 0 #ebe7dc;
+  display: inline-block;
+  padding-bottom: 1px;
+  width: 32px;
+  height: 30px;
+
+
+}
+
 /* お気に入り */
 #favorite-mark {
   position: relative;
-  top: 5px;
+  top: 10px;
 }
 
 #favorite-count {
   position: relative;
+  left: -4px;
 }
 /* ポップアップメッセージ */
 #favorite-mark .unmark_popup {
@@ -1952,8 +1968,8 @@ background-color: #F5FFFA;
   display: block;
   position: absolute;
   width: 12em;
-  top: 10px;
-  left: -5px;
+  bottom: 35px;
+  right: 2px;
   background: none repeat scroll 0 0 #FFEDBE;
   border: 1px solid #FFD88C;
   padding: 0.5em;
