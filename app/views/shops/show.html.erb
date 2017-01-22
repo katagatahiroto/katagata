@@ -5,10 +5,7 @@
 <br />
 
 <!-- TODO : お気に入りの位置を見直す -->
-<div>
-  <span id="favorite-mark"><%= render 'favorites/favorite_mark', shop: @shop %></span>
-  <span id="favorite-count"><%= render 'favorites/favorite_count', shop: @shop, favorites: @shop.favorites %></span>
-</div>
+
 
 <div class="box200 clearfix">
   <div class="box300 clearfix">
@@ -105,6 +102,12 @@
           <tr>
             <td class="box999-show">メッセージ</td>
             <td class="tablebox111-show"><%= @shop.othertext %></td>
+          </tr>
+          <tr>
+            <td class="box999-show">検討リスト追加<br />検討者数</td>
+            <td class="tablebox111-show">
+               <span id="favorite-mark"><%= render 'favorites/favorite_mark', shop: @shop %></span>
+               <span id="favorite-count"><%= render 'favorites/favorite_count', shop: @shop, favorites: @shop.favorites %></span></td>
           </tr>
 
         </table>
