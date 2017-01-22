@@ -1949,7 +1949,7 @@ background-color: #F5FFFA;
 /* お気に入り */
 #favorite-mark {
   position: relative;
-  top: 10px;
+  top: 15px;
 }
 
 #favorite-count {
