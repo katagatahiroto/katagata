@@ -72,12 +72,11 @@
         <td class="tablebox6000"><small><%= shop.number_of_sheets_i18n %>枚
           <p><span style="color:#ff0000;"><%= number_with_delimiter(shop.price) %></span>円/枚</span></p>
         <p><%= shop.list_price_i18n %></span></p></small></td>
-        <td class="tablebox5000">&nbsp;
+        <td class="tablebox5000">
         <div id="favorite-mark"><%= render 'favorites/favorite_mark', shop: shop %></div>
         <% # TODO : (仮)styleによる中央寄せ %>
         <div id="favorite-count" style="text-align: center;"><%= render 'favorites/favorite_count', shop: shop, favorites: shop.favorites %></div>
-        &nbsp;<%= image_tag("e_title_shops.png", :size => "18x18", :align=>"center") %><br />
-        <%= link_to '詳細購入', shop %></td>
+        <div class="btn2"><%= link_to '詳細', shop %></div></td>
       </tr>
       <% end %>
     <% end %>
