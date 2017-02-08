@@ -34,11 +34,11 @@
           </tr>
           <tr>
             <td class="box999-show">内容選択<br />（必須）</td>
-            <td class="tablebox111-show"><%= f.select :typeselect, {ー問い合わせ内容ー: "", アーティスト名追加: "アーティスト名追加", イベント名追加: "イベント名追加", 会場名追加: "会場名追加", 質問・要望: "質問・要望", その他: "その他"}, autofocus: true %></td>
+            <td class="tablebox111-show"><%= f.select :typeselect, {ー問い合わせ内容ー: "", 取り扱いブランド追加: "取り扱いブランド追加", 質問・要望: "質問・要望", その他: "その他"}, autofocus: true %></td>
           </tr>
           <tr>
             <td class="box999-show">お問い合わせ<br />内容詳細</td>
-            <td class="tablebox111-show"><%= f.text_area :message ,placeholder: 'お問い合わせの内容によっては対応できないことがありますので、予めご了承ください。チケット売買、チケット仲介は、あんしん・安全な取引が可能な『チケリン』で検索!!'%></td>
+            <td class="tablebox111-show"><%= f.text_area :message ,placeholder: 'お問い合わせの内容によっては対応できないことがありますので、予めご了承ください。腕時計ブランド品の売買、仲介は、あんしん・安全な取引が可能な『オトクーナ』で検索!!'%></td>
           </tr>
   </table>
   <%= f.submit '送信', :class => 'btn btn-primary' %>
