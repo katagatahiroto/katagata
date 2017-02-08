@@ -41,14 +41,14 @@ ActiveRecord::Schema.define(version: 20170112003019) do
     t.integer  "user_id",            limit: 4
     t.string   "price",              limit: 255
     t.integer  "list_price",         limit: 4
-    t.integer  "number_of_sheets",   limit: 4
-    t.integer  "serial_number",      limit: 4
-    t.integer  "seat",               limit: 4
+    t.string   "number_of_sheets",   limit: 11
+    t.string   "serial_number",      limit: 11
+    t.string   "seat",               limit: 11
     t.integer  "shipping_method",    limit: 4
     t.integer  "ticketing_state",    limit: 4
     t.integer  "postage",            limit: 4
     t.integer  "nsk",                limit: 4
-    t.integer  "ticket_name",        limit: 4
+    t.string   "ticket_name",        limit: 11
     t.integer  "ticket_name_yes_no", limit: 4
     t.text     "seat_in_detail",     limit: 65535
     t.integer  "docide_promptly",    limit: 4
