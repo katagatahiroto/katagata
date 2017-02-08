@@ -68,7 +68,7 @@ class ShopsController < ApplicationController
        @shop.destroy
     end
     respond_to do |format|
-      format.html { redirect_to shops_url, notice: 'お手続きしたチケットを削除致しました。今後ともTicketNaviをどうぞ宜しくお願い致します。' }
+      format.html { redirect_to shops_url, notice: 'お手続きした商品を削除致しました。今後とも『オトクーナ』をどうぞ宜しくお願い致します。' }
       format.json { head :no_content }
     end
   end
@@ -81,24 +81,24 @@ class ShopsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def shop_params
-      params.require(:shop).permit(:live_tour_name, :airt_name, :time_date, :plase, :day_date, :colse_date, :price, :list_price, :number_of_sheets, :serial_number, :shipping_method, :ticketing_state, :postage, :nsk, :ticket_name, :ticket_name_yes_no, :seat_in_detail, :docide_promptly, :othertext, :seat, :image, :image_cache, :remove_image, :colse_day)
+      params.require(:shop).permit(:live_tour_name, :airt_name, :plase, :day_date, :colse_date, :price, :list_price, :number_of_sheets, :serial_number, :shipping_method, :ticketing_state, :postage, :nsk, :ticket_name, :ticket_name_yes_no, :seat_in_detail, :docide_promptly, :othertext, :seat, :image, :image_cache, :remove_image, :colse_day)
     end
 
   def getprice
       a = @shop.price.to_i
-      b = @shop.number_of_sheets_i18n.to_i
+      b = 1
       @getprice = a * b
   end
 
   def getprice_index
       a = shop.price.to_i
-      b = shop.number_of_sheets_i18n.to_i
+      b = 1
       @getprice_index = a * b
   end
 
   def buyprice
       a = @shop.price.to_i
-      b = @shop.number_of_sheets_i18n.to_i
+      b = 1
       @getprice = a * b
 
     if
@@ -112,7 +112,7 @@ class ShopsController < ApplicationController
 
   def otherprice
       a = @shop.price.to_i
-      b = @shop.number_of_sheets_i18n.to_i
+      b = 1
       @getprice = a * b
     if
        @getprice <= 8000
@@ -125,7 +125,7 @@ class ShopsController < ApplicationController
 
   def taxprice
       a = @shop.price.to_i
-      b = @shop.number_of_sheets_i18n.to_i
+      b = 1
       @getprice = a * b
 
     if
