@@ -1,0 +1,279 @@
+<% content_for :title do %>
+<%= @nickname %>さんの管理画面 | チケット売買ならチケリン
+<% end %>
+<div class="mypage-main clearfix">
+  <div class="mypage-header clearfix">
+     <div class="mypage-header-left">
+       <h2>★<%= @nickname %>さん★️出品チケット一覧</h2>
+       <p><span style="color:#ff0000;">過去の出品データ含みます</span>&emsp;&emsp;ログイン時間&emsp;<%= Time.now.strftime("%Y年%m月%d日 %H時%M分")%></p>
+     </div>
+     <div class="mypage-header-right">
+       <ul>
+       <li><%= image_tag("e_title_120.png", :size => "10x10", :align=>"center") %><%= link_to "重要登録", edit_user_registration_path, class: "btn btn-large" %><span style="color:#ff0000;">(売買必須)</span></li>
+       <li>送金可能金額(売上高)&nbsp;<%= number_with_delimiter(@money) %><small>円</small></li>
+       </ul>
+     </div>
+ </div>
+<br />
+  <div class="mypage-main-date">
+<div class="index-box-mypage">
+    <table>
+  <thead>
+    <tr>
+      <th class="tablebox1105-left">公演名</th>
+      <th class="tablebox5100">日時</th>
+      <th class="tablebox1105">場所</th>
+      <th class="tableboxticket">チケット情報</th>
+      <th class="tablebox1111">価格</th>
+      <th class="tablebox1100">詳細</th>
+      <th class="tablebox1100">編集</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shops.each do |shop| %>
+      <tr>
+        <td class="tablebox5011"><small><%= shop.airt_name.truncate(18) %></span>
+          <p><span style="color:#0000CC;"><%= shop.live_tour_name.truncate(24) %></span></p></small></td>
+        <td class="tablebox5100under"><small><%= shop.day_date %>&emsp;&emsp;&emsp;<%= shop.time_date %>〜</small></td>
+        <td class="tablebox5011"><small><span style="color:#0000CC;"><%= shop.plase.truncate(41) %></span></small></td>
+        <td class="tableboxticketunder">
+          <small>[<span style="color:#ff0000;">送料</span>]&nbsp;<%= shop.postage_i18n %>
+            &emsp;[<span style="color:#ff0000;">名義</span>]&nbsp;<%= shop.ticket_name %>
+            &emsp;[<span style="color:#ff0000;">席種</span>]&nbsp;<%= shop.seat %></small>
+        <p><small>[<span style="color:#ff0000;">発送方法</span>]&nbsp;<%= shop.shipping_method_i18n %>
+            &emsp;[<span style="color:#ff0000;">発送予定時期</span>]&nbsp;<%= shop.docide_promptly_i18n %></small></p>
+        <p><small>[<span style="color:#ff0000;">売手側からのチケット情報</span>]</small></p>
+        <p><small><%= shop.seat_in_detail.truncate(30) %></small></p></td>
+        <td class="tablebox6000"><small><%= shop.number_of_sheets %>枚
+          <p><span style="color:#ff0000;"><%= number_with_delimiter(shop.price) %></span>円/枚</span></p>
+        <p><%= shop.list_price_i18n %></span></p></small></td>
+        <td class="tablebox5000">&nbsp;<%= image_tag("e_title_shops.png", :size => "18x18", :align=>"center") %><br />
+        <div class="btn2"><%= link_to '詳細', shop %></div></td>
+        <td class="tablebox5000"><%= link_to '編集', "/shops/#{shop.id}/edit", method: :get, :class=>"black-btn" %>
+        <p><%= link_to '削除', "/shops/#{shop.id}", method: :delete, :class=>"red-btn", data: {
+      confirm: '本当に削除しても宜しいでしょうか？',
+      disable_with: '削除中です..。。'} %></p></td>
+      </tr>
+    <% end %>
+  </tbody>
+    </table>
+    <br />
+
+    <%= paginate(@shops) %>
+
+    <br>
+
+
+    <% # 検討リスト --- %>
+<div class="index-box-mypage">
+  <h2>★<%= @nickname %>さん★️検討チケット一覧</h2>
+  <%
+    # NOTE : shops/index.html.erbのshops一覧とほぼ同じなので、
+    #        (こちら側はsearch_form_forを削除している、ただしこれも仮)
+    #        パーシャルにしてrenderすれば処理をまとめられる。
+    #        するかどうかはレイアウトが確定するまで様子見
+  %>
+    <table>
+  <thead>
+    <tr>
+      <th class="tablebox1105-left">公演名</th>
+      <th class="tablebox5100">日時</th>
+      <th class="tablebox1105">場所</th>
+      <th class="tableboxticket">チケット情報</th>
+      <th class="tablebox1111">価格</th>
+      <th class="tablebox1100">詳細</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <% # NOTE : search_form_forを削除している %>
+  <tbody>
+    <% @favorite_shops.each do |shop| %>
+    <% if shop.day_date >=  Time.now %>
+      <tr>
+        <td class="tablebox5011"><small><%= shop.airt_name.truncate(18) %></span>
+          <p><span style="color:#0000CC;"><%= shop.live_tour_name.truncate(24) %></span></p></small></td>
+        <td class="tablebox5100under"><small><%= shop.day_date %>&emsp;&emsp;&emsp;<%= shop.time_date %>〜</small></td>
+        <td class="tablebox5011"><small><span style="color:#0000CC;"><%= shop.plase.truncate(41) %></span></small></td>
+        <td class="tableboxticketunder">
+          <small>[<span style="color:#ff0000;">送料</span>]&nbsp;<%= shop.postage_i18n %>
+            &emsp;[<span style="color:#ff0000;">名義</span>]&nbsp;<%= shop.ticket_name_i18n %>
+            &emsp;[<span style="color:#ff0000;">席種</span>]&nbsp;<%= shop.seat_i18n %></small>
+        <p><small>[<span style="color:#ff0000;">発送方法</span>]&nbsp;<%= shop.shipping_method_i18n %>
+            &emsp;[<span style="color:#ff0000;">発送予定時期</span>]&nbsp;<%= shop.docide_promptly_i18n %></small></p>
+        <p><small>[<span style="color:#ff0000;">売手側からのチケット情報</span>]</small></p>
+        <p><small><%= shop.seat_in_detail.truncate(30) %></small></p></td>
+        <td class="tablebox6000"><small><%= shop.number_of_sheets_i18n %>枚
+          <p><span style="color:#ff0000;"><%= number_with_delimiter(shop.price) %></span>円/枚</span></p>
+        <p><%= shop.list_price_i18n %></span></p></small></td>
+        <td class="tablebox5000">
+        <div id="favorite-mark"><%= render 'favorites/favorite_mark', shop: shop %></div>
+        <% # TODO : (仮)styleによる中央寄せ %>
+        <div id="favorite-count" style="text-align: center;"><%= render 'favorites/favorite_count', shop: shop, favorites: shop.favorites %></div>
+        <div class="btn2"><%= link_to '詳細', shop %></div></td>
+      </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+    </table>
+    <br />
+    <%= paginate @favorite_shops  %>
+      <br>
+</div>
+    <% # 検討リスト --- %>
+
+
+       <div class="bulebox">
+       <h4 class="bulebox">&nbsp;<%= link_to 'チケットの出品へ', new_shop_path , class: "btn btn-large" %></h4>
+     </div>
+</div>
+
+  </div>
+</div>
+<div class="mypage-main clearfix">
+<br />
+  <h2><%= @nickname %>さんのご登録情報<p><small>お客様情報が空の場合は<%= image_tag("e_title_120.png", :size => "10x10", :align=>"center") %><%= link_to "こちらからご登録", edit_user_registration_path , class: "btn btn-large" %>&nbsp;<%= image_tag("icon-c.png", :size => "10x10", :align=>"center") %>をお願いします。</small></p></h2>
+<table id="tablebox-show">
+          <tr class="header">
+            <th class="box1000-left">お名前</th>
+            <th class="tablebox111-right">ご登録情報</th>
+          </tr>
+          <tr>
+            <td class="box999-show">お名前<br />(フルネーム)</td>
+            <td class="tablebox111-show"><%= @name %><span style="color:#ff0000;">&emsp;<small>*購入者のみメール記載</small></span></td>
+          </tr>
+          <tr>
+            <td class="box999-show">ニックネーム<br />(２〜８文字)</td>
+            <td class="tablebox111-show"><%= @nickname %><span style="color:#ff0000;">&emsp;<small>*チケット記載</small></span></td>
+          </tr>
+          <tr class="header">
+          <th class="box1000-left">郵送先（住所）</th>
+          <th class="tablebox111-right">ご登録情報</th>
+          </tr>
+          <tr>
+            <td class="box999-show">郵便番号</td>
+            <td class="tablebox111-show"><%= @number %><span style="color:#ff0000;">&emsp;<small>*購入者のみメール記載</small></span></td>
+          </tr>
+          <tr>
+            <td class="box999-show">都道府県</td>
+            <td class="tablebox111-show"><%= @big_address %><span style="color:#ff0000;">&emsp;<small>*チケット記載　*購入者のみメール記載</small></span></td>
+          </tr>
+          <tr>
+            <td class="box999-show">市区町村</td>
+            <td class="tablebox111-show"><%= @subaddress %><span style="color:#ff0000;">&emsp;<small>*チケット記載　*購入者のみメール記載</small></span></td>
+          </tr>
+          <tr>
+            <td class="box999-show">番地以下</td>
+            <td class="tablebox111-show"><%= @littleaddress %><span style="color:#ff0000;">&emsp;<small>*購入者のみメール記載</small></span></td>
+          </tr>
+          <tr>
+            <td class="box999-show">マンション名/<br />部屋番号</td>
+            <td class="tablebox111-show"><%= @address %><span style="color:#ff0000;">&emsp;<small>*購入者のみメール記載</small></span></td>
+          </tr>
+          <tr class="header">
+            <th class="box1000-left">緊急連絡先</th>
+            <th class="tablebox111-right">ご登録情報</th>
+          </tr>
+          <tr>
+            <td class="box999-show">連絡先</td>
+            <td class="tablebox111-show"><%= @tel %><span style="color:#ff0000;">&emsp;<small>*購入者のみメール記載</small></span></td>
+          </tr>
+</table>
+<table id="tablebox-show_right">
+          <tr class="header">
+            <th class="box1000-left">振込口座</th>
+            <th class="tablebox111-right">ご登録情報</th>
+          </tr>
+          <tr>
+            <td class="box999-show">金融機関名</td>
+            <td class="tablebox111-show"><%= @bankname %></td>
+          </tr>
+          <tr>
+            <td class="box999-show">支店名</td>
+            <td class="tablebox111-show"><%= @branch_name %></td>
+          </tr>
+          <tr>
+            <td class="box999-show">口座種別</td>
+            <td class="tablebox111-show"><%= @account_type %></td>
+          </tr>
+          <tr>
+            <td class="box999-show">口座番号</td>
+            <td class="tablebox111-show"><%= @account_number %></td>
+          </tr>
+          <tr>
+            <td class="box999-show">口座名義</td>
+            <td class="tablebox111-show"><%= @account_name %></td>
+          </tr>
+          <tr>
+            <td class="box999-show">本人確認書類<br />身分証の提出状況</td>
+            <td class="tablebox111-show"><span style="color:#ff0000;"><%= @identification %></span></td>
+          </tr>
+
+</table>
+<br />
+<%= image_tag("e_title_123.png", :size => "10x10", :align=>"center") %><strong><%= mail_to "identification@highlows.jp",  " *重要*公的身分証明書の提出フォーム", :subject => "公的身分証の確認依頼", :body => "お手数ですがお名前又はIDを記入して下さい。
+現住所とお名前が確認可能な公的身分証を撮影し、こちらのアドレスまで添付し、送信して下さい。
+担当の者が添付された身分証の確認を行い判断させて頂きます。
+身分証確認の反映まで最大で3日程度掛かる場合が御座いますので予めご了承ください。
+
+<お名前(漢字フルネーム)又はID番号>
+
+
+
+
+今後もTicket Ringをどうぞよろしくお願いします。", class: "btn btn-large" %></strong><br />
+&emsp;有効な公的身分証明書とは？<br />
+・パスポート・各種保険証・免許証・住民票・住民基本台帳カード<br />
+・マイナンバーカード・学生証(期限内)・印鑑登録証明書（個人）等<br />
+&emsp;現住所とお名前が分かる身分証が有効です。<br />
+*ゆうちょ銀行のお取り扱いは現在しておりません。<br />
+&emsp;お客様の入力ミスにより送金(銀行振込)が出来なかった場合は<br />
+&emsp;手数料<span style="color:#ff0000;">840</span>円をご請求させて頂きます。
+</div>
+<div class="money">
+     <div class="money-left">
+        <h2>送金可能金額&emsp;<%= number_with_delimiter(@money) %>円</h2>
+        <%= image_tag("e_title_122.png", :size => "10x10", :align=>"center") %><strong><%= mail_to "money-transfer@highlows.jp",  "送金（銀行振込）手続きフォーム", :subject => "送金依頼", :body =>"お手数ですが
+        1.お名前(漢字)フルネーム
+        2.仮名カナ
+        3.お客様ID番号を記入して下さい。
+          送金は振込手数料(400円)を引いた全額をお客様の口座へお振込させて頂きます。
+          金額の指定は出来ないので予めご了承下さい。
+          送金可能金額が401円以上でなければご対応致しかねますので宜しくお願いします。
+          また非常に悪質な悪戯や重複した送金依頼などは、売上金の没収、アカウントの停止などの措置を取らせて頂きますので、よろしくお願い申し上げます。
+
+        ＊お客様の指定口座への銀行振込は平日15:00までなら２翌営業日以内、
+          上記以外の時間帯は３翌営業日以内となります。
+          ご登録の一部の金融機関（地方銀行など）では翌銀行営業日に対応していない場合等がございますので予めご了承ください。
+
+
+送金依頼ご希望お客様の
+<お名前(漢字フルネーム)・仮名(カナ)・ID番号>
+
+
+お名前（漢字）/
+カナ/
+ID番号/
+
+
+以上3点をお間違えなく記入し送信して下さい。
+今後もTicket Ringをどうぞよろしくお願いします。", class: "btn btn-large" %></strong>
+          <p>公的身分証が未提出、未確認の場合、売上代金のお振込（送金）が出来ないので、予めご了承下さい。</p>
+
+        <br />
+        <%= image_tag("e_title_123.png", :size => "10x10", :align=>"center") %><strong><%= mail_to "identification@highlows.jp",  " *重要*公的身分証明書の提出フォーム", :subject => "公的身分証の確認依頼", :body => "お手数ですがお名前又はIDを記入して下さい。
+現住所とお名前が確認可能な公的身分証を撮影し、こちらのアドレスまで添付し、送信して下さい。
+担当の者が添付された身分証の確認を行い判断させて頂きます。
+身分証確認の反映まで最大で3日程度掛かる場合が御座いますので予めご了承ください。
+
+<お名前(漢字フルネーム)又はID番号>
+
+
+
+
+今後もTicket Ringをどうぞよろしくお願いします。", class: "btn btn-large" %></strong>
+
+     </div>
+   </div>
+</div>
