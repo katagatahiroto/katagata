@@ -50,7 +50,7 @@ Rails.application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for NGINX
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  # config.force_ssl = true
+  config.force_ssl = true
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
@@ -93,7 +93,7 @@ Rails.application.configure do
     :address => "smtp.muumuu-mail.com",
     :port => 587,
     :domain => 'smtp.muumuu-mail.com',
-    :user_name => "ticket-ring@highlows.jp", #ご自身のgmailアドレス
+    :user_name => "otoku-na@highlows.jp", #ご自身のgmailアドレス
     :password => "highlows0223", #ご自身のgmailアドレスのパスワード
     :authentication => 'login'
   }
