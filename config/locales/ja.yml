@@ -5,17 +5,16 @@ ja:
     group_id: グループ名
     user: ユーザー
     price: 販売（出品）価格
-    list_price: 定価以下又は定価以上
-    number_of_sheets: 販売枚数
+    list_price: 種類
+    number_of_sheets: サイズ
     shipping_method: 発注方法（発送方法）
-    ticketing_state: 発券状態
-    serial_number: 送料なし
+    ticketing_state: 正規品判別書類の有り無し
     postage: 送料
-    nsk: チケットの購入元
-    ticket_name: チケット名義
-    ticket_name_yes_no: 名義の塗り潰しの有無
-    docide_promptly: チケットの発送予定時期
-    seat: 席の種類
+    nsk: 販売商品の購入元
+    ticket_name: 素材
+    ticket_name_yes_no: 修復履歴の有無
+    docide_promptly: 商品の発送予定時期
+    seat: カラー
     name: 漢字（フルネーム）
     kana: カタカナでお名前(フルネーム)
     nickname: お好きなニックネーム
@@ -30,12 +29,12 @@ ja:
     account_number: 振込先、口座番号
     bankname: 振込先の金融機関名
     current_password: ご登録済みのパスワード
-    plase: 会場
-    live_tour_name: 公演名
-    time_date: 開演・公演時間
-    day_date: 開演・公演日
-    airt_name: アーティスト・チケット名
+    plase: 商品カテゴリー
+    live_tour_name: 商品の状態
+    day_date: 商品購入日
+    airt_name: 出品するブランド名
     close_date: 終了日
+    othertext: 詳細な商品名
 
   date:
     abbr_day_names:
@@ -234,59 +233,31 @@ ja:
   enums:
     shop:
       list_price:
-        under_list: ☆定価以下☆
-        over_list: 定価以上
-      number_of_sheets:
-        one_ticket: 1
-        two_ticket: 2
-        three_ticket: 3
-        fore_ticket: 4
-      serial_number:
-        nasi_number: 送料なし
+        men: 男性用
+        women: 女性用
+        others: 問わない
       shipping_method:
-        post: 郵便
-        electron_ticket: 電子チケット
-        store_ticket: コンビニ発券
+        post: 郵送
         hand_sent: 手渡し
-      seat:
-        arena: アリーナ
-        stand: スタンド
-        other_seat: 未分類
       ticketing_state:
-        have: 所持（発券済み）
-        not_have: 未到着・未発券
+        have: 所持・書類あり
+        not_have: 書類なし
       postage:
         postage_in: 送料込み
-        postage_out: 送料別（510円）
-        no_postage: 無し(手渡し・電子チケット)
+        postage_out: 送料別（910円）
       nsk:
-       ticket_agency: プレガイド
-       funclub: ファンクラブ
-       organizer: 主催者
-       other: その他
-      ticket_name:
-        no_name: 名義無し
-        female_name: 男性名義
-        male_name: 女性名義
-        other_sex: 不明
+       seiki: 正規店・直営店(EC含む)
+       c2c: 中古品販売店又はフリマサイト・並行輸入店
+       present: 贈与・懸賞・賞品
+       other: 出処不明・その他
       ticket_name_yes_no:
-        name_yes: 名義塗り潰し無し
-        name_no: 名義塗り潰し有り
+        name_yes: 修正履歴無し
+        name_no: 修正履歴有り
       docide_promptly:
         within_24_hours: 24時間以内
         within_3day: 2~3日以内
         within_7day: 4~7日以内
-        other_day: 未到着・その他
-      seat:
-        arena: アリーナ席
-        stand: スタンド席
-        other_seat: その他の席
-      genre_id:
-        japan_live: 国内ライブ・コンサート
-        foreign_countries: 海外ライブ・コンサート
-        livefes: 音楽フェス・イベント
-        theater: 演劇・宝塚・ミュージカル
-        spotr_live: スポーツ
+        other_day: 未定・不明(詳細にて)
     user:
       identification:
         ok: 本人確認提出済み
