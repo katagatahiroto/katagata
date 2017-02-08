@@ -3,25 +3,23 @@
 <head>
 <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="keywords" content="チケット,チケットリング,チケリン,Ticket Ring,チケット売買,売買,チケット仲介" />
-  <title><%= content_for?(:title) ? yield(:title) : "チケットリング |チケリンは誰でも簡単にチケット売買できる" %> </title>
+  <meta name="keywords" content="ブランド,腕時計,バッグ,お得な,オトクーナ,売買,仲介" />
+  <title><%= content_for?(:title) ? yield(:title) : "ブランド品がお得な |オトクーナは誰でも簡単に売買できる" %> </title>
   <meta name=”author” content=”High&Lows合同会社”>
   <meta http-equiv=”content-language” content=”ja”>
-  <meta property="og:title" content="チケットリング |チケリンは誰でも簡単にチケット売買できる" />
+  <meta property="og:title" content="ブランド品がお得な |オトクーナは誰でも簡単に売買できる" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="http://www.ticket-ring.net" />
-  <meta property="og:site_name" content="チケットリング |チケリンは誰でも簡単にチケット売買できる" />
-  <meta property="og:description" content="icket Ring(チケリン)は国内最安値の手数料でチケット売買、チケット仲介ができる。簡単な登録後、すぐに取引可能。もちろん登録料は一切掛かりません。シンプルな取引画面と使い易さを追求し誰でも簡単にチケットを売る、買うができる。さらに、あんしん・安全取引システムを導入し、お客様のチケット取引を全力でサポートします。" />
+  <meta property="og:url" content="http://www.otoku-na.net" />
+  <meta property="og:site_name" content="腕時計・ブランド品がお得な『オトクーナ』は国内最安値の手数料でブランド品の売買、仲介ができる。簡単な登録後、すぐに取引可能。もちろん登録料は一切掛かりません。シンプルな取引画面と使い易さを追求し誰でも簡単にブランド品を売る、買うができる。さらに、あんしん・安全取引システムを導入し、お客様の腕時計・ブランド品の取引を全力でサポートします。" />
   <link type="text/css" rel="stylesheet"
-  href="http://code.jquery.com/ui/1.10.3/themes/cupertino/jquery-ui.min.css" />
+  href="https://code.jquery.com/ui/1.10.3/themes/cupertino/jquery-ui.min.css" />
 <script type="text/javascript"
-  src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script type="text/javascript"
-  src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
-  <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/ui-lightness/jquery-ui.css" rel="stylesheet" type="text/css"/>
+  src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+  <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/ui-lightness/jquery-ui.css" rel="stylesheet" type="text/css"/>
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
   <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag "application" %>
   <%= javascript_include_tag "jquery.ui.datepicker-ja.js" %>
   <%= javascript_include_tag "autocomplete.js" %>
   <%= csrf_meta_tags %>
@@ -30,7 +28,7 @@
  <% if content_for?(:head) %>
     <%= yield :head %>
  <% else %>
-    <meta name="description" content="Ticket Ring(チケリン)は国内最安値の手数料でチケット売買、チケット仲介ができる。簡単な登録後、すぐに取引可能。もちろん登録料は一切掛かりません。シンプルな取引画面と使い易さを追求し誰でも簡単にチケットを売る、買うができる。さらに、あんしん・安全取引システムを導入し、お客様のチケット取引を全力でサポートします。">
+    <meta name="description" content="腕時計・ブランド品がお得な『オトクーナ』は国内最安値の手数料でブランド品の売買、仲介ができる。簡単な登録後、すぐに取引可能。もちろん登録料は一切掛かりません。シンプルな取引画面と使い易さを追求し誰でも簡単にブランド品を売る、買うができる。さらに、あんしん・安全取引システムを導入し、お客様の腕時計・ブランド品の取引を全力でサポートします。">
  <% end %>
 </head>
 <body>
@@ -39,7 +37,7 @@
   <noscript>
   <span style="color:red;"><重要></span><br />
     ※現在 JavaScriptが「無効」に設定されています。<br>
-    チケットリングをご利用いただくには、JavaScriptの設定を「有効」に変更してください。
+    オトクーナをご利用いただくには、JavaScriptの設定を「有効」に変更してください。
   </noscript>
 </div>
 </div>
@@ -48,8 +46,8 @@
 
    <div class="header-box1 clearfix">
       <div class ="left-menu">
-          <a><strong><%= link_to 'Ticket Ring', root_path, class: "header-logo" %></strong></a>
-          <h1 class="sublogo"><small><span style="color:orange;">チケットリング</span></small></h1>
+          <a><strong><%= link_to '　オトクーナ', root_path, class: "header-logo" %></strong></a>
+          <h1 class="sublogo"><small><span style="color:orange;">ブランド品がお得な</span></small></h1>
       </div>
 
       <div class ="right-menu ">
@@ -95,193 +93,149 @@
     <div class="navbar">
 <!-- ここから試験中 -->
 <ul id="menu">
-     <li><a href="#" class="drop">国内ライブ・コンサート<br />
-      <small><small><small>ジャニーズ、人気アイドル、EXILE等</small></small></small></a>
+     <li><a href="#" class="drop">WOMEN<br />
+     <small><small>定番のバッグ、財布・小物、アクセサリー等</small></small></a>
        <div class="dropdown_4columns"><!-- Begin 4 columns container -->
 
             <div class="col_4">
-              <p>サマステ ジャニーズキングのチケットをはじめ、キスマイ(Kis-My-Ft2)、ハイアンドロー(HiGH＆LOW)、Hey! Say! JUMPなどのチケット売買が可能です。 ジャニーズコンサート、邦楽グループ・ユニット・バンド、邦楽男性ソロ、邦楽女性ソロなどからも国内アーティストのチケットを探すことができます。</p>
+              <p>ルイ・ヴィトンやシャネルなどの人気ブランドをはじめとした、国内外のブランド品を多く取り揃え、流行やオシャレに敏感なあなたへ、売買可能な商品があります。また各、商品カテゴリーから検索することが可能です。</p>
             </div>
 
             <div class="col_1">
 
-              <h3>ジャニーズ</h3>
+              <h3>財布・小物</h3>
                 <ul>
                  <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "Kis-My-Ft2", home_kis_my_ft2_path %></li>
+                 <li><%= link_to "財布", home_exile_path %></li>
                  <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "Hey! Say! JUMP", home_hey_say_jump_path %></li>
+                 <li><%= link_to "カードケース", home_egirls_path %></li>
                  <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "関ジャニ∞", home_kanjani8_path %></li>
+                 <li><%= link_to "キーケース", home_generations_path %></li>
                  <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "A.B.C-Z", home_abc_z_path %></li>
+                 <li><%= link_to "スカーフ・マフラー", home_high_low_path %></li>
                  <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "山下智久(山P)", home_yamasita_p_path %></li>
+                 <li><%= link_to "サングラス", home_high_low_path %></li>
                 </ul>
-            </div>
-            <div class="col_1">
-
-              <h3>LDH</h3>
-                <ul>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "EXILE", home_exile_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "E-girls", home_egirls_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "GENERATIONS", home_generations_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "ハイアンドロー", home_high_low_path %></li>
-                </ul>
-            </div>
-            <div class="col_1">
-              <h3>グループ</h3>
-                <ul>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "ドリカム", home_dreams_come_true_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "スピッツ", home_spitz_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "UVERworld", home_uverworld_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "ハイエイタス", home_thehiatus_path %></li>
-                </ul>
-
-            </div>
-            <div class="col_1">
-
-              <h3>アイドル</h3>
-                <ul>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li> <%= link_to "乃木坂46", home_nogizaka46_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li> <%= link_to "AKB48", home_akb48_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li> <%= link_to "ベビーメタル", home_babymetal_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li> <%= link_to "モーニング娘", home_morning_musume_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li> <%= link_to "でんぱ組.inc", home_dempagumi_path %></li>
-                </ul>
-
-            </div>
-            <div class="col_1">
-
-              <h3>男性ソロ</h3>
-                <ul>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "小田 和正", home_oda_kazumasa_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "清水 翔太", home_shimizu_shota_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "T.M.Revolution", home_tm_revolution_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "赤西 仁", home_akanishi_jin_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "徳永英明", home_tokunaga_hideaki_path %></li>
-                </ul>
-
-            </div>
-            <div class="col_1">
-
-              <h3>女性ソロ</h3>
-                <ul>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "西野 カナ", home_nishino_kana_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "大原 櫻子", home_ohara_sakurako_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "aiko", home_aiko_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "倖田 來未", home_kouda_kumi_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "安室 奈美恵", home_amuro_namie_path %></li>
-                </ul>
-
             </div>
 
             <div class="col_1">
 
-              <h3>演歌</h3>
-                <ul>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "氷川 きよし", home_hikawa_kiyoshi_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "五木 ひろし", home_ituki_hirosi_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "北島 三郎", home_kitajima_saburo_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "八代 亜紀", home_yasiro_aki_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "小林 幸子", home_kobayasi_sachiko_path %></li>
-                </ul>
-
-            </div>
-            <div class="col_1">
-
-              <h3>声優・アニメ</h3>
+              <h3>アクセサリー</h3>
                 <ul>
                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "Tokyo 7th シスターズ", home_t7s_path %></li>
+                 <li><%= link_to "ネックレス", home_hisaishi_joe_path %></li>
                  <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "初音ミク", home_hatsunemiku_path %></li>
+                 <li><%= link_to "ブレスレット", home_ozawaseiji_path %></li>
                  <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "三森 すずこ", home_mimori_suzuko_path %></li>
+                 <li><%= link_to "イヤリング・ピアス", home_wiener_staatsoper_path %></li>
                  <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "内田 彩", home_uchida_aya_path %></li>
+                 <li><%= link_to "指輪", home_tujii_nobuyuki_path %></li>
                  <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "小倉 唯", home_ogura_yui_path %></li>
+                 <li><%= link_to "ヘアアクセサリー", home_tujii_nobuyuki_path %></li>
                 </ul>
 
             </div>
 
             <div class="col_1">
 
-              <h3>クラシック</h3>
+              <h3>腕時計</h3>
                 <ul>
                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "久石 譲", home_hisaishi_joe_path %></li>
+                 <li><%= link_to "手巻き", home_chie_ayado_path %></li>
                  <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "小澤 征爾", home_ozawaseiji_path %></li>
+                 <li><%= link_to "自動巻き", home_uehara_hiromi_path %></li>
                  <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "ウィーン国立歌劇場", home_wiener_staatsoper_path %></li>
+                 <li><%= link_to "クオーツ", home_kokubu_hiroko_path %></li>
+                </ul>
+
+            </div>
+
+
+            <div class="col_1">
+
+              <h3>バッグ</h3>
+                <ul>
                  <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "辻井 伸行", home_tujii_nobuyuki_path %></li>
+                 <li><%= link_to "ハンドバッグ", home_kis_my_ft2_path %></li>
+                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                 <li><%= link_to "ショルダーバッグ", home_hey_say_jump_path %></li>
+                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                 <li><%= link_to "トートバッグ", home_kanjani8_path %></li>
+                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                 <li><%= link_to "ボディバッグ", home_abc_z_path %></li>
+                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                 <li><%= link_to "ボストンバッグ", home_yamasita_p_path %></li>
+                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                 <li><%= link_to "イブニングバッグ", home_yamasita_p_path %></li>
+                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                 <li><%= link_to "クラッチバッグ", home_yamasita_p_path %></li>
+                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                 <li><%= link_to "バックパック", home_yamasita_p_path %></li>
+                </ul>
+            </div>
+            <div class="col_1">
+              <h3>トップス</h3>
+                <ul>
+                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                 <li><%= link_to "シャツ", home_dreams_come_true_path %></li>
+                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                 <li><%= link_to "ブラウス", home_spitz_path %></li>
+                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                 <li><%= link_to "ニット", home_uverworld_path %></li>
+                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                 <li><%= link_to "カットソー", home_thehiatus_path %></li>
+                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                 <li><%= link_to "カーディガン", home_thehiatus_path %></li>
+                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                 <li><%= link_to "ワンピース", home_thehiatus_path %></li>
                 </ul>
 
             </div>
 
             <div class="col_1">
 
-              <h3>ジャズ・フージョン</h3>
+              <h3>アウター</h3>
                 <ul>
-                <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "綾戸 智恵", home_chie_ayado_path %></li>
                  <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "上原 ひろみ", home_uehara_hiromi_path %></li>
+                 <li> <%= link_to "コート", home_nogizaka46_path %></li>
                  <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "国府 弘子", home_kokubu_hiroko_path %></li>
+                 <li> <%= link_to "ジャケット", home_akb48_path %></li>
                  <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "akiko(あきこ)", home_akiko_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "野瀬 栄進", home_nose_eishin_path %></li>
+                 <li> <%= link_to "ブルゾン", home_babymetal_path %></li>
                 </ul>
 
             </div>
-
             <div class="col_1">
 
-                <h3>おすすめ</h3>
+              <h3>ボトムス・スーツ</h3>
                 <ul>
-                <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "浜田 省吾", home_hamada_shogo_path %></li>
                  <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "きゃりーぱみゅぱみゅ", home_kyarypamyupamyu_path, :search=> true %></li>
+                 <li><%= link_to "パンツ", home_oda_kazumasa_path %></li>
                  <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "絢香", home_ayaka_path %></li>
+                 <li><%= link_to "スカート", home_shimizu_shota_path %></li>
                  <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "欅坂46", home_keyakizaka_46_path %></li>
+                 <li><%= link_to "スーツ", home_hikawa_kiyoshi_path %></li>
                  <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "藤原 さくら", home_fujiwara_sakura_path %></li>
+                 <li><%= link_to "スカートスーツ", home_ituki_hirosi_path %></li>
+                </ul>
+
+            </div>
+            <div class="col_1">
+
+              <h3>シューズ</h3>
+                <ul>
+                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                 <li><%= link_to "ブーツ", home_nishino_kana_path %></li>
+                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                 <li><%= link_to "スニーカー", home_ohara_sakurako_path %></li>
+                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                 <li><%= link_to "サンダル", home_aiko_path %></li>
+                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                 <li><%= link_to "パンプス", home_kouda_kumi_path %></li>
+                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                 <li><%= link_to "ミュール", home_amuro_namie_path %></li>
+                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                 <li><%= link_to "フラットシューズ", home_amuro_namie_path %></li>
                 </ul>
 
             </div>
@@ -290,530 +244,274 @@
     </li><!-- End 4 columns Item -->
 
 
-    <li><a href="#" class="drop">海外ライブ・コンサート<br />
-      <small><small><small>韓流、アジア系、人気洋楽など</small></small></small></a><!-- Begin 5 columns Item -->
+    <li><a href="#" class="drop">MEN<br />
+      <small><small>ビジネスバッグ、財布、腕時計など</small></small></a><!-- Begin 5 columns Item -->
 
        <div class="dropdown_4columns"><!-- Begin 4 columns container -->
 
             <div class="col_4">
-              <p> BIGBANG(ビッグバン)のチケットをはじめ、ジャスティンビーバー、EXO(エクソ)、セレーナゴメスなどのチケット売買が可能です。 K-POP、洋楽グループ・ユニット・バンドなどからも海外アーティストのチケットを探すことができます。</p>
+              <p> ビジネスバッグをはじめ、名刺入れ、キーケース、腕時計などの商品の売買が可能です。 また多くの有名ブランドを各、カテゴリーから検索することができます。プレミアムな品が見つかるはずです...</p>
             </div>
-
             <div class="col_1">
 
-              <h3>韓流・アジア</h3>
+              <h3>財布・小物</h3>
                 <ul>
                  <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "EXO(エクソ)", home_exo_path %></li>
+                 <li><%= link_to "財布", home_exile_path %></li>
                  <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "防弾少年団(BTS)", home_bts_path %></li>
+                 <li><%= link_to "カードケース", home_egirls_path %></li>
                  <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "Block.B", home_blockb_path %></li>
+                 <li><%= link_to "キーケース", home_generations_path %></li>
                  <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "INFINITE", home_infinite_path %></li>
+                 <li><%= link_to "スカーフ・マフラー", home_high_low_path %></li>
                  <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "イェソン(YESUNG)", home_sj_yesung_path %></li>
+                 <li><%= link_to "ネクタイ", home_high_low_path %></li>
+                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                 <li><%= link_to "サングラス", home_high_low_path %></li>
                 </ul>
             </div>
             <div class="col_1">
-
-              <h3>グループ・ユニット</h3>
-                <ul>
-                <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li> <%= link_to "クイーン(QUEEN)", home_queen_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li> <%= link_to "マイケルシェンカー", home_michael_schenker_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li> <%= link_to "Earth wind ＆ fire", home_ewf_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li> <%= link_to "Weezer(ウィーザー)", home_weezer_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li> <%= link_to "エクストリーム", home_extreme_path %></li>
-                </ul>
-            </div>
-            <div class="col_1">
-              <h3>男性ソロ</h3>
-                <ul>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "ジャスティンビーバー", home_justin_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "クリスブラウン", home_chris_brown_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "リンゴスター", home_ringo_starr_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "ゼインマリク ", home_zayn_malik_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "Kid Ink", home_kid_ink_path %></li>
-                </ul>
-
-            </div>
-            <div class="col_1">
-
-              <h3>女性ソロ</h3>
+              <h3>アクセサリー</h3>
                 <ul>
                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li> <%= link_to "セレーナゴメス", home_selena_gomez_path %></li>
+                 <li><%= link_to "ネックレス", home_hisaishi_joe_path %></li>
                  <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li> <%= link_to "サットンフォスター", home_sutton_foster_path %></li>
+                 <li><%= link_to "ブレスレット", home_ozawaseiji_path %></li>
                  <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li> <%= link_to "アレクサンドラスタン", home_alexandra_stan_path %></li>
+                 <li><%= link_to "ピアス", home_wiener_staatsoper_path %></li>
                  <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li> <%= link_to "MO(ムー)", home_mo_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li> <%= link_to "シェネル", home_chenelle_path %></li>
+                 <li><%= link_to "指輪", home_tujii_nobuyuki_path %></li>
                 </ul>
-
             </div>
             <div class="col_1">
-
-              <h3>クラシック</h3>
+              <h3>腕時計</h3>
                 <ul>
                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li> <%= link_to "ワールドピアニスト", home_wps_path %></li>
+                 <li><%= link_to "手巻き", home_chie_ayado_path %></li>
                  <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li> <%= link_to "ヨーヨーマ(yo-yo-ma)", home_yo_yo_ma_path %></li>
+                 <li><%= link_to "自動巻き", home_uehara_hiromi_path %></li>
                  <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li> <%= link_to "ワールドオーケストラ", home_wos_path %></li>
+                 <li><%= link_to "クオーツ", home_kokubu_hiroko_path %></li>
+                </ul>
+              </div>
+
+              <div class="col_1">
+               <h3>バッグ</h3>
+                <ul>
                  <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li> <%= link_to "ウィーンフィルハーモニー", home_vienna_philharmonic_path %></li>
+                 <li><%= link_to "ショルダーバッグ", home_hey_say_jump_path %></li>
+                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                 <li><%= link_to "トートバッグ", home_kanjani8_path %></li>
+                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                 <li><%= link_to "ボディバッグ", home_abc_z_path %></li>
+                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                 <li><%= link_to "ボストンバッグ", home_yamasita_p_path %></li>
+                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                 <li><%= link_to "クラッチバッグ", home_yamasita_p_path %></li>
+                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                 <li><%= link_to "バックパック", home_yamasita_p_path %></li>
+                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                 <li><%= link_to "ビジネスバッグ", home_yamasita_p_path %></li>
+                </ul>
+              </div>
+
+              <div class="col_1">
+              <h3>トップス</h3>
+                <ul>
+                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                 <li><%= link_to "シャツ", home_dreams_come_true_path %></li>
+                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                 <li><%= link_to "ニット", home_uverworld_path %></li>
+                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                 <li><%= link_to "カットソー", home_thehiatus_path %></li>
                 </ul>
 
             </div>
-            <div class="col_1">
 
-              <h3>ジャズ・フージョン</h3>
+
+            <div class="col_1">
+            <h3>アウター</h3>
                 <ul>
                  <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "アトミック(ATOMIC)", home_atomic_path %></li>
+                 <li> <%= link_to "コート", home_nogizaka46_path %></li>
                  <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "Jaga Jazzist", home_jaga_jazzist_path %></li>
+                 <li> <%= link_to "ジャケット", home_akb48_path %></li>
                  <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "リチャードボナ", home_richard_bona_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "Lee Ritenour", home_lee_ritenour_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "KAMASI WASHINGTON", home_kamasi_washington_path %></li>
-
+                 <li> <%= link_to "ブルゾン", home_babymetal_path %></li>
                 </ul>
+            </div>
 
+            <div class="col_1">
+            <h3>ボトムス・スーツ</h3>
+                <ul>
+                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                 <li><%= link_to "パンツ", home_oda_kazumasa_path %></li>
+                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                 <li><%= link_to "スーツ", home_hikawa_kiyoshi_path %></li>
+                </ul>
             </div>
 
             <div class="col_1">
 
-                <h3>おすすめ</h3>
+              <h3>シューズ</h3>
                 <ul>
                  <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li> <%= link_to "パリ管弦楽団", home_orchestre_de_paris_path %></li>
+                 <li><%= link_to "ブーツ", home_nishino_kana_path %></li>
                  <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li> <%= link_to "Maxwell", home_maxwell_path %></li>
+                 <li><%= link_to "スニーカー", home_ohara_sakurako_path %></li>
                  <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li> <%= link_to "イエス(Yes)", home_yes_path %></li>
+                 <li><%= link_to "サンダル", home_aiko_path %></li>
                  <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li> <%= link_to "Suede(スウェード)", home_suede_path %></li>
+                 <li><%= link_to "ドレスシューズ", home_kouda_kumi_path %></li>
                  <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li> <%= link_to "イジョンヒョン", home_lee_jong_hyun_path %></li>
+                 <li><%= link_to "カジュアルシューズ", home_amuro_namie_path %></li>
+                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                 <li><%= link_to "スリッポン", home_amuro_namie_path %></li>
                 </ul>
-
             </div>
         </div><!-- End 4 columns container -->
 
     </li><!-- End 4 columns Item -->
 
-    <li><a href="#" class="drop">音楽フェス・イベント<br />
-      <small><small><small>人気テーマパーク、舞台挨拶ほか</small></small></small></a><!-- Begin 4 columns Item -->
+    <li><a href="#" class="drop">BRANDS<br />
+      <small><small>取り扱いブランドを見る</small></small></a><!-- Begin 4 columns Item -->
 
         <div class="dropdown_4columns_center"><!-- Begin 4 columns container -->
 
             <div class="col_4">
-                <P> ロッキン(ロックインジャパン)のチケットをはじめ、アニメロサマーライブ2016、ドラゴンクエスト(ドラクエ)、めざましライブなどのチケット売買が可能です。 音楽フェス、キッズ・ファミリーなどからも全国の音楽イベントのチケットを探すことができます。</p>
+                <P>定番のルイヴィトンやシャネル,
+                HERMESなどの商品はもちろんのこと、DOLCE&GABBANAやDAMIANIなどのイタリアブランドも取り揃え、オトクーナに取り扱えないブランドはございません!!</p>
             </div>
 
             <div class="col_1">
 
-              <h3>音楽フェス・イベント</h3>
+              <h3>定番BRANDS</h3>
                 <ul>
                     <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                    <li>ロックインジャパン</li>
+                    <li>CHANEL</li>
                     <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                    <li>めざましライブ</li>
+                    <li>LOUIS VUITTON</li>
                     <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                    <li>FUJI ROCK 2016</li>
+                    <li>HERMES</li>
                     <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                    <li>MONSTER baSH</li>
+                    <li>PRADA</li>
                     <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                    <li>ap bank fes</li>
+                    <li>GUCCI</li>
+                    <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                    <li>CELINE</li>
+                    <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                    <li>miu miu</li>
+                    <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                    <li>FENDI</li>
+                    <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                    <li>DOLCE&GABBANA</li>
+                    <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                    <li>Christian Louboutin</li>
                 </ul>
             </div>
 
             <div class="col_1">
-              <h3>遊園地・テーマパーク</h3>
-                <ul>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "三鷹の森ジブリ美術館", home_ghibli_museum_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "スヌーピー", home_snoopy_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "USJ", home_usj_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "東京ディズニーランド", home_tdl_land_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "東京ディズニーシー", home_tdl_sea_path %></li>
-                </ul>
-
-            </div>
-
-            <div class="col_1">
-
-              <h3>キッズ・ファミリー</h3>
-                <ul>
-                <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "おかあさんといっしょ", home_okaasan_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "しまじろうコンサート", home_shimajiro_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "それいけアンパンマン", home_anpanman_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "ガラピコぷ～", home_garapiko_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "プリキュア", home_smile_precure_path %></li>
-                </ul>
-
-            </div>
-            <div class="col_1">
-
-              <h3>舞台挨拶</h3>
+              <h3>LUXURY BRAND</h3>
                 <ul>
                     <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                    <li>ワンピースフィルムゴールド</li>
+                    <li>BOTTEGA VENETA</li>
                     <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                    <li>アクセルワールド</li>
+                    <li><small>SAINT LAURENT PARIS</small></li>
                     <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                    <li>甲鉄城のカバネリ</li>
+                    <li>BALENCIAGA</li>
                     <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                    <li>メサイア</li>
+                    <li>EMILIO PUCCI</li>
                     <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                    <li>コープスパーティー</li>
+                    <li>LOEWE</li>
+                    <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                    <li>Christian Dior</li>
+                    <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                    <li>Sergio Rossi</li>
+                    <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                    <li>MOSCHINO</li>
+                    <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                    <li>Chloe</li>
+                    <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                    <li>Salvatore Ferragamo</li>
                 </ul>
 
             </div>
 
             <div class="col_1">
 
-              <h3>声優・アニメ(ゲームイベント)</h3>
+              <h3>CONTEMPORARY</h3>
                 <ul>
                     <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                    <li>アニメロサマーライブ</li>
+                    <li>kate spade</li>
                     <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                    <li>ドラゴンクエスト</li>
+                    <li>COACH</li>
                     <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                    <li>艦隊これくしょん</li>
+                    <li>BCBG MAXAZRIA</li>
                     <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                    <li>アイドルマスター</li>
+                    <li>FOXEY</li>
                     <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                    <li>マクロス</li>
+                    <li>Stella McCartney</li>
+                    <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                    <li>3.1 Phillip Lim</li>
+                    <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                    <li>CARVEN</li>
+                    <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                    <li>BVLGARI</li>
+                    <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                    <li>N°21</li>
                 </ul>
-            </div>
 
+            </div>
             <div class="col_1">
 
-              <h3>その他イベント・有料席</h3>
-                <ul>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "シルクドソレイユ", home_cirquedusoleil_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "U-FES 2016", home_u_fes_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "Suchmos", home_suchmos_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "鱈々(だらだら)", home_daradara_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "ゲーム実況", home_game_broadcast_path %></li>
-                </ul>
-            </div>
-
-            <div class="col_1">
-
-                <h3>おすすめ</h3>
+              <h3>JEWELRY/WATCH</h3>
                 <ul>
                     <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                    <li>a-nation</li>
+                    <li>ROLEX</li>
                     <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                    <li>ワイルドバンチフェス</li>
+                    <li>HUBLOT</li>
                     <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                    <li>日テレライブ</li>
+                    <li>OMEGA</li>
                     <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                    <li>SMTOWN (SMタウン)</li>
+                    <li>FRANCK MULLER</li>
                     <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                    <li>ライジングサン</li>
+                    <li>Harry Winston</li>
+                    <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                    <li><small>Van Cleef & Arpels</small></li>
+                    <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                    <li>TIFFANY & Co.</li>
+                    <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                    <li>Cartier</li>
+                    <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                    <li>DAMIANI</li>
+                    <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
+                    <li>GaGa MILANO</li>
                 </ul>
-
             </div>
         </div><!-- End 4 columns container -->
 
     </li><!-- End 4 columns Item -->
 
-
-
-    <li class="menu_right"><a href="#" class="drop">演劇・宝塚ミュージカル<br />
-      <small><small><small>劇団四季、歌舞伎、宝塚、お笑いなど</small></small></small></a>
-                <div class="dropdown_4columns_geki"><!-- Begin 4 columns container -->
-
-            <div class="col_4">
-                <p> エリザベート ミュージカルのチケットをはじめ、関西ジャニーズJr. ANOTHER、エリザベート 愛と死のロンド、テニミュ(テニスの王子様)などのチケット売買が可能です。 ジャニーズの舞台、宝塚歌劇団、劇団四季などからも演劇・舞台・ミュージカルのチケットを探すことができます。</p>
-            </div>
-
-            <div class="col_1">
-
-              <h3>ジャニーズ(舞台)</h3>
-                <ul>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "ドリームボーイズ", home_dreamboys_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "ジャニーズワールド", home_johnnys_world_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "縁 むかしなじみ", home_en_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "クロスハート", home_cross_heart_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "十月花形歌舞伎", home_jugatsu_hanagata_kabuki_path %></li>
-                </ul>
-            </div>
-
-            <div class="col_1">
-
-              <h3>宝塚歌劇団</h3>
-                <ul>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "エリザベート", home_elisabeth_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "信長 下天の夢", home_nobunaga_geten_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "桜華に舞え", home_oukanimae_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "仮面のロマネスク", home_romanesque_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "バレンシアの熱い花", home_valencia_path %></li>
-                </ul>
-            </div>
-
-            <div class="col_1">
-              <h3>劇団四季</h3>
-                <ul>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "アラジン", home_aladdin_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "ウェストサイド物語", home_west_side_story_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "ウィキッド", home_wicked_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "オペラ座の怪人", home_operaza_no_kaijin_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "キャッツ", home_cats_path %></li>
-                </ul>
-
-            </div>
-            <div class="col_1">
-
-              <h3>2.5次元ミュージカル</h3>
-                <ul>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "テニスの王子様", home_tennimu_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "こち亀 舞台", home_kochikame_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "おそ松さん", home_osomatsusan_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "バイオハザード", home_biohazard_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "刀剣乱舞(とうらぶ) ", home_tohken_path %></li>
-                </ul>
-
-            </div>
-            <div class="col_1">
-
-              <h3>歌舞伎・伝統芸能</h3>
-                <ul>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "立川志の輔", home_shinosuke_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "市川海老蔵", home_ichikawa_ebizo_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "桂歌丸", home_utamaru_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "立川談春", home_dansyun_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "三遊亭好楽", home_sanyutei_koraku_path %></li>
-                </ul>
-
-            </div>
-            <div class="col_1">
-
-              <h3>お笑いライブ</h3>
-                <ul>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "サンドウィッチマン", home_sandwichman_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "エグスプロージョン", home_egu_splosion_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "なんばグランド花月", home_ngklive_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "中川家", home_nakagawake_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "笑福亭鶴瓶(鶴瓶噺)", home_tsurube_path %></li>
-                </ul>
-
-            </div>
-
-            <div class="col_1">
-
-              <h3>その他の劇・公演</h3>
-                <ul>
-                  <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                  <li><%= link_to "劇団☆新感線", home_gekidan_shinkansen_path %></li>
-                  <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                  <li><%= link_to "キンキーブーツ", home_kinky_boots_path %></li>
-                  <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                  <li><%= link_to "娼年 舞台", home_shounen_path %></li>
-                  <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                  <li><%= link_to "スカーレット・ピンパーネル", home_scarlet_pimpernel_path %></li>
-                </ul>
-
-            </div>
-            <div class="col_1">
-
-              <h3>おすすめ</h3>
-                <ul>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "ミス・サイゴン", home_miss_saigon_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "春秋座 大歌舞伎", home_daikabuki_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "マンマ・ミーア！", home_mamma_mia_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "美女と野獣", home_bijyo_to_yajyu_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "早霧せいな", home_sagiri_seina_path %></li>
-                </ul>
-
-            </div>
-        </div><!-- End 4 columns container -->
-
-    </li>
-
-
-    <li class="menu_right"><a href="#" class="drop">スポーツ・格闘技&emsp;<br />
-      <small><small><small>サッカー、プロ野球、テニスほか</small></small></small></a>
+    <li class="menu_right"><a href="#" class="drop">鑑定依頼&emsp;<small><small>健全なサイトを目指して..</small></small><br />
+      <small><small>鑑定書取得はこちらから</small></small></a>
                 <div class="dropdown_4columns_sport"><!-- Begin 4 columns container -->
 
             <div class="col_4">
-                <p> 巨人戦(読売ジャイアンツ)のチケットをはじめ、広島東洋カープ戦、横浜DeNAベイスターズ戦、阪神タイガース戦などのチケット売買が可能です。 プロ野球、サッカー、フィギュアスケート、モータースポーツなどからもスポーツのチケットを探すことが出来ます。</p>
-            </div>
-
-            <div class="col_1">
-
-              <h3>プロ野球</h3>
-                <ul>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "読売ジャイアンツ", home_kyojin_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "阪神タイガース", home_hansin_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "横浜ベイスターズ戦", home_yokohama_base_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "ヤクルトスワローズ戦", home_tokyo_yakuruto_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "広島東洋カープ戦", home_hirosimaka_pu_path %></li>
-                </ul>
-            </div>
-            <div class="col_1">
-
-              <h3>サッカー</h3>
-                <ul>
-                 <!-- <li><%= link_to "FIFAロシアWorld Cup", home_fifa_worldcup_path %></li> -->
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "柏レイソル", home_reisoru_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "FC東京", home_fctokyo_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "ガンバ大阪 ", home_ganbaoosaka_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "鹿島アントラーズ ", home_kasima_path %></li>
-                </ul>
-            </div>
-
-            <div class="col_1">
-              <h3>テニス</h3>
-                <ul>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li> <%= link_to "JAPAN WOMEN’S OPEN TENNIS", home_japanopen_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li> <%= link_to "楽天ジャパンオープン", home_rakutenopen_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li> <%= link_to "東レ パンパシフィック", home_tore_path %></li>
-                </ul>
-
-            </div>
-            <div class="col_1">
-
-              <h3>フィギュアスケート</h3>
-                <ul>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "高橋 大輔", home_takahasi_daisuke_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "浅田 真央", home_asada_mao_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "安藤 美姫", home_ando_miki_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "ディズニーオンアイス", home_disney_on_ice_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "荒川 静香", home_arakawa_sizuka_path %></li>
-                </ul>
-
-            </div>
-
-            <div class="col_1">
-
-              <h3>モータースポーツ</h3>
-                <ul>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "MotoGP 日本グランプリ", home_motogp_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "F1日本グランプリ", home_f1_tickets_path %></li>
-                </ul>
-
-            </div>
-
-            <div class="col_1">
-
-              <h3>格闘技</h3>
-                <ul>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "G1 クライマックス", home_g1_climax_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "新日本プロレス", home_njpw_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "ボクシング(WPB)", home_wpb_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "ドラゴンゲート", home_dragongate_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "K-1 WORLD GP 2016", home_k_1wg_path %></li>
-                </ul>
-
-            </div>
-            <div class="col_1">
-
-              <h3>おすすめ</h3>
-                <ul>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "大相撲", home_sumou_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "福岡ホークス", home_fukuoka_base_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "日本ハムファイターズ", home_nichihamu_base_path %></li>
-                 <%= image_tag("e_title_120.png", :size => "8x8", :align=>"left", :class=>"mini-icon") %>
-                 <li><%= link_to "浦和レッズ ", home_urawarez_path %></li>
-                </ul>
-
+                <p>
+                <a href="http://jbiaa.org/" target="_blank">日本ブランド品鑑定協会へ</a>
+                健全でクリーンな腕時計・ブランド品専門の2次流通市場を作る...サイト運営者として、本物だけを取り扱いたいと、切なる思いで初めてます。<br />
+                高額なブランド品をいつでも買取、現金化してくれるのが質屋さん。<br />
+                でも店頭で再販売される価格15,000円の商品は...実は4,500円前後で買取された商品です。<br />
+                また最近流行りの買取兼委託販売の会社では質屋さんほど低くないものの、委託された商品の販売価格15,000円は50%を手数料で取られてしまいます。<br />
+                すぐに現金化できて便利ではあるが、『疑問』と『不満』を抱いてました。<br />
+                話が変わり
+                近年流行りののC2C市場(個人間取引)の成長は目まぐるしいですが、私自身、やはり高額なブランド品の購入には気が引けました。理由は簡単です。<br />購入した商品が、『本物』か『偽物』か区別がつかないからです。<br />
+                その為、オトクーナでは、購入者側の立場を考えクリーンな市場を目指すために15,000円を超える商品には全て鑑定書や鑑別書、購入先(販売元)のレシートなどの正規品と判断できる書類を購入者に送付することを義務ずけてます。これからオトクーナで販売(出品)を行うお客様にはどうかご理解のほど宜しくお願いします。<br />
+                下記のリンク先から鑑定を格安で行えます。*弊社とは無関係です<br />
+                <a href="http://jbiaa.org/" target="_blank">日本ブランド品鑑定協会に商品鑑定を依頼する</a>
+                購入者は安心して安く購入し、販売者はより多く現金化できる...<br />
+                そんな当たり前のサイト..腕時計・ブランド品がお得な『オトクーナ』を今後とも宜しくお願いします。
+                </p>
             </div>
         </div><!-- End 4 columns container -->
 
@@ -833,7 +531,7 @@
      <div class="seach_navi">
 
        <%= search_form_for @ransack do |f| %>
-       <%= f.text_field :airt_name_cont , class: "text" ,id: "listname" ,placeholder: '   検索するアーティスト・公演名を入力...' ,autocomplete: "off" %>
+       <%= f.text_field :airt_name_cont , class: "text" ,id: "listname" ,placeholder: '   お探しのブランド名を入力してください...' ,autocomplete: "off" %>
      <div class="submit-box">
        <%= f.submit ("検索"),:class => "submit-button-search" ,:target=>["_blank"] %>
      </div>
@@ -842,9 +540,10 @@
      </div>
      <div class="seach_navi_right">
      <br /><br />
-       <P><strong>現在試験的に公開中です。</strong>レイアウト崩れが見られると思いますが、予めご了承ください。<br />
-       またアプリ化には今暫くお待ちください。<br>
-       チケリンは多くのお客様に取引をして頂きたく、シンプルな投稿画面や取引画面で運営させていただいてます。他の類似サイトとは違う形でお客様にチケットの出品手続きを行いますが、使いやすいサイト、皆様に愛されるサイト運営に精進して参りたいと思いますので、今後ともチケットリングをどうぞ宜しくお願い致します。</P>
+       <P>
+       『オトクーナ』はハイブランド専門の個人間取引のサービスです。
+簡単に出品、お得に購入できる中古ブランド市場です。<br />
+中古ブランド品の購入も出品も是非オトクーナで体験してみてください。</P>
 
      </div>
 </div>
@@ -858,29 +557,29 @@
 <Hr Size="1">
  <div claas="footer-content clearfix">
  <div class="footer-content-menu clearfix">
-  <div class="footer-left ">
+  <div class="footer-left">
     <ul>
       <li>
-      <h4 class="sample2"><%= image_tag("e_title_150.png", :size => "18x18", :align=>"center") %>チケリンからのお知らせ&emsp;&emsp;</h4>
+        <h4 class="sample2"><%= image_tag("e_title_150.png", :size => "18x18", :align=>"center") %><strong><span style="color:white;">オトクーナからのお知らせ&emsp;&emsp;</span></h4>
       </li>
       <li>
-        <%= image_tag("e_title_123.png", :size => "10x10", :align=>"center") %>&nbsp;2017/1/11<br />&emsp;検索機能の修正完了
+        <%= image_tag("e_title_123.png", :size => "10x10", :align=>"center") %><strong><span style="color:white;">&nbsp;2017/1/11<br />&emsp;検索機能の修正完了</span>
       </li>
       <li>
-      <%= image_tag("e_title_123.png", :size => "10x10", :align=>"center") %>&nbsp;2016/12/11<br />&emsp;チケリンのレイアウト変更
+        <%= image_tag("e_title_123.png", :size => "10x10", :align=>"center") %><strong><span style="color:white;">&nbsp;2016/12/11<br />&emsp;『オトクーナ』のレイアウト変更</span>
       </li>
       <li>
-        <%= image_tag("e_title_123.png", :size => "10x10", :align=>"center") %>&nbsp;2016/12/5<br />&emsp;画面縮小による不具合の修正完了
+        <%= image_tag("e_title_123.png", :size => "10x10", :align=>"center") %><strong><span style="color:white;">&nbsp;2016/12/5<br />&emsp;画面縮小による不具合の修正完了</span>
       </li>
       <li>
-        <%= image_tag("e_title_123.png", :size => "10x10", :align=>"center") %>&nbsp;2016/11/15<br />&emsp;不具合のお詫びとお知らせ
+        <%= image_tag("e_title_123.png", :size => "10x10", :align=>"center") %><strong><span style="color:white;">&nbsp;2016/11/15<br />&emsp;不具合のお詫びとお知らせ</span>
       </li>
     </ul>
   </div>
   <div class="footer-center">
     <ul>
       <li>
-      <h4 class="sample2"><%= image_tag("e_title_150.png", :size => "18x18", :align=>"center") %>人気チケット&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</h4>
+        <h4 class="sample2"><%= image_tag("e_title_150.png", :size => "18x18", :align=>"center") %><span style="color:white;">人気ブランド&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span></h4>
       </li>
       <li>
          <%= image_tag("e_title_120.png", :size => "10x10", :align=>"center") %>
@@ -919,7 +618,7 @@
   <div class="footer-right">
           <ul>
           <li>
-           <h4 class="sample2"><%= image_tag("e_title_150.png", :size => "18x18", :align=>"center") %>会員登録/ユーザー情報&emsp;&emsp;&emsp;&emsp;</h4>
+           <h4 class="sample2"><%= image_tag("e_title_150.png", :size => "18x18", :align=>"center") %><span style="color:white;">会員登録/ユーザー情報&emsp;&emsp;&emsp;&emsp;</span></h4>
          </li>
             <% if user_signed_in? %>
                <li>
@@ -953,11 +652,7 @@
                 </li>
             <% end %>
                 <li>
-                 <h4 class="sample2"><%= image_tag("e_title_150.png", :size => "18x18", :align=>"center") %>その他運営サイト&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</h4>
-                </li>
-                <li>
-                 <%= image_tag("e_title_shops2.png", :size => "10x10", :align=>"center") %>
-                 <a href="http://www.highlows.co" target="_blank">ブランド仲介専門『オトクーナ』*製作中</a>
+                 <h4 class="sample2"><%= image_tag("e_title_150.png", :size => "18x18", :align=>"center") %><span style="color:white;">その他運営サイト&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span></h4>
                 </li>
                 <li>
                  <%= image_tag("e_title_shops2.png", :size => "10x10", :align=>"center") %>
@@ -971,11 +666,11 @@
   <div class="footer-left-under">
     <ul>
       <li>
-      <h4 class="sample2"><%= image_tag("e_title_150.png", :size => "18x18", :align=>"center") %>サイト情報&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</h4>
+        <h4 class="sample2"><%= image_tag("e_title_150.png", :size => "18x18", :align=>"center") %><span style="color:white;">サイト情報</span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</h4>
          </li>
       <li>
       <%= image_tag("e_title_123.png", :size => "10x10", :align=>"center") %>
-      <a href="http://www.highlows.co" target="_blank">運営会社</a>
+      <a href="https://www.highlows.co" target="_blank">運営会社</a>
       </li>
       <li>
         <%= image_tag("e_title_123.png", :size => "10x10", :align=>"center") %>
@@ -1002,7 +697,7 @@
   <div class="footer-center-under">
     <ul>
       <li>
-      <h4 class="sample2"><%= image_tag("e_title_150.png", :size => "18x18", :align=>"center") %>ご利用ガイド&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</h4>
+        <h4 class="sample2"><%= image_tag("e_title_150.png", :size => "18x18", :align=>"center") %><span style="color:white;">ご利用ガイド</span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</h4>
       </li>
       <li>
          <%= image_tag("e_title_120.png", :size => "10x10", :align=>"center") %>
@@ -1025,16 +720,16 @@
   <div class="footer-right-under">
     <ul>
       <li>
-      <h4 class="sample2"><%= image_tag("e_title_150.png", :size => "18x18", :align=>"center") %>お問い合わせ&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</h4>
+        <h4 class="sample2"><%= image_tag("e_title_150.png", :size => "18x18", :align=>"center") %><span style="color:white;">お問い合わせ</span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</h4>
       </li>
       <li>
       <%= image_tag("e_mail.png", :size => "18x18", :align=>"center") %>
-      <strong><%= link_to "お問い合わせ(Email 24時間受付)", inquiry_path %></strong>
+      <strong><%= link_to "お問い合わせ(Email 24時間受付)", inquiry_path  %></strong>
       </li>
       <li>
-        <small>新しく掲載を希望する公演名、アーティスト、会場名などをご連絡ください。
+        <small><span style="color:#EEEEEE;">新しく掲載を希望するブランド名・商品名などをご連絡ください。
         内容を確認の上、弊社の担当者が掲載判断させて頂きます。<br />
-        またその他の質問、要望などを含め、通常は24時間以内に反映、ご返信をさせて頂きます。</small>
+        またその他の質問、要望などを含め、通常は24時間以内に反映、ご返信をさせて頂きます。</span></small>
       </li>
     </ul>
   </div>
@@ -1045,9 +740,9 @@
 
   <div class="footer-bottom clearfix">
   <small>
-   <i><p>&emsp;主催者、出演者、プロダクション等とは一切関係ない個人間のチケット売買サイトです。転売目的でのチケット購入、販売は固くお断りさせて頂きます。<br />
-   &emsp;チケットリングではチケット売買、チケット仲介の、あんしん・安全取引が可能です。<br />
-   &emsp;<%= image_tag("highlows.png", :size => "30x30", :align=>"center") %>©2011-2016&nbsp;&nbsp;<a href="http://www.highlows.co" target="_blank">High&nbsp;＆&nbsp;Lows&nbsp;,Inc.</a>&nbsp;&nbsp;&nbsp;All Rights&nbsp;Reserved.&emsp;複製及び無断転載禁止</p></i></small>
+   <i><p>&emsp;個人間での腕時計・ブランド品専門の売買サイトです。転売目的での商品の購入、販売は固くお断りさせて頂きます。<br />
+   &emsp;『オトクーナ』ではブランド品の売買、仲介のあんしん・安全取引が可能です。<br />
+   &emsp;<%= image_tag("highlows.png", :size => "100x70", :align=>"center") %>©2011-2017&nbsp;&nbsp;<a href="http://www.highlows.co" target="_blank"><span style="color:black;">High&nbsp;＆&nbsp;Lows&nbsp;,Inc.</span></a>&nbsp;&nbsp;&nbsp;All Rights&nbsp;Reserved.&emsp;複製及び無断転載禁止</p></i></small>
   </div>
 </footer>
 <script>
