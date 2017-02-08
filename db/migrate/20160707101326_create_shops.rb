@@ -25,5 +25,13 @@ class CreateShops < ActiveRecord::Migration
 
       t.timestamps
     end
+    change_column :shops, :seat, :string
+    #素材
+    change_column :shops, :number_of_sheets, :string
+    # カラー
+    change_column :shops, :ticket_name, :string
+    # サイズ
+    change_column :shops, :serial_number, :string
+    # 詳細な商品名
   end
 end
