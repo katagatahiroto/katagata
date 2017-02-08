@@ -1,0 +1,78 @@
+<div class="airt-commntbox-under"></div>
+<div class="index-box">
+    <table>
+  <thead>
+    <tr>
+      <th class="tablebox1105-left">公演名</th>
+      <th class="tablebox5100">日時</th>
+      <th class="tablebox1105">場所</th>
+      <th class="tableboxticket">チケット情報</th>
+      <th class="tablebox1111">価格</th>
+      <th class="tablebox1100">詳細</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <%= search_form_for @search do |f| %>
+<div class="sortbox">
+  <ul>
+    <li><%= sort_link(@search, :created_at, '新着順') %></li>
+    <li><%= sort_link(@search, :price, '価格順') %></li>
+    <li><%= sort_link(@search, :day_date, '日時順') %></li>
+  </ul>
+</div>
+
+<div class="seach_day_date">
+      <%= f.label :day_date, '公演日指定' %>
+        <%= f.text_field :day_date_gteq, include_blank: true, :readonly=> true ,class: "day_date-text" ,:id => 'datepicker_second' , placeholder: "ここをクリック"%>〜
+        <%= f.text_field :day_date_lteq, include_blank: true, :readonly=> true ,class: "day_date-text" ,:id => 'datepicker_three' , placeholder: "ここをクリック"%>
+      <%= f.submit '検索',:class => "submit-button-search" %>
+</div>
+<br />
+<% end %>
+  <tbody>
+
+<% @shops.each do |shop| %>
+<% if shop.day_date >=  Time.now %>
+      <tr>
+        <td class="tablebox5011"><small><%= shop.airt_name.truncate(18) %></span>
+          <p><span style="color:#0000CC;"><%= shop.live_tour_name.truncate(24) %></span></p></small></td>
+        <td class="tablebox5100under"><small><%= shop.day_date %>&emsp;&emsp;&emsp;<%= shop.time_date %></small></td>
+        <td class="tablebox5011"><small><span style="color:#0000CC;"><%= shop.plase.truncate(41) %></span></small></td>
+        <td class="tableboxticketunder">
+          <small>[<span style="color:#ff0000;">送料</span>]&nbsp;<%= shop.postage_i18n %>
+            &emsp;[<span style="color:#ff0000;">名義</span>]&nbsp;<%= shop.ticket_name_i18n %>
+            &emsp;[<span style="color:#ff0000;">席種</span>]&nbsp;<%= shop.seat_i18n %></small>
+        <p><small>[<span style="color:#ff0000;">発送方法</span>]&nbsp;<%= shop.shipping_method_i18n %>
+            &emsp;[<span style="color:#ff0000;">発送予定時期</span>]&nbsp;<%= shop.docide_promptly_i18n %></p>
+        <p><small>[<span style="color:#ff0000;">売手側からのチケット情報</span>]</small></p>
+        <p><small><%= shop.seat_in_detail.truncate(39) %></small></p></td>
+        <td class="tablebox6000"><small><%= shop.number_of_sheets_i18n %>枚
+          <p><span style="color:#ff0000;"><%= shop.price %></span>円/枚</span></p>
+        <p><%= shop.list_price_i18n %></span></p></small></td>
+        <td class="tablebox5000"><div id="favorite-mark"><%= render 'favorites/favorite_mark', shop: shop %></div>
+        <% # TODO : (仮)styleによる中央寄せ %>
+        <div id="favorite-count" style="text-align: center;"><%= render 'favorites/favorite_count', shop: shop, favorites: shop.favorites %></div>
+        <div class="btn2"><%= link_to '詳細', shop %></div></td>
+
+      </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+    </table>
+    <br />
+
+<%= paginate @shops  %>
+
+      <br>
+       <div class="bulebox">
+       <% if user_signed_in? %>
+          <h4 class="bulebox">&nbsp;<%= link_to 'チケットの出品へ', new_shop_path, :target=>["_blank"]%></h4>
+          <% else %><h4 class="bulebox-sec">&emsp;<%= link_to '新規会員登録へ', new_user_registration_path %></h4>
+          <% end %>
+       </div>
+</div>
+</div>
+<div align="center">
+  <h3>チケットリングではチケット売買、チケット仲介の、あんしん・安全取引が可能。<br />『チケリン』で検索!!</h3>
+</div>

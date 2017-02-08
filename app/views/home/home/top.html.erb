@@ -1,0 +1,126 @@
+
+<br />
+
+<div align="center">
+  <div class="slider-contents-top>">
+    <h2><strong>オトクーナは、誰でも簡単に腕時計・ブランド品売買ができて、<br />
+      安心・安全なお取引ができる腕時計・ブランド品仲介専門のサイトです。</strong></h2>
+  </div>
+<br />
+     <div class="contents-center">
+       <%= image_tag"ticket-navi.net-top.png", :size => "1024x100" %>
+       <%= image_tag"otoku-na-file.png", :size => "1024x300" %>
+       <div class="contents-center-under clearfix">
+         <div class="contents-center-under-contents-left">
+           <p><strong>たった3分の会員登録とユーザー管理画面を<br />登録するだけで『オトクーナ』内、全ての<br />機能をすぐにご利用可能です。<br />会員登録<span style="color:red;">無料</span>・月額利用料・更新費<span style="color:red;">不要</span></strong></p>
+         </div>
+         <div class="contents-center-under-contents-center">
+           <p><strong>指定された内容に従ってブランド品の<br />出品をするだけでO.K!!<br />オトクーナでは迷わせない、シンプルな出品画面を徹底的に追及しました。</strong></p>
+         </div>
+         <div class="contents-center-under-contents-right">
+         <p><strong>簡単な取引画面と明朗会計で<br />あんしん・安全な購入が可能!!後は..<br />売り手側からの商品を待つだけ。<br />あなたの欲しかった商品が見つかるかも...</strong></p>
+         </div>
+       </div>
+     </div>
+   </div>
+<div class="wrap">
+  <div class="sliding">
+     <%= image_tag"ticket-navi.net-photo2.png", :size => "2710x300" %>
+  </div>
+</div>
+   <div class="loopslider-underber">
+        <h3><strong><span style="color:#FF367F  ;">憧れのラグジュアリーブランドから最先端ブランドまで、取り扱いブランドは業界No1水準。<br />
+          バッグ・小物・腕時計・靴・アパレル・アクセサリーまで幅広くお取扱いいたします。</span></h3>
+   </div>
+
+
+ <div class="slider-under clearfix">
+   <div align="center">
+     <h4><strong><span style="color:white;">『オトクーナ』が選ばれる理由</span></strong></h4>
+   </div>
+  <br />
+   <div class="slider-under-contents-1">
+     <%= image_tag"117245g.png", :size => "150x150" %>
+     <h3><strong>業界最安値の取引手数料</strong></h3>
+     <p>登録手数料０円!!月会費・出品料はもちろん無料で一切かかりません。<br />業界最安値の手数料に挑戦！<br />詳しくは<strong><%= link_to "こちらへ" ,home_kakaku_path %></strong></p>
+   </div>
+
+   <div class="slider-under-contents-2">
+     <%= image_tag"134462r.png", :size => "150x150" %>
+     <h3><strong>あんしん・安全決済</strong></h3>
+     <p>お金のやりとりはオトクーナが仲介し、商品が届いた後に出品者へお金の振り込みを行うので安心です。あんしん・安全の取引システムを導入し売り買いをサポートしてます。<br />詳しくは<strong><%= link_to "こちらへ" ,home_esukuro_path %></strong></p>
+   </div>
+   <div class="slider-under-contents-3">
+     <%= image_tag"130978.png", :size => "150x150" %>
+     <h3><strong>簡単な売り買いが可能</strong></h3>
+     <p>不要な品や、どうしても手放す事にした腕時計やブランド品などの品を売ってみよう!オトクーナなら簡単に出品できる。</p>
+   </div>
+   <div class="slider-under-contents-4">
+     <%= image_tag"119962b.png", :size => "150x150" %>
+     <h3><strong>多彩な決済方法を整備</strong></h3>
+     <p>ブランド品の購入は、あんしん・安全を前提に、クレジットカード/コンビニ/銀行振込等の豊富な支払い方法に対応。<br />詳しくは<strong><%= link_to "こちらへ" ,home_payment_path %></strong></p>
+   </div>
+</div>
+
+<br /><br />
+ <div class="top-contents-main">
+  <div class="top-contents-main-nabvi">
+    <h4><strong>新着ピックアップ商品</strong></h4>
+    <div class="top-contents-main-nabvi-tag"><%= image_tag"shops-osusume.png", :size => "100x100" %></div>
+  </div>
+<br />
+<div class="index-box">
+<%= image_tag"new.png", :size => "50x50", :class=> "icon-mini3" %>
+    <table>
+  <thead>
+    <tr>
+      <th class="tablebox1105-left">公演名</th>
+      <th class="tablebox5100">日時</th>
+      <th class="tablebox1105">場所</th>
+      <th class="tableboxticket">チケット情報</th>
+      <th class="tablebox1111">価格</th>
+      <th class="tablebox1100">詳細</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+</div>
+
+<br />
+  <tbody>
+    <% @shops.last(7).each do |shop| %>
+      <tr>
+        <td class="tablebox5011"><small><%= shop.airt_name.truncate(18) %></span>
+          <p><span style="color:#0000CC;"><%= shop.live_tour_name.truncate(24) %></span></p></small></td>
+        <td class="tablebox5100under"><small><%= shop.day_date %>&emsp;&emsp;&emsp;<%= shop.time_date %>〜</small></td>
+        <td class="tablebox5011"><small><span style="color:#0000CC;"><%= shop.plase.truncate(41) %></span></small></td>
+        <td class="tableboxticketunder">
+          <small>[<span style="color:#ff0000;">送料</span>]&nbsp;<%= shop.postage_i18n %>
+            &emsp;[<span style="color:#ff0000;">名義</span>]&nbsp;<%= shop.ticket_name %>
+            &emsp;[<span style="color:#ff0000;">席種</span>]&nbsp;<%= shop.seat %></small>
+        <p><small>[<span style="color:#ff0000;">発送方法</span>]&nbsp;<%= shop.shipping_method_i18n %>
+            &emsp;[<span style="color:#ff0000;">発送予定時期</span>]&nbsp;<%= shop.docide_promptly_i18n %></small></p>
+        <p><small>[<span style="color:#ff0000;">売手側からのチケット情報</span>]</small></p>
+        <p><small><%= shop.seat_in_detail.truncate(30) %></small></p></td>
+        <td class="tablebox6000"><small><%= shop.number_of_sheets %>枚
+          <p><span style="color:#ff0000;"><%= number_with_delimiter(shop.price) %></span>円/枚</span></p>
+        <p><%= shop.list_price_i18n %></span></p></small></td>
+        <td class="tablebox5000"><div id="favorite-mark"><%= render 'favorites/favorite_mark', shop: shop %></div>
+        <% # TODO : (仮)styleによる中央寄せ %>
+        <div id="favorite-count" style="text-align: center;"><%= render 'favorites/favorite_count', shop: shop, favorites: shop.favorites %></div>
+        <div class="btn2"><%= link_to '詳細', shop %></div></td>
+      </tr>
+    <% end %>
+  </tbody>
+    </table>
+  </div>
+    <br />
+    <% @shops.last(5).each do |shop| %>
+    <% end %>
+  </div>
+</div>
+<br />
+<div align="center">
+   <div class="photo-ticket-image">
+    <%= image_tag"otoku-na.png", :size => "1024x350" %>
+   </div>
+  </div>

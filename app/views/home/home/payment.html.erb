@@ -1,0 +1,51 @@
+<% content_for :head do %>
+<meta name="description" content="オトクーナは国内最安値の手数料で腕時計・ブランド品の売買、仲介ができる。簡単な登録後、すぐに取引可能。もちろん登録料は一切掛かりません。クレジットカード払い、コンビニ払い、銀行振込(ATM/銀行ネット対応)のお支払い方法を採用し、お客様のお取引を全力でサポート。腕時計・ブランド品売買、仲介はオトクーナにお任せ!!">
+<% end %>
+<% content_for :title do %>
+お支払い方法 | あんしん・安全取引ならオトクーナ
+<% end %>
+<br />
+
+   <div class="payment-title">
+     <h1>商品購入時のお支払い方法</h1>
+     <p>※今後、お客様の利便性を考えお支払い方法を随時増やす予定ですので、暫くお待ち下さい。</p>
+     <p>※全ての支払い方法に共通の決済手数料はご負担下さい。詳しくは<%= link_to "こちらへ" ,home_kakaku_path %></p>
+     <p>※またエスクロー決済(あんしん取引)について詳しくは<%= link_to "こちらへ" ,home_esukuro_path %></p>
+   </div>
+
+   <div class="payment-content-left">
+    <h3><strong>クレジットカード払い</strong></h3>
+      <%= image_tag"card_01.gif", :size => "230x80" %>
+    <br /><br />
+      <p><strong><span style="color: brown;">ご利用可能カードブランド</span></strong></p>
+      <p>VISA、MasterCard</p>
+    <br />
+    <p><strong><span style="color: brown;">お支払い回数</span></strong></p>
+    一括、3回払い、6回払い、<br />10回払い、12回払い、15回払い、<br />18回払い、24回払いから選択可能
+   </div>
+
+  <div class="payment-content-center">
+     <h3><strong>コンビニ払い</strong></h3>
+     <%= image_tag"konbini.png", :size => "280x140" %>
+     <br /><br />
+     <p><strong><span style="color: brown;">対応コンビニ</span></strong>
+     <p>ローソン、ファミリーマート、
+        サークルKサンクス、ミニストップ、
+        デイリーヤマザキ、セイコーマート、ヤマザキデイリーストア</p>
+      <br />
+        <p><strong><span style="color: brown;">お支払い方法</span></strong>
+        <p>コンビニ払いは現金のみ対応。<br />お支払い金額が30万円以下の場合にのみご利用可。</p>
+  </div>
+   <div class="payment-content-right">
+    <h3><strong>銀行振込(ATM/銀行ネット対応)</strong></h3>
+     <%= image_tag"banklogo.jpg", :size => "200x80" %>
+     <br /><br />
+     <p><strong><span style="color: brown;">使用方法</span></strong></p>
+     <p>商品購入時にECサイトより通知される「収納機関番号」「お客様番号」「確認番号」をメモして、弊社対応の金融機関へ<br /><br />
+     銀行ネットに関しては提携金融機関の画面操作については、各金融機関によって手続画面が異なりますので、各金融機関のホームページ等でご確認ください。<br />
+     携帯電話でのご利用については、提携金融機関により、ご利用できる携帯電話会社や機種が異なります。事前にご利用の提携金融機関にご確認ください。<br />
+     </p>
+   </div>
+
+<br />
+<br />
