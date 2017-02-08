@@ -14,50 +14,116 @@
   <% end %>
 
 <div class="form-main clearfix">
- <div class="sub-box">公演情報</div>
+ <div class="sub-box">商品情報</div>
     <div class="field">
-      <%= f.label :airt_name, "アーティスト・チケット名" %><br>
+      <%= f.label :airt_name, "出品するブランド名" %><br>
     </div>
     <div class="text-menu_airt">
     <br />
         <!-- 入力フォーム -->
-         <P>出品するアーティスト・チケット名を入力して下さい。</P>
-         <p>出品予定のアーティスト、チケット名がない場合は<%= link_to "こちらへ", inquiry_path %>ご連絡下さい。</p>
-        <%= f.text_field :airt_name, id: "airt_name",class: "price-text" , placeholder: "検索： アーティスト・チケット名" ,autocomplete: "off"%>
+         <P>出品する商品のブランド名を入力して下さい。</P>
+         <p>出品予定のブランド名がない場合は<%= link_to "こちらへ", inquiry_path %>ご連絡下さい。</p>
+        <%= f.text_field :airt_name, id: "airt_name",class: "price-text" , placeholder: "ブランド名を登録する" ,autocomplete: "off"%>
+      </div>
+
+    <div class="field">
+      <%= f.label :othertext, "商品名" %><br>
+    </div>
+    <div class="text-menu_airt">
+    <br />
+        <!-- 入力フォーム -->
+        <P>お手数ですが、出品する商品の状態を選択してください。</P>
+        <p>購入者側へ噓の報告や現物とかけ離れた選択は絶対にしないでください。</p>
+        <%= f.text_field :othertext, class: "price-text" , placeholder: "商品名を登録する" ,autocomplete: "off"%>
       </div>
 
 
     <div class="field">
-      <%= f.label :live_tour_name, "公演名" %><br>
+      <%= f.label :live_tour_name, "商品の状態" %><br>
     </div>
     <div class="text-menu_airt">
     <br />
         <!-- 入力フォーム -->
-        <P>お手数ですが、出品する公演名・イベント名を選択、記入してください。</P>
-        <p>公演名がない場合は直接記入して下さい。また<%= link_to "こちらへ", inquiry_path %></span>ご連絡下さい。</p>
-        <%= f.text_field :live_tour_name, id: "asukachan",class: "price-text" , placeholder: "検索： 公演・イベント名 " ,autocomplete: "off"%>
+        <P>お手数ですが、出品する商品の状態を選択してください。</P>
+        <p>購入者側へ噓の報告や現物とかけ離れた選択は絶対にしないでください。</p>
+        <br />
+        <%= f.select :live_tour_name, {ーーーー出品する商品の現在の状態選択ーーーーー: "", NS・新品未使用: "N・新品未使用", S・新品同様極上の中古品: "S・新品同様極上の中古品", A・若干の使用感がある非常に状態の良い中古品: "A・若干の使用感がある、非常に状態の良い中古品", B・適度な使用感がある一般的な中古品: "適度な使用感がある一般的な中古品", C・使用感が目立つ中古品: "C・使用感が目立つ中古品", D・問題点が多くあるボロボロの状態: "D・問題点が多くあるボロボロの状態"}, autofocus: true %>
       </div>
 
       <div class="field">
-        <%= f.label :day_date, "公演日"%><br>
+        <%= f.label :day_date, "商品購入日"%><br>
       </div>
       <div class="text-menu_airt">
     <br />
-    <p>出品するチケットに記載されてる公演・イベント日時を選択してください。<br />
-       例:&nbsp;2016/11/05 土曜日 19:00</p>
+    <p>出品する商品の購入した日付を覚えてる範囲で選択してください。<br />
+       例:&nbsp;2016/11/05 土曜日</p>
        <%= f.text_field :day_date, :readonly=> true , class: "price-textday" ,:id => 'datepicker' , placeholder: "日にち選択  ここをクリックして下さい"%>
-       &emsp;<%= f.label :time_date, "開始時間"%>&emsp;<%= f.time_field :time_date, :class=> "time_datebox"  %>
      </div>
 
     <div class="field">
-      <%= f.label :plase ,"場所・会場" %><br>
+      <%= f.label :plase ,"商品の種類(カテゴリ)" %><br>
     </div>
     <div class="text-menu_airt">
     <br />
         <!-- 入力フォーム -->
         <P>出品するチケットに記載されてる場所・会場名を選択・記入して下さい。</P>
         <p>会場、場所の選択がない場合は直接記入して下さい。また<%= link_to "こちらへ", inquiry_path %>ご連絡下さい。</p>
-        <%= f.text_field :plase, id: "liveplase", class: "price-text" , placeholder: "検索： 場所・会場名" ,autocomplete: "off" %>
+        <br />
+        <%= f.select :plase, {
+ーーーー出品する商品のカテゴリーを選択ーーーーー: "",
+ーーーーーーーーー財布・小物ーーーーーーーーー: "",
+財布: "財布(財布・小物)",
+カードケース: "カードケース(財布・小物)",
+キーケース: "キーケース(財布・小物)",
+スカーフ・マフラ: "スカーフ・マフラー(財布・小物)",
+サングラス: "サングラス(財布・小物)",
+ネクタイ: "ネクタイ(財布・小物)",
+ーーーーーーーーーアクセサリーーーーーーーーー: "",
+ネックレス: "ネックレス(アクセサリー)",
+ブレスレット: "ブレスレット(アクセサリー)",
+イヤリング・ピアス: "イヤリング・ピアス(アクセサリー)",
+指輪: "指輪(アクセサリー)",
+ヘアアクセサリー: "ヘアアクセサリー(アクセサリー)",
+ーーーーーーーーーー腕時計ーーーーーーーーーー: "",
+手巻き腕時計: "手巻き(腕時計)",
+自動巻き腕時計: "自動巻き(腕時計)",
+クオーツ腕時計: "クオーツ(腕時計)",
+ーーーーーーーーーーバッグーーーーーーーーーー: "",
+ハンドバッグ: "ハンドバッグ(バッグ)",
+ショルダーバッグ: "ショルダーバッグ(バッグ)",
+トートバッグ: "トートバッグ(バッグ)",
+ボディバッグ: "ボディバッグ(バッグ)",
+ボストンバッグ: "ボストンバッグ(バッグ)",
+イブニングバッグ: "イブニングバッグ(バッグ)",
+クラッチバッグ: "クラッチバッグ(バッグ)",
+バッグパック: "バックパック(バッグ)",
+ビジネスバッグ: "ビジネスバッグ(バッグ)",
+ーーーーーーーーーートップスーーーーーーーーーー: "",
+シャツ: "シャツ(トップス)",
+ブラウス: "ブラウス(トップス)",
+ニット: "ニット(トップス)",
+カットソー: "カットソー(トップス)",
+カーディガン: "カーディガン(トップス)",
+ワンピース: "ワンピース(ワンピース)",
+ーーーーーーーーーーーアウターーーーーーーーーー: "",
+アウター: "コート(アウター)",
+ジャケット: "ジャケット(アウター)",
+ブルゾン: "ブルゾン(アウター)",
+ーーーーーーーーボトムス・スーツーーーーーーーー: "",
+パンツ: "パンツ(ボトムス・スーツ)",
+スカート: "スカート(ボトムス・スーツ)",
+スーツ: "スーツ(ボトムス・スーツ)",
+スカートスーツ: "スカートスーツ(ボトムス・スーツ)",
+ーーーーーーーーーーーシューズーーーーーーーーーー: "",
+ブーツ: "ブーツ(シューズ)",
+スニーカー: "スニーカー(シューズ)",
+サンダル: "サンダル(シューズ)",
+パンプス: "パンプス(シューズ)",
+ミュール: "ミュール(シューズ)",
+フラットシューズ: "フラットシューズ(シューズ)",
+スリッポン: "スリッポン(シューズ)",
+ドレスシューズ: "ドレスシューズ(シューズ)",
+カジュアルシューズ: "カジュアルシューズ(シューズ)"}, autofocus: true %>
       </div>
    <br />
 
@@ -71,56 +137,42 @@
      <div class="field">
       <%= f.label :price, "出品価格" %><br>
     </div>
-      <div class="text-menu_airt">
+      <div class="text-menu-serach">
       <br />
-      <p><span style="color:#ff0000;">&emsp;チケット代金別の出品は行ってません。</span></p>
-      <p>&emsp;連番をバラ売りで行いたい場合、お手数ですが<span style="color:#ff0000;">1枚づつ出品</span>して下さい。</p>
-      <%= f.text_field :price, class: "price-text" ,placeholder: "1枚での販売価格を記入", data: { autonumeric: { aSign: '¥ ', mDec: 0 } }%>&emsp;円/枚
+      <%= f.text_field :price, class: "price-text" ,placeholder: "商品販売価格を記入してください", data: { autonumeric: { aSign: '¥ ', mDec: 0 } }%>円
       <br />
      </div>
   </div>
-  <br />
-
-<br />
    <div class="text-main">
      <div class="field">
-       <%= f.label :list_price ,"定価以下の出品" %><br>
-     </div>
-     <div class="text-menu-serach">
-     <br />
-     <ul>
-       <li><%= f.radio_button :list_price , :under_list %><div class="absolute">定価以下の出品</div><small><p>購入時の送料や手数料は含めません</p></small></li>
-       <li><%= f.radio_button :list_price, :over_list %><div class="absolute">定価以上の出品</div></li>
-     </ul>
-    </div>
-    
-    <div class="text-main">
-    <div class="field">
-       <%= f.label :number_of_sheets, "出品枚数" %><br>
+       <%= f.label :list_price ,"種類" %><br>
      </div>
      <div class="text-menu">
      <br />
      <ul>
-       <li><%= f.radio_button :number_of_sheets, :one_ticket %><div class="absolute">１枚のみ出品</div></li>
-       <li><%= f.radio_button :number_of_sheets, :two_ticket %><div class="absolute">2枚連番で出品</div><small><p>連番バラ売り不可</p></small></li>
-       <li><%= f.radio_button :number_of_sheets, :three_ticket %><div class="absolute">3枚連番で出品</div><small><p>連番バラ売り不可</p></small></li>
-       <li><%= f.radio_button :number_of_sheets, :fore_ticket %><div class="absolute">4枚連番で出品</div><small><p>連番バラ売り不可</p></small></li>
+       <li><%= f.radio_button :list_price , :men %><div class="absolute">男性用(MEN)</div></li>
+       <li><%= f.radio_button :list_price, :women %><div class="absolute">女性用(WOMEN)</div></li>
+       <li><%= f.radio_button :list_price, :others %><div class="absolute">問わない・その他</div><small><p>絵画や美術品など</p></small></li>
      </ul>
+    </div>
+  </div>
+  <br />
+    <div class="text-main">
+    <div class="field">
+       <%= f.label :number_of_sheets, "サイズ" %><br>
+     </div>
+     <div class="text-menu-serach">
+     <br />
+     <%= f.text_field :number_of_sheets, id: "sizeform", class: "price-text" , placeholder: "サイズを入力　例：Mサイズ" ,autocomplete: "off"%>
       </div>
     </div>
-    <br />
-
     <div class="text-main">
       <div class="field">
-        <%= f.label :seat, "席の種類" %><br>
+        <%= f.label :seat, "カラー又は柄" %><br>
       </div>
-      <div class="text-menu">
+      <div class="text-menu-serach">
       <br />
-     <ul>
-       <li><%= f.radio_button :seat, :arena %><div class="absolute">アリーナ席</div><small><p>詳しい席情報あれば席の詳細へ記入</p></small></li>
-       <li><%= f.radio_button :seat, :stand %><div class="absolute">スタンド席</div><small><p>詳しい席情報あれば席の詳細へ記入</p></small></li>
-       <li><%= f.radio_button :seat, :other_seat %><div class="absolute">その他・不明</div><small><p>席の詳細にて記入をお願いします</p></small></li>
-     </ul>
+     <%= f.text_field :seat, id: "colorform", class: "price-text" , placeholder: "カラーを入力　例：レッド" ,autocomplete: "off"%>
       </div>
     </div>
     <br />
@@ -129,28 +181,25 @@
       <div class="field">
         <%= f.label :shipping_method, "発注方法" %><br>
       </div>
-      <div class="text-menu">
+      <div class="text-menu-serach">
       <br />
      <ul>
-       <li><%= f.radio_button :shipping_method, :post %><div class="absolute">郵便</div><small><p>追跡可能な方法のみ可</p></small></li>
-       <li><%= f.radio_button :shipping_method, :electron_ticket %><div class="absolute">電子チケット</div><small><p>QRコードなど</p></small></li>
-       <li><%= f.radio_button :shipping_method, :store_ticket %><div class="absolute">コンビニ発券</div><small><p>専用端末・店頭受取り</p></small></li>
+       <li><%= f.radio_button :shipping_method, :post %><div class="absolute">郵送</div><small><p>追跡可能な方法のみ可</p></small></li>
        <li><%= f.radio_button :shipping_method, :hand_sent %><div class="absolute">手渡し</div><small><p>受渡し方法の記入をお願いします</p></small></li>
      </ul>
       </div>
     </div>
-    <br />
 
     <div class="text-main">
       <div class="field">
-        <%= f.label :ticketing_state, "発券状態の確認" %><br>
+        <%= f.label :ticketing_state, "鑑定書・鑑別書などの正規品判別書類の有り無し" %><br>
       </div>
 
       <div class="text-menu-serach">
       <br />
      <ul>
-       <li><%= f.radio_button :ticketing_state, :have %><div class="absolute">所持・発券済み</div><small><p>即、発送可能状態</p></small></li>
-       <li><%= f.radio_button :ticketing_state, :not_have %><div class="absolute">未到着・未発券</div><small><p>チケットがない状態</p></small></li>
+       <li><%= f.radio_button :ticketing_state, :have %><div class="absolute">所持・書類あり</div><small><p>発送可能(15,000円以上の商品は必須)</p></small></li>
+       <li><%= f.radio_button :ticketing_state, :not_have %><div class="absolute">書類なし</div><small><p>鑑定書・鑑別書などがない場合</p></small></li>
      </ul>
       </div>
     </div>
@@ -162,30 +211,30 @@
        <div class="text-menu-serach">
        <br />
      <ul>
-       <li><%= f.radio_button :postage, :postage_in %><div class="absolute">送料込みorなし</div><small><p>自己負担・手渡し、電子チケット</p></small></li>
-       <li><%= f.radio_button :postage, :postage_out %><div class="absolute">送料別（¥510）</div><small><p>相手負担</p></small></li>
+       <li><%= f.radio_button :postage, :postage_in %><div class="absolute">送料込みorなし</div><small><p>自己負担・手渡し</p></small></li>
+       <li><%= f.radio_button :postage, :postage_out %><div class="absolute">送料別（¥910）</div><small><p>相手負担</p></small></li>
      </ul>
       </div>
-        <p>&emsp;&emsp;送料は一律510円のご負担です。</p>
-        <p>&emsp;&emsp;手渡し・電子チケットの方は「なし」になります。</p>
+        <p>&emsp;&emsp;送料は一律910円のご負担です。</p>
+        <p>&emsp;&emsp;手渡しの方は「なし」になります。</p>
      </div>
      <br />
      <br />
 
 
-<div class="sub-box">チケット情報</div>
+<div class="sub-box">商品情報</div>
 
      <div class="text-main">
         <div class="field">
-          <%= f.label :nsk, "チケットの購入元" %><br>
+          <%= f.label :nsk, "商品の購入元" %><br>
         </div>
         <div class="text-menu">
         <br />
      <ul>
-       <li><%= f.radio_button :nsk, :ticket_agency %><div class="absolute">プレイガイド</div><small><p>チケットぴあ・イープラス</p></small></li>
-       <li><%= f.radio_button :nsk, :funclub %><div class="absolute">ファンクラブ</div><small><p>ファンクラブ先行など</p></small></li>
-       <li><%= f.radio_button :nsk, :organizer %><div class="absolute">主催者</div><small><p>主催者側からの購入</p></small></li>
-       <li><%= f.radio_button :nsk, :other %><div class="absolute">その他・不明</div><small><p>チケット詳細にて記入をお願いします</p></small></li>
+       <li><%= f.radio_button :nsk, :seiki %><div class="absolute">正規店・直営店</div><small><p>デパート・旗艦店・ECサイト含む</p></small></li>
+       <li><%= f.radio_button :nsk, :c2c %><div class="absolute">中古品</div><small><p>フリマサイト・質屋などの2次流通品</p></small></li>
+       <li><%= f.radio_button :nsk, :present %><div class="absolute">贈与・懸賞</div><small><p>友人・知人からのプレゼントや賞品</p></small></li>
+       <li><%= f.radio_button :nsk, :other %><div class="absolute">その他・不明</div><small><p>出処不明。詳細に記入</p></small></li>
      </ul>
         </div>
     </div>
@@ -193,43 +242,39 @@
 
      <div class="text-main">
         <div class="field">
-          <%= f.label :ticket_name, "チケット券面の名義" %><br>
+          <%= f.label :ticket_name, "素材" %><br>
         </div>
-        <div class="text-menu">
+        <div class="text-menu-serach">
         <br />
-     <ul>
-       <li><%= f.radio_button :ticket_name, :no_name %><div class="absolute">名義なし</div></li>
-       <li><%= f.radio_button :ticket_name, :female_name %><div class="absolute">男性名義</div><small><p>入場時に係員に確認される場合があり</p></small></li>
-       <li><%= f.radio_button :ticket_name, :male_name %><div class="absolute">女性名義</div><small><p>入場時に係員に確認される場合があり</p></small></li>
-       <li><%= f.radio_button :ticket_name, :other_sex %><div class="absolute">その他・非公開</div><small><p>チケット詳細にて記入をお願いします</p></small></li>
-     </ul>
+          <%= f.text_field :ticket_name, id: "materialform", class: "price-text" , placeholder: "メインの素材を入力　例：ダイヤモンド" ,autocomplete: "off"%>
         </div>
       </div>
       <br />
 
      <div class="text-main">
         <div class="field">
-           <%= f.label :ticket_name_yes_no, "名義の塗りつぶし" %><br>
+           <%= f.label :ticket_name_yes_no, "商品の修復又は加工の有り無し" %><br>
          </div>
          <div class="text-menu-serach">
          <br />
      <ul>
-       <li><%= f.radio_button :ticket_name_yes_no, :name_yes %><div class="absolute">塗りつぶし無し</div></li>
-       <li><%= f.radio_button :ticket_name_yes_no, :name_no %><div class="absolute">塗りつぶし有り</div><small><p>チケット詳細にて記入をお願いします</p></small></li>
+       <li><%= f.radio_button :ticket_name_yes_no, :name_yes %><div class="absolute">修復履歴無し</div></li>
+       <li><%= f.radio_button :ticket_name_yes_no, :name_no %><div class="absolute">修復履歴有り</div><small>
+       <p>商品詳細にて記入をお願いします</p></small></li>
      </ul>
         </div>
-        <p>&emsp;ペンやマジックでチケットの名義などを塗りつぶし、何らかの加工がされているチケットです。</p>
-        <p>&emsp;店名やFC番号など、名義以外に塗りつぶしがあるチケットは出品できません。</p>
+        <p>&emsp;何らかの修復や加工がされている商品です。</p>
+        <p>&emsp;正規店や出品予定ブランド専用工場での修復商品以外はオススメできません。</p>
       </div>
       <br />
       <br />
 
       <div class="text-main">
          <div class="field">
-           <%= f.label :seat_in_detail , "席の詳細" %><br>
+           <%= f.label :seat_in_detail , "商品の詳細" %><br>
          </div>
          <div class="text-menu">
-           <%= f.text_area :seat_in_detail ,placeholder: "席の詳しい詳細等を記入して下さい。出品チケット一覧ページに35文字程度まで記載され、詳細画面にて全文表示されます。また購入者へ向けて丁寧に書くコトにより、安心感が生まれ、購入される確率が上がります。（例）①座席の場所②席の種類（より詳しく）③お勧めポイント等" %>
+           <%= f.text_area :seat_in_detail ,placeholder: "商品の詳しい詳細等を記入して下さい。商品一覧ページに35文字程度まで記載され、詳細画面にて全文表示されます。また購入者へ向けて丁寧に書くコトにより、安心感が生まれ、購入される確率が上がります。（例）①付属品②汚れてる部分や大きさ③型番などの詳細や特記事項など" %>
          </div>
       </div>
 
@@ -260,7 +305,7 @@
 
       <div class="text-main">
          <div class="field">
-            <%= f.label :docide_promptly, "チケットの発送予定時期" %><br>
+            <%= f.label :docide_promptly, "商品の発送予定時期" %><br>
           </div>
           <div class="text-menu">
           <br />
@@ -268,21 +313,10 @@
        <li><%= f.radio_button :docide_promptly, :within_24_hours %><div class="absolute">24時間以内</div><small><p>即発送・受渡しをお願いします</p></small></li>
        <li><%= f.radio_button :docide_promptly, :within_3day %><div class="absolute">2〜3日以内</div><small><p>購入者側と相談</p></small></li>
        <li><%= f.radio_button :docide_promptly, :within_7day %><div class="absolute">4〜7日以内</div><small><p>購入者側と相談</p></small></li>
-       <li><%= f.radio_button :docide_promptly, :other_day %><div class="absolute">発券・到着後</div><small><p>チケット詳細にて記入をお願いします</p></small></li>
+       <li><%= f.radio_button :docide_promptly, :other_day %><div class="absolute">相談・未定</div><small><p>商品詳細にて記入をお願いします</p></small></li>
      </ul>
          </div>
       </div>
-      <br />
-
-      <div class="text-main">
-         <div class="field">
-             <%= f.label :othertext, "買い手側へメッセージ" %><br>
-           </div>
-           <div class="text-menu">
-             <%= f.text_area :othertext, placeholder: "その他に何か買い手側へ補足する情報やメッセージがあれば自由に入力してください。" %>
-         </div>
-      </div>
-      <br />
       <br />
 
          <div class="actions">

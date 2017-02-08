@@ -26,7 +26,7 @@
           </tr>
           <tr>
             <td class="box999-show">公演日/時間</td>
-            <td class="tablebox111-show"><%= @shop.day_date %>&nbsp;/&nbsp;<%= @shop.time_date %>〜</td>
+            <td class="tablebox111-show"><%= @shop.day_date %>&nbsp;/&nbsp;</td>
           </tr>
           <tr>
             <td class="box999-show">会場（場所）</td>
@@ -34,7 +34,7 @@
           </tr>
           <tr>
             <td class="box999-show">席の種類</td>
-            <td class="tablebox111-show"><%= @shop.seat_i18n %></td>
+            <td class="tablebox111-show"><%= @shop.seat %></td>
           </tr>
           <tr>
             <td class="box999-show">席の詳細内容</td>
@@ -50,7 +50,7 @@
           </tr>
           <tr>
             <td class="box999-show">名義</td>
-            <td class="tablebox111-show"><%= @shop.ticket_name_i18n %>&emsp;&nbsp;<%= @shop.ticket_name_yes_no_i18n %></td>
+            <td class="tablebox111-show"><%= @shop.ticket_name %>&emsp;&nbsp;<%= @shop.ticket_name_yes_no %></td>
           </tr>
           <tr>
             <td class="box999-show">受渡し方法</td>
@@ -93,11 +93,11 @@
           </tr>
           <tr>
             <td class="box999-show">販売価格/枚数</td>
-            <td class="tablebox111-show"><%= number_with_delimiter(@shop.price) %>円&nbsp;/枚&emsp;&emsp;<%= @shop.number_of_sheets_i18n %>枚</td>
+            <td class="tablebox111-show"><%= number_with_delimiter(@shop.price) %>円&nbsp;/枚&emsp;&emsp;<%= @shop.number_of_sheets %>枚</td>
           </tr>
           <tr>
             <td class="box999-show">チケット<br />合計金額</td>
-            <td class="tablebox111-show">(<%= @shop.number_of_sheets_i18n %>枚分)合計金額&nbsp;<strong><%= number_with_delimiter(@getprice) %>円</strong>&emsp;<small><%= @shop.postage_i18n %></small></td>
+            <td class="tablebox111-show">(<%= @shop.number_of_sheets %>枚分)合計金額&nbsp;<strong><%= number_with_delimiter(@getprice) %>円</strong>&emsp;<small><%= @shop.postage_i18n %></small></td>
           </tr>
           <tr>
             <td class="box999-show">メッセージ</td>
@@ -159,7 +159,7 @@
 <% if current_user %>
    <div class=" commets-box">
     <div class="commets-box-under">
-       <p>相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣い等は利用制限や退会処分となる事があります。ログイン済みの場合のみ使用可能です。</p>
+     <p><span style="color:white;">相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣い等は利用制限や退会処分となる事があります。ログイン済みの場合のみ使用可能です。</span></p>
     </div>
           <div class="box300-under">
              <h3><span style="color:#FFFFFF;">出品チケットへの質問・コメント</span></h3>
