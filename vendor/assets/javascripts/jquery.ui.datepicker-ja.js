@@ -39,9 +39,11 @@ $(function() {
 	weekHeader: "週",
 	dateFormat: "yy/mm/dd (DD)",
 	numberOfMonths: 2,
-	minDate: 0,
+	minDate: -40000,
+  maxDate: +100,
 	firstDay: 0,
 	isRTL: false,
+  changeYear: true,
 	showMonthAfterYear: true,
 	yearSuffix: "年" };
   $.datepicker.setDefaults($.datepicker.regional['ja']);
