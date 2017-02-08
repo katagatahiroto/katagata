@@ -9,7 +9,7 @@
      </div>
      <div class="mypage-header-right">
        <ul>
-       <li><%= image_tag("e_title_120.png", :size => "10x10", :align=>"center") %><%= link_to "重要登録", edit_user_registration_path %><span style="color:#ff0000;">(売買必須)</span></li>
+       <li><%= image_tag("e_title_120.png", :size => "10x10", :align=>"center") %><%= link_to "重要登録", edit_user_registration_path, class: "btn btn-large" %><span style="color:#ff0000;">(売買必須)</span></li>
        <li>送金可能金額(売上高)&nbsp;<%= number_with_delimiter(@money) %><small>円</small></li>
        </ul>
      </div>
@@ -40,19 +40,19 @@
         <td class="tablebox5011"><small><span style="color:#0000CC;"><%= shop.plase.truncate(41) %></span></small></td>
         <td class="tableboxticketunder">
           <small>[<span style="color:#ff0000;">送料</span>]&nbsp;<%= shop.postage_i18n %>
-            &emsp;[<span style="color:#ff0000;">名義</span>]&nbsp;<%= shop.ticket_name_i18n %>
-            &emsp;[<span style="color:#ff0000;">席種</span>]&nbsp;<%= shop.seat_i18n %></small>
+            &emsp;[<span style="color:#ff0000;">名義</span>]&nbsp;<%= shop.ticket_name %>
+            &emsp;[<span style="color:#ff0000;">席種</span>]&nbsp;<%= shop.seat %></small>
         <p><small>[<span style="color:#ff0000;">発送方法</span>]&nbsp;<%= shop.shipping_method_i18n %>
             &emsp;[<span style="color:#ff0000;">発送予定時期</span>]&nbsp;<%= shop.docide_promptly_i18n %></small></p>
         <p><small>[<span style="color:#ff0000;">売手側からのチケット情報</span>]</small></p>
         <p><small><%= shop.seat_in_detail.truncate(30) %></small></p></td>
-        <td class="tablebox6000"><small><%= shop.number_of_sheets_i18n %>枚
+        <td class="tablebox6000"><small><%= shop.number_of_sheets %>枚
           <p><span style="color:#ff0000;"><%= number_with_delimiter(shop.price) %></span>円/枚</span></p>
         <p><%= shop.list_price_i18n %></span></p></small></td>
         <td class="tablebox5000">&nbsp;<%= image_tag("e_title_shops.png", :size => "18x18", :align=>"center") %><br />
-        <%= link_to '詳細', shop %></td>
-        <td class="tablebox5000"><%= link_to '編集', "/shops/#{shop.id}/edit", method: :get %>
-        <p><%= link_to '削除', "/shops/#{shop.id}", method: :delete, data: {
+        <div class="btn2"><%= link_to '詳細', shop %></div></td>
+        <td class="tablebox5000"><%= link_to '編集', "/shops/#{shop.id}/edit", method: :get, :class=>"black-btn" %>
+        <p><%= link_to '削除', "/shops/#{shop.id}", method: :delete, :class=>"red-btn", data: {
       confirm: '本当に削除しても宜しいでしょうか？',
       disable_with: '削除中です..。。'} %></p></td>
       </tr>
@@ -125,7 +125,7 @@
 
 
        <div class="bulebox">
-       <h4 class="bulebox">&nbsp;<%= link_to 'チケットの出品へ', new_shop_path %></h4>
+       <h4 class="bulebox">&nbsp;<%= link_to 'チケットの出品へ', new_shop_path , class: "btn btn-large" %></h4>
      </div>
 </div>
 
@@ -133,7 +133,7 @@
 </div>
 <div class="mypage-main clearfix">
 <br />
-  <h2><%= @nickname %>さんのご登録情報<p><small>お客様情報が空の場合は<%= image_tag("e_title_120.png", :size => "10x10", :align=>"center") %><%= link_to "こちらからご登録", edit_user_registration_path %>&nbsp;<%= image_tag("icon-c.png", :size => "10x10", :align=>"center") %>をお願いします。</small></p></h2>
+  <h2><%= @nickname %>さんのご登録情報<p><small>お客様情報が空の場合は<%= image_tag("e_title_120.png", :size => "10x10", :align=>"center") %><%= link_to "こちらからご登録", edit_user_registration_path , class: "btn btn-large" %>&nbsp;<%= image_tag("icon-c.png", :size => "10x10", :align=>"center") %>をお願いします。</small></p></h2>
 <table id="tablebox-show">
           <tr class="header">
             <th class="box1000-left">お名前</th>
@@ -222,7 +222,7 @@
 
 
 
-今後もTicket Ringをどうぞよろしくお願いします。"%></strong><br />
+今後もTicket Ringをどうぞよろしくお願いします。", class: "btn btn-large" %></strong><br />
 &emsp;有効な公的身分証明書とは？<br />
 ・パスポート・各種保険証・免許証・住民票・住民基本台帳カード<br />
 ・マイナンバーカード・学生証(期限内)・印鑑登録証明書（個人）等<br />
@@ -258,7 +258,7 @@ ID番号/
 
 
 以上3点をお間違えなく記入し送信して下さい。
-今後もTicket Ringをどうぞよろしくお願いします。"%></strong>
+今後もTicket Ringをどうぞよろしくお願いします。", class: "btn btn-large" %></strong>
           <p>公的身分証が未提出、未確認の場合、売上代金のお振込（送金）が出来ないので、予めご了承下さい。</p>
 
         <br />
@@ -272,7 +272,7 @@ ID番号/
 
 
 
-今後もTicket Ringをどうぞよろしくお願いします。"%></strong>
+今後もTicket Ringをどうぞよろしくお願いします。", class: "btn btn-large" %></strong>
 
      </div>
    </div>
