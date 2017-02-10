@@ -71,7 +71,7 @@
         <td class="tablebox6000"><small><%= shop.number_of_sheets %>枚
           <p><span style="color:#ff0000;"><%= number_with_delimiter(shop.price) %></span>円/枚</span></p>
         <p><%= shop.list_price_i18n %></span></p></small></td>
-        <td class="tablebox5000 favorite-unmark">
+        <td class="tablebox5000">
         <div id="favorite-mark"><%= render 'favorite_mark', shop: shop %></div>
         <% # TODO : (仮)styleによる中央寄せ %>
         <div id="favorite-count" style="text-align: center;">

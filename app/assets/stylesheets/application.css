@@ -2007,7 +2007,7 @@ background-color: #F5FFFA;
 #favorite-mark a .unmark_popup {
   color: #823a45;
 }
-#favorite-mark a:hover .unmark_popup {
+#favorite-mark div:hover .unmark_popup {
   display: block;
   position: absolute;
   width: 12em;

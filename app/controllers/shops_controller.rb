@@ -73,6 +73,19 @@ class ShopsController < ApplicationController
     end
   end
 
+  def mark
+    @shop = Shop.find(params[:shop_id])
+    Favorite.find_or_create_by(shop_id: params[:shop_id],user_id: current_user.id)
+    render :json => {count: Favorite.where(shop_id: params[:shop_id]).count,
+                     src: "/assets/favorite_mark.png"}
+  end
+  def unmark
+    Favorite.where(user_id: current_user.id, shop_id: params[:shop_id]).
+      delete_all
+    count =Favorite.where(shop_id: params[:shop_id]).count
+    render :json => {count: (count>0 ? count : "　"),src: "/assets/favorite_unmark.png" }
+  end
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_shop
