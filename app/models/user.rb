@@ -1,3 +1,4 @@
+# coding: utf-8
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -15,7 +16,7 @@ class User < ActiveRecord::Base
   validates :big_address, presence: true, on: :update
   validates :subaddress, presence: true, on: :update
   validates :littleaddress, presence: true, on: :update
-  validates :tel, presence: true, on: :update, numericality: { only_integer: true }
+  validates :tel, presence: true, on: :update
   def tel=(value)
     value.tr!('０-９', '0-9') if value.is_a?(String)
     super(value)

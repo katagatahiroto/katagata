@@ -10,6 +10,4 @@ Dir.glob("#{Rails.root}/db/seeds/**/*.rb").each do |file|
   require file if FileTest.file?(file)
 end
 
-User.create(email: "user",password: "user1111")
 
-include
