@@ -49,8 +49,8 @@
         <p><small><%= shop.seat_in_detail.truncate(39) %></small></p></td>
         <td class="tablebox6000"><small><%= shop.number_of_sheets_i18n %>枚
           <p><span style="color:#ff0000;"><%= shop.price %></span>円/枚</span></p>
-        <p><%= shop.list_price_i18n %></span></p></small></td>
-        <td class="tablebox5000"><div id="favorite-mark"><%= render 'favorites/favorite_mark', shop: shop %></div>
+        <p><%= shop.list_price %></span></p></small></td>
+        <td class="tablebox5000"><div id="favorite-mark"><%= render 'favorite_mark', shop: shop %></div>
         <% # TODO : (仮)styleによる中央寄せ %>
         <div id="favorite-count" style="text-align: center;"><%= render 'favorites/favorite_count', shop: shop, favorites: shop.favorites %></div>
         <div class="btn2"><%= link_to '詳細', shop %></div></td>
