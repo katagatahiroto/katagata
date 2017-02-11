@@ -5,85 +5,93 @@
 
 <br />
 <div class="indexpage">
-    <div class="box100">
-     <h2><strong>☆★検索条件の商品一覧★☆</strong>️</h2>
-    </div>
-    <div class="airt-commntbox-top"></div>
-<div class="airt-commntbox">
-  <p>チケリンでは、<strong><span style="color:#0000CC;">ジャニーズ</span></strong>、<strong><span style="color:#0000CC;">LDH</span></strong>や<strong><span style="color:#0000CC;">人気アイドルグループ</span></strong>、<strong><span style="color:#0000CC;">海外有名アーティスト</span></strong>のライブ・コンサート、そして<strong><span style="color:#0000CC;">各種イベント関連</span></strong>、<strong><span style="color:#0000CC;">演劇</span></strong>・<strong><span style="color:#0000CC;">宝塚</span></strong>、<strong><span style="color:#0000CC;">ミュージカル</span></strong>、<strong><span style="color:#0000CC;">プロ野球</span></strong>や<strong><span style="color:#0000CC;">サッカー</span></strong><strong><span style="color:#0000CC;">フィギュアスケート</span></strong>を含む<strong><span style="color:#0000CC;">スポーツ全般</span></strong>のチケットまで、<strong><span style="color:#ff0000;">ジャンルを問わず幅広く</span></strong>チケットのお取り扱いをしてます。お客様の欲しいチケットが<strong><span style="color:#ff0000;">定価より安く出品</span></strong>されてたり、手に入りづらい<strong><span style="color:#0000CC;">人気アーティスト</span></strong>のライブ・コンサート、イベントの<strong><span style="color:#ff0000;">プレミアムチケット</span></strong>もきっと見つかるはず...<br />
-
-    <strong><%= link_to "会員登録料" ,home_kakaku_path, :class => "black-btn" %><span style="color:#ff0000;">0円</span></strong>!!更新料・維持費用も<strong><span style="color:#ff0000;">無料</span></strong>です。まだ会員登録がお済みでないお客様は是非、この機会に<strong><%= link_to '新規会員登録', new_user_registration_path, :class => "black-btn" %></strong>を行ってください！<br />
-
-    簡単な登録でチケリンの全機能を使い放題。チケットの購入、出品は指示に従うだけでO.K!!<br />
-
-    <strong><%= link_to "あんしん・安全取引(エスクロー決済)システム" ,home_esukuro_path, :class => "black-btn" %></strong>を導入し、<strong><%= link_to "多彩な決済方法" ,home_payment_path, :class => "black-btn" %></strong>と合わせて、お客様の売り買いを全力でサポート！<br />
-
-    また、<strong>乱雑した機能を実装する<span style="color:#ff0000;">他のWebサイトとは違う必要最低限のシンプルな画面と取引</span></strong>で、もうお客様を迷わせない!!<br />
-    腕時計・ブランド品の売り買いなら、専門のオトクーナで決まり!!
-
-  </p>
-</div>
+  <div class="box100">
+    <h2><strong>☆★検索条件の商品一覧★☆</strong>️</h2>
+  </div>
+  <div class="airt-commntbox-top"></div>
+  <div class="airt-commntbox">
+      <%= render partial: "airt_commntbox" %>
+  </div>
   <div class="airt-commntbox-under"></div>
-<div class="index-box">
-    <table>
-  <thead>
-    <tr>
-      <th class="tablebox1105-left">公演名</th>
-      <th class="tablebox5100">日時</th>
-      <th class="tablebox1105">場所</th>
-      <th class="tableboxticket">チケット情報</th>
-      <th class="tablebox1111">価格</th>
-      <th class="tablebox1100">詳細</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-<%= search_form_for @search do |f| %>
-<div class="sortbox">
-  <ul>
-    <li><%= sort_link(@search, :created_at, '新着順') %></li>
-    <li><%= sort_link(@search, :price, '価格順') %></li>
-    <li><%= sort_link(@search, :day_date, '日時順') %></li>
-  </ul>
-</div>
-<div class="seach_day_date">
-      <%= f.label :day_date, '公演日指定' %>
+  <div class="index-box">
+      <%= search_form_for @search do |f| %>
+      <div class="sortbox">
+	<ul>
+	  <li><%= sort_link(@search, :created_at, '新着順') %></li>
+	  <li><%= sort_link(@search, :price, '価格順') %></li>
+	  <li><%= sort_link(@search, :day_date, '日時順') %></li>
+	</ul>
+      </div>
+      <div class="seach_day_date">
+	<%= f.label :day_date, '公演日指定' %>
         <%= f.text_field :day_date_gteq, include_blank: true, :readonly=> true ,class: "day_date-text" ,:id => 'datepicker_second' , placeholder: "ここをクリック"%>〜
         <%= f.text_field :day_date_lteq, include_blank: true, :readonly=> true ,class: "day_date-text" ,:id => 'datepicker_three' , placeholder: "ここをクリック"%>
-      <%= f.submit '検索',:class => "submit-button-search" %>
-</div>
-<br />
-<% end %>
-  <tbody>
-    <% @shops.each do |shop| %>
-      <tr>
-        <td class="tablebox5011"><small><%= shop.airt_name.truncate(18) %></span>
-          <p><span style="color:#0000CC;"><%= shop.live_tour_name.truncate(24) %></span></p></small></td>
-        <td class="tablebox5100under"><small><%= shop.day_date %>&emsp;&emsp;&emsp;<%= shop.time_date %>〜</small></td>
-        <td class="tablebox5011"><small><span style="color:#0000CC;"><%= shop.plase.truncate(41) %></span></small></td>
-        <td class="tableboxticketunder">
-          <small>[<span style="color:#ff0000;">送料</span>]&nbsp;<%= shop.postage_i18n %>
-            &emsp;[<span style="color:#ff0000;">名義</span>]&nbsp;<%= shop.ticket_name %>
-            &emsp;[<span style="color:#ff0000;">席種</span>]&nbsp;<%= shop.seat %></small>
-        <p><small>[<span style="color:#ff0000;">発送方法</span>]&nbsp;<%= shop.shipping_method_i18n %>
-            &emsp;[<span style="color:#ff0000;">発送予定時期</span>]&nbsp;<%= shop.docide_promptly_i18n %></small></p>
-        <p><small>[<span style="color:#ff0000;">売手側からのチケット情報</span>]</small></p>
-        <p><small><%= shop.seat_in_detail.truncate(30) %></small></p></td>
-        <td class="tablebox6000"><small><%= shop.number_of_sheets %>枚
-          <p><span style="color:#ff0000;"><%= number_with_delimiter(shop.price) %></span>円/枚</span></p>
-        <p><%= shop.list_price_i18n %></span></p></small></td>
-        <td class="tablebox5000">
-        <div id="favorite-mark"><%= render 'favorite_mark', shop: shop %></div>
-        <% # TODO : (仮)styleによる中央寄せ %>
-        <div id="favorite-count" style="text-align: center;">
-	  <%= render 'favorites/favorite_count', shop: shop, favorites: shop.favorites %>
-	</div>
-        <div class="btn2"><%= link_to '詳細', shop %></div></td>
-      </tr>
+	<%= f.submit '検索',:class => "submit-button-search" %>
+      </div>
+      <br />
       <% end %>
-  </tbody>
+    <table>
+      <thead>
+	<tr>
+	  <th class="tablebox1105-left">公演名</th>
+	  <th class="tablebox5100">日時</th>
+	  <th class="tablebox1105">場所</th>
+	  <th class="tableboxticket">チケット情報</th>
+	  <th class="tablebox1111">価格</th>
+	  <th class="tablebox1100">詳細</th>
+	  <th colspan="3"></th>
+	</tr>
+      </thead>
+      <tbody>
+	<% @shops.each do |shop| %>
+	<tr>
+          <td class="tablebox5011">
+	    <small><%= shop.airt_name.truncate(18) %>
+	      <p><span style="color:#0000CC;"><%= shop.live_tour_name.truncate(24) %></span></p>
+	    </small>
+	  </td>
+	  <td class="tablebox5100under">
+	    <small><%= shop.day_date %>&emsp;&emsp;&emsp;<%= shop.time_date %>〜</small>
+	  </td>
+	  <td class="tablebox5011">
+	    <small><span style="color:#0000CC;"><%= shop.plase.truncate(41) %></span></small>
+	  </td>
+	  <td class="tableboxticketunder">
+	    <small>[<span style="color:#ff0000;">送料</span>]&nbsp;<%= shop.postage %>
+	      &emsp;[<span style="color:#ff0000;">名義</span>]&nbsp;<%= shop.ticket_name %>
+	      &emsp;[<span style="color:#ff0000;">席種</span>]&nbsp;<%= shop.seat %></small>
+	    <p><small>[<span style="color:#ff0000;">発送方法</span>]
+		&nbsp;<%= shop.shipping_method %>
+		&emsp;[<span style="color:#ff0000;">発送予定時期
+		</span>]&nbsp;<%= shop.docide_promptly %>
+	      </small>
+	    </p>
+	    <p><small>[<span style="color:#ff0000;">売手側からのチケット情報</span>]</small></p>
+	    <p><small><%= shop.seat_in_detail.truncate(30) %></small></p>
+	  </td>
+	  <td class="tablebox6000">
+	    <small>
+	      <%= shop.number_of_sheets %>枚
+	      <p>
+		<span style="color:#ff0000;"><%= number_with_delimiter(shop.price) %></span>円/枚
+	      </p>
+	      <p><%= shop.list_price %></p>
+	    </small>
+	  </td>
+	  <td class="tablebox5000">
+	    <div id="favorite-mark"><%= render 'favorite_mark', shop: shop %></div>
+	    <% # TODO : (仮)styleによる中央寄せ %>
+	    <div id="favorite-count" style="text-align: center;">
+	      <%= render 'favorites/favorite_count', shop: shop, favorites: shop.favorites %>
+	    </div>
+	    <div class="btn2"><%= link_to '詳細', shop %></div>
+	  </td>
+	</tr>
+	<% end %>
+      </tbody>
     </table>
-<br />
-<div class="favorite_unmark"> class="favorite-unmark"</div>
+    <br />
+    <div class="favorite_unmark"> class="favorite-unmark"</div>
     <%= paginate @shops  %>
       <br>
        <div class="bulebox">

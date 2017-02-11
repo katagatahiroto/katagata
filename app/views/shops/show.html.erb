@@ -42,23 +42,23 @@
           </tr>
           <tr>
             <td class="box999-show">購入元</td>
-            <td class="tablebox111-show"><%= @shop.nsk_i18n %></td>
+            <td class="tablebox111-show"><%= @shop.nsk %></td>
           </tr>
           <tr>
             <td class="box999-show">チケット状態</td>
-            <td class="tablebox111-show"><%= @shop.ticketing_state_i18n %></td>
+            <td class="tablebox111-show"><%= @shop.ticketing_state %></td>
           </tr>
           <tr>
             <td class="box999-show">名義</td>
-            <td class="tablebox111-show"><%= @shop.ticket_name %>&emsp;&nbsp;<%= @shop.ticket_name_yes_no_i18n %></td>
+            <td class="tablebox111-show"><%= @shop.ticket_name %>&emsp;&nbsp;<%= @shop.ticket_name_yes_no %></td>
           </tr>
           <tr>
             <td class="box999-show">受渡し方法</td>
-            <td class="tablebox111-show"><%= @shop.shipping_method_i18n %></td>
+            <td class="tablebox111-show"><%= @shop.shipping_method %></td>
           </tr>
           <tr>
             <td class="box999-show">発送予定時期</td>
-            <td class="tablebox111-show"><span style="color:red;"><%= @shop.docide_promptly_i18n %></span></td>
+            <td class="tablebox111-show"><span style="color:red;"><%= @shop.docide_promptly %></span></td>
           </tr>
           <tr>
             <td class="box999-show">チケットID</td>
@@ -97,7 +97,7 @@
           </tr>
           <tr>
             <td class="box999-show">チケット<br />合計金額</td>
-            <td class="tablebox111-show">(<%= @shop.number_of_sheets %>枚分)合計金額&nbsp;<strong><%= number_with_delimiter(@getprice) %>円</strong>&emsp;<small><%= @shop.postage_i18n %></small></td>
+            <td class="tablebox111-show">(<%= @shop.number_of_sheets %>枚分)合計金額&nbsp;<strong><%= number_with_delimiter(@getprice) %>円</strong>&emsp;<small><%= @shop.postage %></small></td>
           </tr>
           <tr>
             <td class="box999-show">メッセージ</td>

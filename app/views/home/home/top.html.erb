@@ -94,11 +94,11 @@
         <td class="tablebox5100under"><small><%= shop.day_date %>&emsp;&emsp;&emsp;<%= shop.time_date %>〜</small></td>
         <td class="tablebox5011"><small><span style="color:#0000CC;"><%= shop.plase.truncate(41) %></span></small></td>
         <td class="tableboxticketunder">
-          <small>[<span style="color:#ff0000;">送料</span>]&nbsp;<%= shop.postage_i18n %>
+          <small>[<span style="color:#ff0000;">送料</span>]&nbsp;<%= shop.postage %>
             &emsp;[<span style="color:#ff0000;">名義</span>]&nbsp;<%= shop.ticket_name %>
             &emsp;[<span style="color:#ff0000;">席種</span>]&nbsp;<%= shop.seat %></small>
-        <p><small>[<span style="color:#ff0000;">発送方法</span>]&nbsp;<%= shop.shipping_method_i18n %>
-            &emsp;[<span style="color:#ff0000;">発送予定時期</span>]&nbsp;<%= shop.docide_promptly_i18n %></small></p>
+        <p><small>[<span style="color:#ff0000;">発送方法</span>]&nbsp;<%= shop.shipping_method %>
+            &emsp;[<span style="color:#ff0000;">発送予定時期</span>]&nbsp;<%= shop.docide_promptly %></small></p>
         <p><small>[<span style="color:#ff0000;">売手側からのチケット情報</span>]</small></p>
         <p><small><%= shop.seat_in_detail.truncate(30) %></small></p></td>
         <td class="tablebox6000"><small><%= shop.number_of_sheets %>枚
