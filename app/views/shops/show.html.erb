@@ -93,7 +93,12 @@
           </tr>
           <tr>
             <td class="box999-show">販売価格/枚数</td>
-            <td class="tablebox111-show"><%= number_with_delimiter(@shop.price) %>円&nbsp;/枚&emsp;&emsp;<%= @shop.number_of_sheets %>枚</td>
+            <td class="tablebox111-show">
+	      <%= number_with_delimiter(@shop.price) %>円&nbsp;/枚&emsp;&emsp;
+	      <%= @shop.number_of_sheets %>枚<br />
+	      締め切り <%= @shop.close_datetime %>
+		(<%= @shop.rest_time_code %>)
+	    </td>
           </tr>
           <tr>
             <td class="box999-show">チケット<br />合計金額</td>
