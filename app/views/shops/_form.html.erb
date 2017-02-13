@@ -1,4 +1,10 @@
 
+<style type="text/css">
+
+td.w100 { width: 100px; }
+
+</style>
+
 <%= form_for(@shop) do |f| %>
 
 <% if @shop.errors.any? %>
@@ -15,124 +21,91 @@
 
 <div class="form-main clearfix">
   <div class="sub-box">チケット情報</div>
-  <div class="field">
-    <%= f.label :airt_name, "アーティスト名" %><br>
-  </div>
-  <div class="text-menu_airt">
-    <br />
-    <!-- 入力フォーム -->
-    <P>出品するチケットのアーティスト名を入力して下さい。</P>
-    <%= f.text_field :airt_name, id: "airt_name",class: "price-text" , placeholder: "アーティスト名を登録する" ,autocomplete: "off"%>
-  </div>
-
-  <div class="field">
-    <%= f.label :live_tour_name, "公演名" %><br>
-  </div>
-  <div class="text-menu_airt">
-    <br />
-    <!-- 入力フォーム -->
-    <P>お手数ですが、出品する公演名を入力してください。</P>
-    <%= f.text_field :live_tour_name, class: "price-text" , placeholder: "公演名を登録する" ,autocomplete: "off"%>
-  </div>
-
-
-  <div class="field">
-    <%= f.label :day_date, "公演日/時間"%><br>
-  </div>
-  <div class="text-menu_airt">
-    <br />
-    <p>出品するチケットの公演日を選択してください。<br />
-      例:&nbsp;2016/11/05 土曜日</p>
-    <%= f.text_field :day_date, class: "price-textday" ,:id => 'datepicker' , placeholder: "日にち選択  ここをクリックして下さい"%>
-    <%= f.text_field :time_date, placeholder: "開始時刻"%>
-  </div>
-
-  <div class="field">
-    <%= f.label :plase ,"会場（場所）" %><br>
-  </div>
-  <div class="text-menu_airt">
-    <br />
-    <!-- 入力フォーム -->
-    <P>出品するチケットに記載されてる場所・会場名を記入して下さい。</P>
-    <br />
-    <%= f.text_field :plase,size: 60 %>
-  </div>
-  <br />
+  <table>
+    <tr>
+      <th><%= f.label :airt_name,"アーティスト名" %></th>
+      <td><%= f.text_field :airt_name, id: "airt_name",class: "price-text" , placeholder: "アーティスト名を登録する" ,autocomplete: "off"%>
+      </td>
+    </tr>
+    <tr>
+      <th> <%= f.label :live_tour_name, "公演名" %></th>
+      <td>
+	<!-- 入力フォーム -->
+	<%= f.text_field :live_tour_name, class: "price-text" , placeholder: "公演名を登録する" ,autocomplete: "off"%>
+      </td>
+    </tr>
+    <tr>
+      <th> <%= f.label :day_date, "公演日"%><br></th>
+      <td> <%= f.text_field :day_date, class: "price-textday" ,:id => 'datepicker' , placeholder: "日にち選択  ここをクリックして下さい"%>
+      </td>
+    </tr>
+    <tr>
+      <th> <%= f.label :day_date, "公演時間"%><br></th>
+      <td> <%= f.text_field :time_date, placeholder: "開始時刻"%></td>
+    </tr>
+    <tr>
+      <th><%= f.label :plase ,"会場（場所）" %></th>
+      <td> <%= f.text_field :plase,size: 60 %></td>
+    </tr>
+  </table>
 
 
   <div class="sub-box">出品情報</div>
-
-
-  <!---後に全てlabelタグ変更する -->
-
-  <div class="text-main">
-    <div class="field">
-      <%= f.label :price, "出品価格" %><br>
-    </div>
-    <div class="text-menu-serach">
-      <br />
-      <%= f.text_field :price, class: "price-text" ,placeholder: "商品販売価格を記入してください", data: { autonumeric: { aSign: '¥ ', mDec: 0 } }%>円
-      <br />
-    </div>
-  </div>
-  <br />
-  <div class="text-main">
-    <div class="field">
-      <%= f.label :number_of_sheets, "チケット枚数" %><br>
-    </div>
-    <div class="text-menu-serach">
-      <br />
-      <%= f.text_field :number_of_sheets, id: "sizeform", class: "price-text" %>
-    </div>
-  </div>
-  <div class="text-main">
-    <div class="field">
-      <%= f.label :seat, "席の種類" %><br>
-    </div>
-    <div class="text-menu-serach">
-      <br />
-      <%= f.text_field :seat,  class: "price-text" , placeholder: "席の種類を入力　例：S席"%>
-    </div>
-  </div>
-
-  <div class="text-main">
-    <div class="field">
-      <%= f.label :seat_in_detail , "席の詳細内容" %><br>
-    </div>
-    <div class="text-menu">
-      <%= f.text_area :seat_in_detail ,placeholder: "" %>
-    </div>
-  </div>
-  <div class="text-main">
-    <div class="field">
-      <%= f.label :shipping_method, "発送方法" %><br>
-    </div>
-    <div class="text-menu-serach">
-      <br />
-      <ul>
-	<li><%= f.radio_button :shipping_method, :post %><div class="absolute">郵送</div><small><p>追跡可能な方法のみ可</p></small></li>
-	<li><%= f.radio_button :shipping_method, :hand_sent %><div class="absolute">手渡し</div><small><p>受渡し方法の記入をお願いします</p></small></li>
-      </ul>
-    </div>
-  </div>
-
-
-  <div class="text-main">
-    <div class="field">
-      <%= f.label :postage, "送料" %><br>
-    </div>
-    <div class="text-menu-serach">
-      <br />
-      <ul>
-	<li><%= f.radio_button :postage, :postage_in %><div class="absolute">送料込みorなし</div><small><p>自己負担・手渡し</p></small></li>
-	<li><%= f.radio_button :postage, :postage_out %><div class="absolute">送料別（¥910）</div><small><p>相手負担</p></small></li>
-      </ul>
-    </div>
-    <p>&emsp;&emsp;送料は一律910円のご負担です。</p>
-    <p>&emsp;&emsp;手渡しの方は「なし」になります。</p>
-  </div>
-  <br />
-  <br />
+  <table>
+    <tr>
+      <th class="w100"> <%= f.label :close_datetime, "締め切り" %> </th>
+      <td>
+	<%= f.text_field :close_datetime, class: "price-text", placeholder: "月日",
+	    class: "datetimepicker" %>
+      </td>
+    </tr>
+    <tr>
+      <th class="w100"> <%= f.label :price, "出品価格" %> </th>
+      <td>
+	<%= f.text_field :price, class: "price-text" ,placeholder: "商品販売価格を記入してください", data: { autonumeric: { aSign: '¥ ', mDec: 0 } }%>円
+      </td>
+    </tr>
+    <tr>
+      <th> <%= f.label :number_of_sheets, "チケット枚数" %> </th>
+      <td> 
+	<%= f.text_field :number_of_sheets, id: "sizeform", class: "price-text" %>
+      </td>
+    </tr>
+    <tr>
+      <th> <%= f.label :seat, "席の種類" %> </th>
+      <td> 
+	<%= f.text_field :seat,  class: "price-text" , placeholder: "席の種類を入力　例：S席"%>
+      </td>
+    </tr>
+    <tr>
+      <th>  <%= f.label :seat_in_detail , "席の詳細内容" %> </th>
+      <td> <%= f.text_area :seat_in_detail ,cols: 10 %> </td>
+    </tr>
+    <tr>
+      <th> <%= f.label :shipping_method, "発送方法" %> </th>
+      <td> 
+	<div class="text-menu-serach">
+	  <ul>
+	    <li><%= f.radio_button :shipping_method, :post %><div class="absolute">郵送</div><small><p>追跡可能な方法のみ可</p></small></li>
+	    <li><%= f.radio_button :shipping_method, :hand_sent %><div class="absolute">手渡し</div><small><p>受渡し方法の記入をお願いします</p></small></li>
+	  </ul>
+	</div>
+      </td>
+    </tr>
+    <tr>
+      <th> <%= f.label :postage, "送料" %> </th>
+      <td> 
+	<div class="text-menu-serach">
+	  <ul>
+	    <li><%= f.radio_button :postage, :postage_in %><div class="absolute">送料込みorなし</div><small><p>自己負担・手渡し</p></small></li>
+	    <li><%= f.radio_button :postage, :postage_out %><div class="absolute">送料別（¥910）</div><small><p>相手負担</p></small></li>
+	  </ul>
+	  <p>&emsp;&emsp;送料は一律910円のご負担です。</p>
+	  <p>&emsp;&emsp;手渡しの方は「なし」になります。</p>
+	</div>
+      </td>
+    </tr>
+  </table>
 
 
   <div class="sub-box">商品情報</div>

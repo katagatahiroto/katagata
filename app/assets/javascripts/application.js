@@ -20,6 +20,12 @@
 
 // $(document).trigger('refresh_autonumeric')
 
+$('.datetimepicker').datetimepicker({
+  format: 'Y-m-d H:i',
+  inline: true,
+  lang: 'ja'
+});
+
 $(document).on('click', '.favorite-unmark', function(){
     fid = "#favorites-"+this.id;
     img = "img#"+this.id;

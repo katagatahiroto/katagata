@@ -6,7 +6,7 @@ class Shop < ActiveRecord::Base
   has_many :favorites, dependent: :destroy #User:Favorite => 1:多 追加
   # has_many :users, through: :favorites #追加
 
-
+  attr_accessor :close_date, :close_time
 
   enum list_price: {men: 10 ,women: 20 ,others: 30}
   enum shipping_method: {post: 30 ,hand_sent: 60}
