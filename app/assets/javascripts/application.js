@@ -12,7 +12,7 @@
 
 //= require jquery
 //= require jquery_ujs
-//= require jquery.ui.datepicker-ja
+// jquery.ui.datepicker-ja
 //= require jquery-ui/autocomplete
 //= require autonumeric
 //= require favorites
@@ -20,11 +20,11 @@
 
 // $(document).trigger('refresh_autonumeric')
 
-$('.datetimepicker').datetimepicker({
-  format: 'Y-m-d H:i',
-  inline: true,
-  lang: 'ja'
-});
+// $('.datetimepicker').datetimepicker({
+//   format: 'Y-m-d H:i',
+//   inline: true,
+//   lang: 'ja'
+// });
 
 $(document).on('click', '.favorite-unmark', function(){
     fid = "#favorites-"+this.id;
