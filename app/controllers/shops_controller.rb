@@ -41,9 +41,12 @@ class ShopsController < ApplicationController
   # POST /shops
   # POST /shops.json
   def create
-    @shop = current_user.shops.build(shop_params)
-    if
-    @shop.save
+    args = shop_params
+    args[:day_date] = args[:day_date].gsub(/[年月]/,"/")
+    args[:close_datetime] =
+      args[:close_datetime].gsub(/[年月]/,"/").sub(/時/,":").sub(/日/," ")
+    @shop = current_user.shops.build(args)
+    if @shop.save
     redirect_to @shop, notice: "出品されました"
     else
       @shops = Shop.all.order(created_at: :desc)
@@ -53,9 +56,15 @@ class ShopsController < ApplicationController
   end
 
   def update
-    if @shop.user_id == current_user.id
-       @shop.update(shop_params)
-       redirect_to @shop, notice: '出品内容を変更しました。'
+    @shop = Shop.find(params[:id])
+    args = shop_params
+    args[:day_date] = args[:day_date].gsub(/[年月]/,"/")
+    args[:close_datetime] =
+      args[:close_datetime].gsub(/[年月]/,"/").sub(/時/,":").sub(/日/," ")
+
+    
+    if @shop.user_id == current_user.id && @shop.update(args)
+        redirect_to @shop, notice: '出品内容を変更しました。'
     else
       render :edit
     end
@@ -95,7 +104,14 @@ class ShopsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def shop_params
-      params.require(:shop).permit(:live_tour_name, :airt_name, :plase, :day_date, :colse_date, :price, :list_price, :number_of_sheets, :serial_number, :shipping_method, :ticketing_state, :postage, :nsk, :ticket_name, :ticket_name_yes_no, :seat_in_detail, :docide_promptly, :othertext, :seat, :image, :image_cache, :remove_image, :time_date, :close_datetime)
+      params.require(:shop).
+        permit(:live_tour_name, :airt_name, :plase,
+               :day_date, :time_date, :close_datetime,
+               :price, :list_price, :number_of_sheets, :serial_number,
+               :shipping_method, :ticketing_state, :postage, :nsk,
+               :ticket_name, :ticket_name_yes_no, :seat_in_detail,
+               :docide_promptly, :othertext, :seat, :image,
+               :image_cache, :remoe_image)
     end
 
   def getprice
