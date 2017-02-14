@@ -30,7 +30,11 @@
 $(function() {
     $(".zoom").elevateZoom();
 });
-
+$(document).on('click', '.elevatezoom-gallery', function(){
+    document.getElementById("shop-image").src = this["src"];
+    document.getElementById("shop-image").dataset.zoomImage = this.dataset.zoomImage;
+}
+	      )
 $(document).on('click', '.favorite-unmark', function(){
     fid = "#favorites-"+this.id;
     img = "img#"+this.id;

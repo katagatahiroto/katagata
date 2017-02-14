@@ -68,10 +68,21 @@
             <td class="box999-show">チケット画像</td>
             <td class="tablebox111-show">
             <div align="center">
-              <% if @shop.image? %>
-              <%= image_tag @shop.image.url(:thumb),class:"zoom",
-		  "data-zoom-image" => @shop.image.url %>
-                 <% else %>
+              <% unless @shop.images.empty? %>
+                <%= image_tag @shop.images.first.image.url(:thumb),class:"zoom",
+		    "data-zoom-image" => @shop.images.first.image.url,
+		    id: "shop-image"
+		%>
+	        <% if @shop.images.size > 1 %>
+		<br />
+		<% @shop.images.each do |image| %>
+		<%= image_tag image.image.url(:thumb),width: "80",
+		    "data-zoom-image" => image.image.url,
+		    class: "elevatezoom-gallery"
+		%>
+		<% end %>
+	        <% end %>
+              <% else %>
                 <%= image_tag "Noimage.png", :size => "200x150" ,:class => "noimage" %>
               <% end %>
             </div>
