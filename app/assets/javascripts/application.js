@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 // jquery.ui.datepicker-ja
+//= require jquery.elevatezoom.js
 //= require jquery-ui/autocomplete
 //= require autonumeric
 //= require favorites
@@ -25,6 +26,10 @@
 //   inline: true,
 //   lang: 'ja'
 // });
+
+$(function() {
+    $(".zoom").elevateZoom();
+});
 
 $(document).on('click', '.favorite-unmark', function(){
     fid = "#favorites-"+this.id;
