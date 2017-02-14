@@ -55,7 +55,9 @@
 	      <%= shop.time_date_hm %>〜</small>
 	  </td>
 	  <td class="tablebox5011">
-	    <small><span style="color:#0000CC;"><%= shop.plase.truncate(41) %></span></small>
+	    <small><span style="color:#0000CC;">
+		<%= shop.plase.truncate(41) %>
+	    </span></small>
 	  </td>
 	  <td class="tableboxticketunder">
 	    <small>[<span style="color:#ff0000;">送料</span>]&nbsp;<%= shop.postage_i18n %>
