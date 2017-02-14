@@ -55,7 +55,7 @@ td.w100 { width: 100px; }
     <tr>
       <th class="w100"> <%= f.label :close_datetime, "締め切り" %> </th>
       <td>
-	<%= f.text_field :close_datetime, class: "price-text", placeholder: "月日",
+	<%= f.text_field :close_datetime,placeholder: "月日",
 	    class: "datetimepicker" %>
       </td>
     </tr>
@@ -137,8 +137,10 @@ td.w100 { width: 100px; }
       </div>
       <% end %>
       <p>&emsp;<%= f.label :出品予定の商品画像（任意） %>・<span style="color:#ff0000;">著作権のある写真の無断使用は厳禁です。</span></p>
-      &emsp;<%= f.file_field :image %>
-      <%= f.hidden_field :image_cache %>
+      &emsp;
+      <%= f.fields_for :images do |image| %>
+	 <%= image.file_field :image %>
+	 <% end %>
       <% if @shop.persisted? && @shop.image? %>
       <label>
         <p>&emsp;<%= f.check_box :remove_image ,:class => "absolute-chex"%>&emsp;&emsp;削除する</p>

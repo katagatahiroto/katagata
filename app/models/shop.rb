@@ -2,8 +2,12 @@
 class Shop < ActiveRecord::Base
   belongs_to :user
   has_many :questions              #commentsテーブルとのアソシエーション
-  mount_uploader :image, ImageUploader
+  #mount_uploader :image, ImageUploader
   has_many :favorites, dependent: :destroy #User:Favorite => 1:多 追加
+  
+  has_many :images, dependent: :destroy
+  accepts_nested_attributes_for :images, allow_destroy: true
+  
   # has_many :users, through: :favorites #追加
 
   attr_accessor :close_date, :close_time

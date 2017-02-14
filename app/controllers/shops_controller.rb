@@ -32,10 +32,13 @@ class ShopsController < ApplicationController
   # GET /shops/new
   def new
     @shop = Shop.new
+    5.times {@shop.images.build}
   end
 
   # GET /shops/1/edit
   def edit
+    @shop = Shop.find(params[:id])
+    @shop.images.build
   end
 
   # POST /shops
@@ -50,6 +53,7 @@ class ShopsController < ApplicationController
     redirect_to @shop, notice: "出品されました"
     else
       @shops = Shop.all.order(created_at: :desc)
+    5.times {@shop.images.build}
       render :edit
     end
 
@@ -111,7 +115,9 @@ class ShopsController < ApplicationController
                :shipping_method, :ticketing_state, :postage, :nsk,
                :ticket_name, :ticket_name_yes_no, :seat_in_detail,
                :docide_promptly, :othertext, :seat, :image,
-               :image_cache, :remoe_image)
+               :image_cache, :remoe_image,
+               images_attributes: [:image]
+              )
     end
 
   def getprice
