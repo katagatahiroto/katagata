@@ -1,3 +1,4 @@
+# coding: utf-8
 class ShopsController < ApplicationController
   before_action :set_shop, only: [:show, :edit, :update, :destroy]
   before_action :getprice, only: [:show,]
@@ -94,7 +95,7 @@ class ShopsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def shop_params
-      params.require(:shop).permit(:live_tour_name, :airt_name, :plase, :day_date, :colse_date, :price, :list_price, :number_of_sheets, :serial_number, :shipping_method, :ticketing_state, :postage, :nsk, :ticket_name, :ticket_name_yes_no, :seat_in_detail, :docide_promptly, :othertext, :seat, :image, :image_cache, :remove_image, :colse_day)
+      params.require(:shop).permit(:live_tour_name, :airt_name, :plase, :day_date, :colse_date, :price, :list_price, :number_of_sheets, :serial_number, :shipping_method, :ticketing_state, :postage, :nsk, :ticket_name, :ticket_name_yes_no, :seat_in_detail, :docide_promptly, :othertext, :seat, :image, :image_cache, :remove_image, :time_date, :close_datetime)
     end
 
   def getprice
