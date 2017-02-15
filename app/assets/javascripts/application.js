@@ -14,7 +14,7 @@
 //= require jquery_ujs
 // jquery.ui.datepicker-ja
 //= require jquery.elevatezoom.js
-//= require jquery-ui/autocomplete
+// jquery-ui/autocomplete
 //= require autonumeric
 //= require favorites
 //= require_tree .
