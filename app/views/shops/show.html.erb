@@ -67,27 +67,29 @@
           <tr>
             <td class="box999-show">チケット画像</td>
             <td class="tablebox111-show">
-            <div align="center">
-              <% unless @shop.images.empty? %>
-	      <div id="zoom-image">
-                <%= image_tag @shop.images.first.image.url(:thumb),class:"zoom",
-		    "data-zoom-image" => @shop.images.first.image.url,
-		    id: "shop-image"
-		%>
+	      
+	      <div class="zoom-wrapper">
+		<div class="zoom-left">
+                 <% unless @shop.images.empty? %>
+		  <img style="" id="img_01" src="<%= @shop.images.first.image.url(:thumb) %>" 
+		       data-zoom-image="<%= @shop.images.first.image.url %>"
+		       width="400"  />
+		  <div id="gal1" style="width: 400px float:left; ">
+
+		    <% if @shop.images.size > 1 %>
+		    <% @shop.images.each do |image| %>
+		    
+		    <a href="#" class="elevatezoom-gallery" data-update="" data-image="<%= image.image.url(:thumb) %>" 
+			data-zoom-image="<%= image.image.url %>">
+		      <img id="img_01" src="<%= image.image.url(:thumb) %>" width="90"  /></a>
+                    
+                  <% end %>
+                  <% end %>
+    
+		  </div>
+                  <% end %>
+		  </div>
 		</div>
-	        <% if @shop.images.size > 1 %>
-		<br />
-		<% @shop.images.each do |image| %>
-		<%= image_tag image.image.url(:thumb),width: "80",
-		    "data-zoom-image" => image.image.url,
-		    class: "elevatezoom-gallery"
-		%>
-		<% end %>
-	        <% end %>
-              <% else %>
-                <%= image_tag "Noimage.png", :size => "200x150" ,:class => "noimage" %>
-              <% end %>
-            </div>
             </td>
           </tr>
         </table>
@@ -207,3 +209,59 @@
 
 </div>
   </div>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+     $("#select").change(function(e){
+   var currentValue = $("#select").val();
+	// Using default configuration
+ 
+ 
+ 	 var ez =   $('#img_01').data('elevateZoom');	  
+   
+	ez.swaptheimage(smallImage, largeImage); 
+     
+    });
+	
+	// Using custom configuration
+  $("#img_01").elevateZoom({
+    zoomWindowFadeIn : 500,
+    zoomLensFadeIn: 500,
+		gallery				: "gal1",
+		imageCrossfade: true,
+    zoomWindowWidth:411,
+    zoomWindowHeight:274,
+    zoomWindowOffetx: 10,
+    scrollZoom: true, 
+    cursor:"pointer"			
+	});
+  	
+ 
+    $("#img_01").bind("click", function(e) {  
+	 var ez =   $('#img_01').data('elevateZoom');	
+	$.fancybox(ez.getGalleryList());
+            return false;
+    });
+	$("#img_02").elevateZoom({
+		gallery				: "gal2",
+    tint: true,
+    cursor:"crosshair",	
+    windowHeight:600		
+	});
+    	      $("#img_03").elevateZoom({
+    	  		zoomType				: "lens",
+    	  		lensShape : "round",
+            lensSize    : 200
+    	  		});
+  	  	
+ 
+    $("#img_02").bind("click", function(e) {  
+	 var ez =   $('#img_02').data('elevateZoom');	
+	$.fancybox(ez.getGalleryList());
+            return false;
+    });    
+    
+    
+     
+    });
+  </script>
