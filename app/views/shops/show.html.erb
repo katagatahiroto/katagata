@@ -69,10 +69,12 @@
             <td class="tablebox111-show">
             <div align="center">
               <% unless @shop.images.empty? %>
+	      <div id="zoom-image">
                 <%= image_tag @shop.images.first.image.url(:thumb),class:"zoom",
 		    "data-zoom-image" => @shop.images.first.image.url,
 		    id: "shop-image"
 		%>
+		</div>
 	        <% if @shop.images.size > 1 %>
 		<br />
 		<% @shop.images.each do |image| %>

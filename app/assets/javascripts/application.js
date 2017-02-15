@@ -30,7 +30,12 @@
 $(function() {
     $(".zoom").elevateZoom();
 });
+
 $(document).on('click', '.elevatezoom-gallery', function(){
+    //newimg = "<img class='zoom' data-zoom-image='" +this.dataset.zoomImage + "' src='" +this["src"] + "' />" ;
+    //alert(newimg);
+    //document.getElementById("zoom-image").innerHTML=newimg;
+	//.html(newimg) ;
     document.getElementById("shop-image").src = this["src"];
     document.getElementById("shop-image").dataset.zoomImage = this.dataset.zoomImage;
 }
