@@ -3,4 +3,4 @@
 # To ban all spiders from the entire site uncomment the next two lines:
 
 User-agent: *
-Sitemap: http://www.ticket-ring.net/sitemap.xml.gz
+Sitemap: http://www.otoku-na.com/sitemap.xml.gz
