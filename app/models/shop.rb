@@ -1,11 +1,16 @@
+# coding: utf-8
 class Shop < ActiveRecord::Base
   belongs_to :user
   has_many :questions              #commentsテーブルとのアソシエーション
-  mount_uploader :image, ImageUploader
+  #mount_uploader :image, ImageUploader
   has_many :favorites, dependent: :destroy #User:Favorite => 1:多 追加
+  
+  has_many :images, dependent: :destroy
+  accepts_nested_attributes_for :images, allow_destroy: true
+  
   # has_many :users, through: :favorites #追加
 
-
+  attr_accessor :close_date, :close_time
 
   enum list_price: {men: 10 ,women: 20 ,others: 30}
   enum shipping_method: {post: 30 ,hand_sent: 60}
@@ -23,18 +28,41 @@ class Shop < ActiveRecord::Base
   validates :airt_name, presence: true
   validates :live_tour_name, presence: true
   validates :day_date, presence: true
+  validates :close_datetime, presence: true
   validates :plase, presence: true
-  validates :list_price, presence: true
+  #validates :list_price, presence: true
   validates :number_of_sheets, presence: true
   validates :seat, presence: true
   validates :shipping_method, presence: true
-  validates :ticketing_state, presence: true
+  #validates :ticketing_state, presence: true
   validates :postage, presence: true
-  validates :nsk, presence: true
-  validates :ticket_name, presence: true
-  validates :ticket_name_yes_no, presence: true
+  #validates :nsk, presence: true
+  #validates :ticket_name, presence: true
+  #validates :ticket_name_yes_no, presence: true
   validates :docide_promptly, presence: true
-  validates :othertext, presence: true
+  #validates :othertext, presence: true
 
+  # before_save :set_close_datetime
+
+  # def set_close_datetime
+  #   self.close_datetime ||= day_date
+  # end
+  def time_date_hm ; time_date && time_date.strftime("%H:%M") ; end
+  
+  def rest_time
+    close_datetime ? (close_datetime - Time.now) : nil
+  end
+  def rest_time_code(sec = rest_time)
+    return "" unless sec
+    if    sec <= 0       ; "終了"
+    elsif sec >  90.day  ; "3ヶ月"
+    elsif sec >  59.day  ; "2ヶ月"
+    elsif sec >  27.day  ; "1ヶ月"
+    elsif sec >=  7.day  ; "%d週間"%(sec/7.day)
+    elsif sec >= 24.hour ; "%d日"%(sec/24.hour)
+    elsif sec >= 60.minute ; "%d時間"%(sec/60.minute)
+    else       ;     "%d分"%( ten_min = (sec/600).to_i * 10)
+    end
+  end
 end
 # ,:exclusion => { :in => :post },:exclusion => { :in => :store_ticket }
