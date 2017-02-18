@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170112003019) do
+ActiveRecord::Schema.define(version: 20170214074544) do
 
   create_table "favorites", force: :cascade do |t|
     t.integer  "user_id",    limit: 4, null: false
@@ -23,6 +23,11 @@ ActiveRecord::Schema.define(version: 20170112003019) do
   add_index "favorites", ["shop_id"], name: "index_favorites_on_shop_id", using: :btree
   add_index "favorites", ["user_id"], name: "index_favorites_on_user_id", using: :btree
 
+  create_table "images", force: :cascade do |t|
+    t.string  "image",   limit: 255
+    t.integer "shop_id", limit: 4
+  end
+
   create_table "questions", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
     t.text     "text",       limit: 65535
@@ -32,12 +37,12 @@ ActiveRecord::Schema.define(version: 20170112003019) do
   end
 
   create_table "shops", force: :cascade do |t|
-    t.string   "live_tour_name",     limit: 255
-    t.string   "airt_name",          limit: 255
-    t.string   "time_date",          limit: 255
-    t.string   "day_date",           limit: 255
-    t.string   "close_date",         limit: 255
-    t.string   "plase",              limit: 255
+    t.string   "live_tour_name",     limit: 255,   default: ""
+    t.string   "airt_name",          limit: 255,   default: ""
+    t.time     "time_date"
+    t.date     "day_date"
+    t.datetime "close_datetime"
+    t.string   "plase",              limit: 255,   default: ""
     t.integer  "user_id",            limit: 4
     t.string   "price",              limit: 255
     t.integer  "list_price",         limit: 4
@@ -50,7 +55,7 @@ ActiveRecord::Schema.define(version: 20170112003019) do
     t.integer  "nsk",                limit: 4
     t.string   "ticket_name",        limit: 11
     t.integer  "ticket_name_yes_no", limit: 4
-    t.text     "seat_in_detail",     limit: 65535
+    t.string   "seat_in_detail",     limit: 255,   default: ""
     t.integer  "docide_promptly",    limit: 4
     t.text     "othertext",          limit: 65535
     t.datetime "created_at"

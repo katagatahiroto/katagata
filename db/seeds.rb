@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Dir.glob("#{Rails.root}/db/seeds/**/*.rb").each do |file|
+  require file if FileTest.file?(file)
+end
+
+
