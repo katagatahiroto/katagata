@@ -67,13 +67,29 @@
           <tr>
             <td class="box999-show">チケット画像</td>
             <td class="tablebox111-show">
-            <div align="center">
-              <% if @shop.image? %>
-                <%= image_tag @shop.image.url(:thumb) %>
-                 <% else %>
-                <%= image_tag "Noimage.png", :size => "200x150" ,:class => "noimage" %>
-              <% end %>
-            </div>
+	      
+	      <div class="zoom-wrapper">
+		<div class="zoom-left">
+                 <% unless @shop.images.empty? %>
+		  <img style="" id="img_01" src="<%= @shop.images.first.image.url(:thumb) %>" 
+		       data-zoom-image="<%= @shop.images.first.image.url %>"
+		       width="400"  />
+		  <div id="gal1" style="width: 400px float:left; ">
+
+		    <% if @shop.images.size > 1 %>
+		    <% @shop.images.each do |image| %>
+		    
+		    <a href="#" class="elevatezoom-gallery" data-update="" data-image="<%= image.image.url(:thumb) %>" 
+			data-zoom-image="<%= image.image.url %>">
+		      <img id="img_01" src="<%= image.image.url(:thumb) %>" width="90"  /></a>
+                    
+                  <% end %>
+                  <% end %>
+    
+		  </div>
+                  <% end %>
+		  </div>
+		</div>
             </td>
           </tr>
         </table>
@@ -93,7 +109,12 @@
           </tr>
           <tr>
             <td class="box999-show">販売価格/枚数</td>
-            <td class="tablebox111-show"><%= number_with_delimiter(@shop.price) %>円&nbsp;/枚&emsp;&emsp;<%= @shop.number_of_sheets %>枚</td>
+            <td class="tablebox111-show">
+	      <%= number_with_delimiter(@shop.price) %>円&nbsp;/枚&emsp;&emsp;
+	      <%= @shop.number_of_sheets %>枚<br />
+	      締め切り <%= @shop.close_datetime %>
+		(<%= @shop.rest_time_code %>)
+	    </td>
           </tr>
           <tr>
             <td class="box999-show">チケット<br />合計金額</td>
@@ -107,7 +128,7 @@
             <td class="box999-show"><small>検討リスト追加<br />検討者数</small></td>
             <td class="tablebox111-show">
                <div class="btn-show">
-               <span id="favorite-mark"><%= render 'favorites/favorite_mark', shop: @shop %></span>
+               <span id="favorite-mark"><%= render 'favorite_mark', shop: @shop %></span>
                <span id="favorite-count"><%= render 'favorites/favorite_count', shop: @shop, favorites: @shop.favorites %></span>
              </div></td>
           </tr>
@@ -188,3 +209,59 @@
 
 </div>
   </div>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+     $("#select").change(function(e){
+   var currentValue = $("#select").val();
+	// Using default configuration
+ 
+ 
+ 	 var ez =   $('#img_01').data('elevateZoom');	  
+   
+	ez.swaptheimage(smallImage, largeImage); 
+     
+    });
+	
+	// Using custom configuration
+  $("#img_01").elevateZoom({
+    zoomWindowFadeIn : 500,
+    zoomLensFadeIn: 500,
+		gallery				: "gal1",
+		imageCrossfade: true,
+    zoomWindowWidth:411,
+    zoomWindowHeight:274,
+    zoomWindowOffetx: 10,
+    scrollZoom: true, 
+    cursor:"pointer"			
+	});
+  	
+ 
+    $("#img_01").bind("click", function(e) {  
+	 var ez =   $('#img_01').data('elevateZoom');	
+	$.fancybox(ez.getGalleryList());
+            return false;
+    });
+	$("#img_02").elevateZoom({
+		gallery				: "gal2",
+    tint: true,
+    cursor:"crosshair",	
+    windowHeight:600		
+	});
+    	      $("#img_03").elevateZoom({
+    	  		zoomType				: "lens",
+    	  		lensShape : "round",
+            lensSize    : 200
+    	  		});
+  	  	
+ 
+    $("#img_02").bind("click", function(e) {  
+	 var ez =   $('#img_02').data('elevateZoom');	
+	$.fancybox(ez.getGalleryList());
+            return false;
+    });    
+    
+    
+     
+    });
+  </script>
