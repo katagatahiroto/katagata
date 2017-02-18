@@ -1,0 +1,18 @@
+<% if current_user %>
+  <% if shop.user_id == current_user.id %>
+     <%= image_tag("favorite_unmark.png") %>
+  <% elsif current_user.favorites.exists?(shop_id: shop.id) %>
+      <div>
+      <%= image_tag("favorite_mark.png",class: "favorite-unmark",id: shop.id) %>
+      <span class="unmark_popup">検討リストから削除する</span>
+      </div>
+  <% else %>
+      <div>
+      <%= image_tag("favorite_unmark.png",class: "favorite-mark",id: shop.id) %>
+      <span class="unmark_popup">検討リストに追加する</span>
+      </div>
+  <% end %>
+<% else %>
+  <%= image_tag("favorite_unmark.png") %>
+<% end %>
+
