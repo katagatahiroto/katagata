@@ -1,5 +1,5 @@
 # Set the host name for URL creation
-SitemapGenerator::Sitemap.default_host = "http://www.ticket-ring.net"
+SitemapGenerator::Sitemap.default_host = "http://www.otoku-na.com"
 SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
 SitemapGenerator::Sitemap.create_index = :auto
 

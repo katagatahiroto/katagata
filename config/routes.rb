@@ -1,3 +1,4 @@
+# coding: utf-8
 Rails.application.routes.draw do
 # お問い合わせフォーム
   get 'inquiry' => 'inquiry#index'              # 入力画面
@@ -16,9 +17,10 @@ Rails.application.routes.draw do
   root 'home#top'
   get '/about' => 'home#about'
 
-  post   '/favorite/:shop_id' => 'favorites#mark', as: 'favorites_mark'     # お気に入りの追加
-  delete '/favorite/:shop_id' => 'favorites#unmark', as: 'favorites_unmark' # お気に入りの解除
-
+  get   '/shops/mark/:shop_id' => 'shops#mark', as: 'favorites_mark'     # お気に入りの追加
+  get   '/shops/unmark/:shop_id' => 'shops#unmark', as: 'favorites_unmark' # お気に入りの解除
+  #resources :favorite
+  
   get 'home/puraibashi'
   get 'home/torihikihou'
   get 'home/kiyaku'
