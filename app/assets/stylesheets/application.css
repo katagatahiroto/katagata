@@ -1992,12 +1992,12 @@ background-color: #F5FFFA;
 /* お気に入り */
 #favorite-mark {
   position: relative;
-  top: 15px;
+  top: 10px;
 }
 
 #favorite-count {
   position: relative;
-  left: -4px;
+  bottom: 5px;
 }
 /* ポップアップメッセージ */
 #favorite-mark .unmark_popup {
@@ -2012,8 +2012,8 @@ background-color: #F5FFFA;
   position: absolute;
   text-align: center;
   width: 14em;
-  bottom: 35px;
-  right: 2px;
+  bottom: 40px;
+  left: -10px;
   background: none repeat scroll 0 0 #FFEDBE;
   border: 1px solid #FFD88C;
   padding: 0.5em;
