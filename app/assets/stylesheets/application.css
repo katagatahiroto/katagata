@@ -2027,3 +2027,9 @@ background-color: #F5FFFA;
   height: 30px;
   background-color: #C0C0C0;
 }
+
+.fb-like{
+  position: relative;
+  bottom: 30px;
+  left: 616px;
+}
