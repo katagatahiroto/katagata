@@ -115,7 +115,7 @@
              <br />
              下記の「お問い合せ」より新しく掲載を希望するブランド名をご連絡ください。<br />
               内容を確認の上、掲載判断させて頂きますのでご了承ください。<br />
-              <strong><%= link_to "お問い合わせ(Email 24時間受付)", inquiry_path %></strong>
+              <strong><%= link_to "お問い合わせ(Email 24時間受付)", inquiry_path, :class=>"black-btn" %></strong>
               通常は48時間以内に反映されます。</p>
             </article>
       </div>
@@ -193,7 +193,7 @@
     <article>
       <p><br />
     手数料については下記のリンクから詳細をご覧ください。<br />
-    詳しくは<strong><%= link_to "こちらへ" ,home_kakaku_path %></strong>
+    詳しくは<strong><%= link_to "こちらへ" ,home_kakaku_path, :class=>"black-btn" %></strong>
     </p>
     </article>
   </div>
@@ -207,7 +207,7 @@
     買い手が負担する手数料は以下のとおりです。<br />
     1.決済システム料<br />
     2.取引手数料<br />
-    詳しくは<strong><%= link_to "こちらへ" ,home_kakaku_path %></strong>
+    詳しくは<strong><%= link_to "こちらへ" ,home_kakaku_path, :class=>"black-btn" %></strong>
     </p>
     </article>
   </div>
@@ -270,7 +270,7 @@
     <article><br />
       <p>注文した商品が届くまで、お支払いいただいた商品代金は、弊社で一旦お預かりし<br />
         万が一、商品が届かなかった場合には、商品代金を全額ご返金するような決済システムです
-        詳しくは<strong><%= link_to "こちらへ" ,home_esukuro_path %></strong></p>
+        詳しくは<strong><%= link_to "こちらへ" ,home_esukuro_path, :class=>"black-btn" %></strong></p>
     </article>
   </div>
 
@@ -281,7 +281,7 @@
       <p><購入した商品が偽造・盗品の場合、商品代金を補償いたします。<br />
       これまで高額なブランド品の取引に不安を感じている方も万が一の場合に安心です。
       幾つか条件が御座いますので下記のリンクから参照して下さい。<br />
-      詳しくは<strong><%= link_to "こちらから参照" ,home_esukuro_path %></strong></p>
+      詳しくは<strong><%= link_to "こちらから参照" ,home_esukuro_path, :class=>"black-btn" %></strong></p>
     </article>
   </div>
 </section>
@@ -447,7 +447,7 @@
     <label for="ac-35"><%= image_tag("e_title_123.png", :size => "10x10", :align=>"center", :class=>"mini-icon-about2") %>プライバシーポリシー</label>
     <article>
       <p><br />下記から詳細をご覧下さい。<br>
-        <strong><%= link_to 'プライバシーポリシー' , home_puraibashi_path %></strong>について</p>
+        <strong><%= link_to 'プライバシーポリシー' , home_puraibashi_path, :class=>"black-btn" %></strong>について</p>
     </article>
   </div>
 
@@ -456,7 +456,7 @@
     <label for="ac-1010"><%= image_tag("e_title_123.png", :size => "10x10", :align=>"center", :class=>"mini-icon-about2") %>特定商取引法の表示</label>
     <article>
       <p><br>下記から詳細をご覧下さい。<br>
-        <strong><%= link_to '特定商取引法に基づく表示', home_torihikihou_path %></strong>について</p>
+        <strong><%= link_to '特定商取引法に基づく表示', home_torihikihou_path, :class=>"black-btn" %></strong>について</p>
     </article>
   </div>
   </section>
