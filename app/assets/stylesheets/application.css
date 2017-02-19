@@ -120,7 +120,7 @@ input.time_datebox{
 .icon-mini3{
   position: relative;
   top: 50px;
-  left: -5px;
+  left: -460px;
 }
 
 
@@ -129,7 +129,8 @@ input.time_datebox{
 .loopslider-underber{
   text-align: center;
   border-top: 5px solid #ffffff;
-  padding-top: 5px;
+  padding-top: 10px;
+  width: 1070px;
 }
 
 .ticket-navi-paymentimage{
@@ -185,7 +186,7 @@ input.time_datebox{
 .top-contents-main-nabvi-tag{
   position: relative;
   top: -100px;
-  left: -80px;
+  left: -120px;
 }
 
 
