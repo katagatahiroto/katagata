@@ -2010,7 +2010,8 @@ background-color: #F5FFFA;
 #favorite-mark div:hover .unmark_popup {
   display: block;
   position: absolute;
-  width: 12em;
+  text-align: center;
+  width: 14em;
   bottom: 35px;
   right: 2px;
   background: none repeat scroll 0 0 #FFEDBE;
