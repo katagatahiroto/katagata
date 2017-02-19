@@ -840,7 +840,7 @@ header{
 .seach_navi{
   width: 30px;
   height: 80px;
-  padding-top: 95px;
+  padding-top: 50px;
   float: left;
 }
 
@@ -859,8 +859,6 @@ header{
 .seach_navi_right{
   width: 630px;
   margin-left: 350px;
-  height: 60px;
-  padding-top: 30px;
   float: left;
 }
 
@@ -898,7 +896,7 @@ margin-top: 20px;
 .header-under-box{
   width: 1024px;
   margin: 0 auto;
-  height: 160px;
+  height: 130px;
 }
 
 /* ーーーここまででheader終了ーーーーーーーー */
