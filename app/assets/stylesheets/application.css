@@ -861,8 +861,9 @@ header{
 }
 
 .sortbox{
-  width: 1000px;
-  height: 10px;
+  height: 25px;
+  width: 290px;
+  background-color: #FF0066;
 }
 
 .sortbox ul{
@@ -883,7 +884,7 @@ margin-top: 20px;
 
 .seach_day_date{
   padding-left: 300px;
-  margin-top: -20px;
+  margin-top: -33px;
 }
 
 .navbar{
