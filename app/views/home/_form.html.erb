@@ -61,9 +61,9 @@
   </tbody>
     </table>
     <br />
-
-<%= paginate @shops  %>
-
+  <div class="paginate">
+     <%= paginate @shops  %>
+  </div>
       <br>
        <div class="bulebox">
        <% if user_signed_in? %>
