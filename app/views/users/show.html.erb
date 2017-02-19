@@ -60,9 +60,9 @@
   </tbody>
     </table>
     <br />
-
+<div class="paginate">
     <%= paginate(@shops) %>
-
+</div>
     <br>
 
 
@@ -116,14 +116,16 @@
   </tbody>
     </table>
     <br />
-    <%= paginate @favorite_shops  %>
+    <div class="paginate">
+      <%= paginate @favorite_shops  %>
+    </div>
       <br>
 </div>
     <% # 検討リスト --- %>
 
 
        <div class="bulebox">
-       <h4 class="bulebox">&nbsp;<%= link_to 'チケットの出品へ', new_shop_path , class: "btn btn-large" %></h4>
+       <h4 class="bulebox">&nbsp;<%= link_to '　商品の出品へ', new_shop_path , class: "btn btn-large" %></h4>
      </div>
 </div>
 
