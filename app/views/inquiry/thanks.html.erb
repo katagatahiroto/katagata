@@ -1,3 +1,4 @@
+<div class="serach_navimain clearfix">
 <% content_for :title do %>
 お問い合わせ完了画面
 <% end %>
@@ -16,8 +17,8 @@
    <div class="payment-title">
      <h1>あんしん・安全取引</h1>
      <p>エスクロー決済と言われる決済手段により、購入者様に対して安心・安全な取引環境を整備</p>
-     <p>※全ての支払い方法に共通の決済手数料はご負担下さい。詳しくは<%= link_to "こちらへ" ,home_kakaku_path %></p>
-     <p>※決済手段について詳しく知りたい方は<%= link_to "こちらへ" ,home_payment_path %></p>
+     <p>※全ての支払い方法に共通の決済手数料はご負担下さい。詳しくは<%= link_to "こちらへ" ,home_kakaku_path, :class=>"black-btn" %></p>
+     <p>※決済手段について詳しく知りたい方は<%= link_to "こちらへ" ,home_payment_path, :class=>"black-btn" %></p>
    </div>
    <div class="esukuro-photo">
      <%= image_tag"svc_bidcube_func03.gif", :size => "520x500" %>
@@ -33,7 +34,7 @@
      <span style="color: red;">*注</span>&nbsp;取引相手にカード番号、金融機関口座情報を知らせる必要はありませんので安心してお取引を行う事ができます。</strong> </p>
    </div>
 </div>
-
+  </div>
 <!-- <div class="ticket-sagi">
       <div class="payment-title">
         <h1>偽造商品補償制度！</h1>
