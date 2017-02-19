@@ -1950,7 +1950,7 @@ background-color: #F5FFFA;
 }
 
 @keyframes slide{
-  0%{
+  5%{
     transform: translate3d(0, 0, 0);
   }
   100%{
