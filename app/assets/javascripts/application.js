@@ -10,8 +10,10 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 
-//= require jquery
+// jquery
 //= require jquery_ujs
+//= require jquery-ui
+//= require jquery.datetimepicker.js
 // jquery.ui.datepicker-ja
 //= require jquery.elevatezoom.js
 // jquery-ui/autocomplete
@@ -21,11 +23,8 @@
 
 // $(document).trigger('refresh_autonumeric')
 
-// $('.datetimepicker').datetimepicker({
-//   format: 'Y-m-d H:i',
-//   inline: true,
-//   lang: 'ja'
-// });
+$('.datetimepicker').datetimepicker();
+
 
 $(function() {
     $(".zoom").elevateZoom();
