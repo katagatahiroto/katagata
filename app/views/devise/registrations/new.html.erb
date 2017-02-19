@@ -1,8 +1,8 @@
 <% content_for :head do %>
-<meta name="description" content="Ticket Ring(チケリン)は国内最安値の手数料でチケット売買、チケット仲介ができる。簡単な登録後、すぐに取引可能。もちろん登録料は一切掛かりません。シンプルな取引画面と使い易さを追求し誰でも簡単にチケットを売る、買うができる。さらに、あんしん・安全取引システムを導入し、お客様のチケット取引を全力でサポートします。チケットリングにお任せ!!">
+<meta name="description" content="オトクーナは国内最安値の手数料でブランド品の売買、仲介ができる。簡単な登録後、すぐに取引可能。もちろん登録料は一切掛かりません。シンプルな取引画面と使い易さを追求し誰でも簡単に売る、買うができる。さらに、あんしん・安全取引システムを導入し、お客様の取引を全力でサポートします。腕時計・ブランド品の売買は『オトクーナ』にお任せ!!">
 <% end %>
 <% content_for :title do %>
-チケットリング新規会員登録 |チケット売買ならチケリンにお任せ!!
+オトクーナ新規会員登録 |腕時計・ブランド品の売買ならお任せ!!
 <% end %>
 <div class="box777">
     <h1>&emsp;新規会員登録（無料）</h1>
@@ -42,21 +42,21 @@
      </div>
 <br />
 
-  <strong><%= link_to '利用規約', home_kiyaku_path, :target=>["_blank"] %></strong>、<strong><%= link_to 'プライバシーポリシー' , home_puraibashi_path, :target=>["_blank"] %></strong>に同意し、会員登録
+  <strong><%= link_to '利用規約', home_kiyaku_path, :target=>["_blank"], :class=>"black-btn" %></strong>、<strong><%= link_to 'プライバシーポリシー' , home_puraibashi_path, :target=>["_blank"], :class=>"black-btn" %></strong>に同意し、会員登録
 
   <div class="actions">
     <%= f.submit "会員登録",:class => "submit-button", data: {
       confirm: '宜しければ、仮会員登録を行います。ご登録されたメールアドレスへ本登録用の認証メールを送信しますので、開封し本登録用リンクからログインしてください。今後ともチケットリングを宜しくお願い致します。',
       disable_with: '送信中...'} %>
   </div>
-  <p>登録済みの方は<%= link_to "こちらからログイン", user_session_path %></p>
+  <p>登録済みの方は<%= link_to "こちらからログイン", user_session_path, :class=>"black-btn" %></p>
 <% end %>
 </div>
 
    <div class="payment-title">
-     <h1>チケット購入時のお支払い方法</h1>
+     <h1>商品購入時のお支払い方法</h1>
      <p>※今後、お客様の利便性を考えお支払い方法を随時増やす予定ですので、暫くお待ち下さい。</p>
-     <p>※全ての支払い方法に共通の決済手数料はご負担下さい。&emsp;詳しくは<%= link_to "こちらへ" ,home_kakaku_path %></p>
+     <p>※全ての支払い方法に共通の決済手数料はご負担下さい。&emsp;詳しくは<%= link_to "こちらへ" ,home_kakaku_path, :class=>"black-btn" %></p>
    </div>
    <div class="payment-content-left">
     <h3><strong>クレジットカード払い</strong></h3>
