@@ -1814,7 +1814,7 @@ th {
 .button-buybuy-first{
   height: 60px;
   width: 450px;
-  background-color: #ea352d;;
+  background-color: #bc2414;
   float: right;
   padding-top: 10px;
   padding-left: 200px;
@@ -1822,15 +1822,23 @@ th {
   right: 22px;
 }
 
+.button-buybuy-first:hover{
+  opacity: 0.7;
+}
+
+.button-buybuy:hover{
+  opacity: 0.7;
+}
+
 .button-buybuy{
   height: 60px;
   width: 430px;
-  background-color: #ea352d;;
+  background-color: #bc2414;
   float: right;
   padding-top: 10px;
   padding-left: 200px;
   position: relative;
-  bottom: 340px;
+  bottom: 295px;
   left: 390px;
 }
 
