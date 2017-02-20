@@ -217,7 +217,7 @@
       </tr>
       <tr>
         <th>請求内約</th>
-        <td>チケット代金&emsp;&emsp;<small>+</small>&nbsp;<strong><%= number_with_delimiter(@getprice) %></strong><small>円</small><br />
+        <td>商品代金&emsp;&emsp;&emsp;&emsp;<small>+</small>&nbsp;<strong><%= number_with_delimiter(@getprice) %></strong><small>円</small><br />
               取引手数料&emsp;&emsp;&emsp;<small>+</small>&nbsp;<strong><%= number_with_delimiter( @otherprice.round) %></strong><small>円</small><br />
               決済事務手数料&emsp;<small>+</small>&nbsp;<strong><%= number_with_delimiter( @taxprice.round) %></strong><small>円</small><br />
               送料&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<small>+</small>&nbsp;<strong><%= @postageon %></strong><small>円</small>&emsp;&emsp;&emsp;<small><span style="color:red;">*小数点第1位四捨五入</span></small>
