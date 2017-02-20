@@ -126,29 +126,29 @@ class ShopsController < ApplicationController
       @getprice = a * b
   end
 
-  def buyprice　#お支払い代金の合計
+  def buyprice #お支払い代金の合計
       a = @shop.price.to_i
       b = @shop.number_of_sheets.to_i
       @getprice = a * b
 
     if
        @getprice <= 11999 then
-       @buyprice  = (@getprice.to_i + 600) + 300
+       @buyprice  = (@getprice + 600) + 300
 
     elsif
        @getprice < 12000 && @getprice >= 19999  then
-       @buyprice = (@getprice.to_i + 800 ) + 300
+       @buyprice = (@getprice + 800 ) + 300
 
     elsif
        @getprice < 20000 && @getprice>= 29999 then
-       @buyprice = (@getprice.to_i + 1000) + 300
+       @buyprice = (@getprice + 1000) + 300
 
     elsif
        @getprice < 30000 && @getprice>= 100000 then
-       @buyprice = (@getprice.to_i * 1.03) + 300
+       @buyprice = (@getprice * 1.03) + 300
 
      else
-       @buyprice = (@getprice.to_i * 1.028) + 300
+       @buyprice = (@getprice * 1.028) + 300
     end
   end
 
@@ -159,26 +159,26 @@ class ShopsController < ApplicationController
 
       if
        @getprice <= 11999 then
-       @otherprice  = (@getprice.to_i + 600 ) - @getprice.to_i
+       @otherprice  = (@getprice + 600 ) - @getprice
 
     elsif
        @getprice < 12000 && @getprice>= 19999  then
-       @otherprice = (@getprice.to_i + 800 ) - @getprice.to_i
+       @otherprice = (@getprice + 800 ) - @getprice
 
     elsif
        @getprice < 20000 && @getprice>= 29999 then
-       @otherprice = (@getprice.to_i + 1000) - @getprice.to_i
+       @otherprice = (@getprice + 1000) - @getprice
 
     elsif
        @getprice < 30000 && @getprice>= 100000 then
-       @otherprice = (@getprice.to_i * 1.03) - @getprice.to_i
+       @otherprice = (@getprice * 1.03) - @getprice
 
      else
-       @otherprice = (@getprice.to_i * 1.028) - @getprice.to_i
+       @otherprice = (@getprice * 1.028) - @getprice
     end
   end
 
-  def taxprice　#事務手数料一律300円
+  def taxprice #事務手数料一律300円
       a = @shop.price.to_i
       b = @shop.number_of_sheets.to_i
       @getprice = a * b
