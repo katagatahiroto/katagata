@@ -5,8 +5,7 @@
 <% end %>
 <br />
 <div class="serach_navimain-show clearfix">
-<div class="mainSect">
-  
+<div class="mainSect clearfix">
     <!-- /*写真エリア -->
     <div id="detailPhotoArea">
       <div class="dtlPhoto pc">
@@ -35,8 +34,8 @@
     <!-- 写真エリア*/ -->
 
     <!-- /*テキストエリア -->
-    <div id="detailTxtArea" itemscope itemtype="http://data-vocabulary.org/Product">
-      <div class="dtlSumArea">
+    <div id="detailTxtArea">
+<div class="dtlSumArea">
   <h1>
     <div class="dtlTit"><%= @shop.airt_name %></div>
     <div class="dtlSubTit"><%= @shop.live_tour_name %></div>
@@ -55,8 +54,7 @@
         </tr>
       </table>
     </div>
-    <div class="dtlSpecRack" itemprop="offerDetails" itemscope itemtype="http://data-vocabulary.org/Offer">
-      <meta itemprop="currency" content="JPY" />
+    <div class="dtlSpecRack">
       <table class="dtlSpec02">
         <tr>
           <th>PRICE</th>
@@ -64,11 +62,12 @@
         <tr>
           <td>
             <!--pricedown-->
-                        <div><span class="priceNum"><span>￥</span><span class="priceAmount"><%= number_with_delimiter(@shop.price) %></span></span><span class="placeTax">（税込）</span>
+              <div><span class="priceNum"><span>￥</span><span class="priceAmount"><%= number_with_delimiter(@shop.price) %></span></span><span class="     placeTax">（税込）</span>
 
-            <div style="display:inline-block;"><span class="priceReclo">
-                        締め切り時間 <%= @shop.close_datetime %>(残り<%= @shop.rest_time_code %>)</span></div>
-            </div>
+                     <div style="display:inline-block;"><span class="priceReclo">
+                        締め切り時間 <%= @shop.close_datetime %>(残り<%= @shop.rest_time_code %>)</span>
+                     </div>
+              </div>
           </td>
         </tr>
       </table>
@@ -80,8 +79,8 @@
 
 <h1><%= link_to '購入', users_path ,:class=>"button-buybuy-first",:style=>'color:#FFFFFF;' %></h1>
                <div class="contlike"><span id="favorite-mark"><%= render 'favorite_mark', shop: @shop %></span>
-                 <span id="favorite-count"><%= render 'favorites/favorite_count', shop: @shop, favorites: @shop.favorites %></span></div>
-
+                 <span id="favorite-count"><%= render 'favorites/favorite_count', shop: @shop, favorites: @shop.favorites %></span>
+               </div>
 
 <div class="dtlInfoArea">
     <h2>商品情報</h2>
@@ -231,13 +230,9 @@
   </table>
   </div>
   </div>
-
-<br />
-
-<br />
        <h1><%= link_to '購入', users_path ,:class=>"button-buybuy",:style=>'color:#FFFFFF;' %></h1>
-  </div>
-  </div>
+ </div>
+</div>
 
 <script type="text/javascript">
   $(document).ready(function () {
