@@ -145,16 +145,18 @@
           <tr>
             <td class="box999-showcopy">取引手数料<br />(購入者側)</td>
             <td class="tablebox111-showcopy">
-              8,000円以下の場合は一律&nbsp;<span style="color:red;">400円</span><small>(税込)</small><br />
-              8,001円以上の場合は一律&nbsp;<span style="color:red;">４％</span><small>(税込)</small><br />
+              11,999円以下の場合は一律&nbsp;<span style="color:red;">600円</span><small>(税込)</small><br />
+              12,000〜19,999円以下の場合は一律&nbsp;<span style="color:red;">800円</span><small>(税込)</small><br />
+              20,000〜29,999円以上の場合は一律&nbsp;<span style="color:red;">1,000円</span><small>(税込)</small><br />
+              30,000〜100,000円以上の場合は一律&nbsp;<span style="color:red;">3%</span><small>(税込)</small><br />
+              100,001円以上の場合は一律&nbsp;<span style="color:red;">2.8%</span><small>(税込)</small><br />
             </td>
           </tr>
 
           <tr>
-            <td class="box999-showcopy">決済<br />システム料<br />(購入者のみ)</td>
+            <td class="box999-showcopy">決済事務<br />手数料</td>
             <td class="tablebox111-showcopy">
-              一律&nbsp;<span style="color:red;">4%</span><small>税込(全てのお支払い方法に共通)</small><br />
-              <span style="color:red;">＊チケット代金総額 </span><small>(送料を含まない)</small>
+              一律&nbsp;<span style="color:red;">300円</span><small>(税込)</small><br />
             </td>
           </tr>
 
@@ -163,7 +165,7 @@
             <td class="tablebox111-showcopy">
               チケット代金&emsp;&emsp;<small>+</small>&nbsp;<strong><%= number_with_delimiter(@getprice) %></strong><small>円</small><br />
               取引手数料&emsp;&emsp;&emsp;<small>+</small>&nbsp;<strong><%= number_with_delimiter( @otherprice.round) %></strong><small>円</small><br />
-              決済システム料&emsp;<small>+</small>&nbsp;<strong><%= number_with_delimiter( @taxprice.round) %></strong><small>円</small><br />
+              決済事務手数料&emsp;<small>+</small>&nbsp;<strong><%= number_with_delimiter( @taxprice.round) %></strong><small>円</small><br />
               送料&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<small>+</small>&nbsp;<strong><%= @postageon %></strong><small>円</small>&emsp;&emsp;&emsp;&emsp;&emsp;<small><span style="color:red;">*小数点第1位四捨五入</span></small>
             </td>
           </tr>
