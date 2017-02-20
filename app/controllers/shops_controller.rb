@@ -136,15 +136,15 @@ class ShopsController < ApplicationController
        @buyprice  = (@getprice + 600) + 300
 
     elsif
-       @getprice < 12000 && @getprice >= 19999  then
+       @getprice > 12000 && @getprice <= 19999  then
        @buyprice = (@getprice + 800 ) + 300
 
     elsif
-       @getprice < 20000 && @getprice>= 29999 then
+       @getprice > 20000 && @getprice<= 29999 then
        @buyprice = (@getprice + 1000) + 300
 
     elsif
-       @getprice < 30000 && @getprice>= 100000 then
+       @getprice > 30000 && @getprice<= 100000 then
        @buyprice = (@getprice * 1.03) + 300
 
      else
@@ -162,15 +162,15 @@ class ShopsController < ApplicationController
        @otherprice  = (@getprice + 600 ) - @getprice
 
     elsif
-       @getprice < 12000 && @getprice>= 19999  then
+       @getprice > 12000 && @getprice<= 19999  then
        @otherprice = (@getprice + 800 ) - @getprice
 
     elsif
-       @getprice < 20000 && @getprice>= 29999 then
+       @getprice > 20000 && @getprice<= 29999 then
        @otherprice = (@getprice + 1000) - @getprice
 
     elsif
-       @getprice < 30000 && @getprice>= 100000 then
+       @getprice > 30000 && @getprice<= 100000 then
        @otherprice = (@getprice * 1.03) - @getprice
 
      else
