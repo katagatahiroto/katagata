@@ -120,64 +120,76 @@ class ShopsController < ApplicationController
               )
     end
 
-  def getprice
+  def getprice #商品代金の合計(代金✖️枚数)
       a = @shop.price.to_i
-      b = 1
+      b = @shop.number_of_sheets.to_i
       @getprice = a * b
   end
 
-  def getprice_index
-      a = shop.price.to_i
-      b = 1
-      @getprice_index = a * b
-  end
-
-  def buyprice
+  def buyprice　#お支払い代金の合計
       a = @shop.price.to_i
-      b = 1
+      b = @shop.number_of_sheets.to_i
       @getprice = a * b
 
     if
-       @getprice <= 8000
-       @buyprice  = (@getprice + 400) * 1.04
+       @getprice <= 11999 then
+       @buyprice  = (@getprice.to_i + 600) + 300
 
-    else
-       @buyprice = (@getprice * 1.04) * 1.04
+    elsif
+       @getprice < 12000 && @getprice >= 19999  then
+       @buyprice = (@getprice.to_i + 800 ) + 300
+
+    elsif
+       @getprice < 20000 && @getprice>= 29999 then
+       @buyprice = (@getprice.to_i + 1000) + 300
+
+    elsif
+       @getprice < 30000 && @getprice>= 100000 then
+       @buyprice = (@getprice.to_i * 1.03) + 300
+
+     else
+       @buyprice = (@getprice.to_i * 1.028) + 300
     end
   end
 
-  def otherprice
+  def otherprice #手数料
       a = @shop.price.to_i
-      b = 1
+      b = @shop.number_of_sheets.to_i
       @getprice = a * b
-    if
-       @getprice <= 8000
-       @otherprice  = (@getprice + 400) - @getprice.to_i
 
-    else
-       @otherprice = (@getprice * 1.04) - @getprice.to_i
+      if
+       @getprice <= 11999 then
+       @otherprice  = (@getprice.to_i + 600 ) - @getprice.to_i
+
+    elsif
+       @getprice < 12000 && @getprice>= 19999  then
+       @otherprice = (@getprice.to_i + 800 ) - @getprice.to_i
+
+    elsif
+       @getprice < 20000 && @getprice>= 29999 then
+       @otherprice = (@getprice.to_i + 1000) - @getprice.to_i
+
+    elsif
+       @getprice < 30000 && @getprice>= 100000 then
+       @otherprice = (@getprice.to_i * 1.03) - @getprice.to_i
+
+     else
+       @otherprice = (@getprice.to_i * 1.028) - @getprice.to_i
     end
   end
 
-  def taxprice
+  def taxprice　#事務手数料一律300円
       a = @shop.price.to_i
-      b = 1
+      b = @shop.number_of_sheets.to_i
       @getprice = a * b
-
-    if
-       @getprice <= 8000
-       @taxprice  = (@getprice + 400) * 1.04 - 400 -@getprice.to_i
-
-    else
-       @taxprice = (@getprice * 1.04) * 1.04 - (@getprice * 1.04)
-    end
+      @taxprice = (@getprice + 300) - @getprice
   end
 
   def buyprice_sent
     sents = @shop.postage
     if
       sents == "postage_out"
-      @buyprice_sent = @buyprice + 510
+      @buyprice_sent = @buyprice + 910
 
     elsif
       sents == "postage_in"
@@ -189,7 +201,7 @@ class ShopsController < ApplicationController
     sents = @shop.postage
     if
       sents == "postage_out"
-      @postageon = "510"
+      @postageon = "910"
 
     elsif
       sents == "postage_in"
