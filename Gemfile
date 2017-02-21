@@ -38,14 +38,6 @@ group :development, :test do
   gem 'byebug'
 end
 
-group :development do
-  # エラー画面をわかりやすく整形してくれる
-  gem 'better_errors'
-
-  # better_errorsの画面上にirb/pry(PERL)を表示する
-  gem 'binding_of_caller'
-end
-
   # Access an IRB console on exception pages or by using <%= console %> in views
 gem 'web-console', group: :development
 
@@ -77,5 +69,6 @@ group :production, :staging do
   gem 'rails_12factor'
 end
 gem 'sprockets-rails'
+gem 'fog'
 
 
