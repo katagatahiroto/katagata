@@ -1,11 +1,15 @@
 CarrierWave.configure do |config|
+require 'carrierwave/storage/abstract'
+require 'carrierwave/storage/file'
+require 'carrierwave/storage/fog'
     config.storage = :fog
   config.fog_credentials = {
     provider: 'AWS',
-    aws_access_key_id: ENV['ACCESS_KEY_ID'],
-    aws_secret_access_key: ENV['SECRET_ACCESS_KEY'],
+    aws_access_key_id: ENV['nQ1W3tOQfXCtQ1zx5'],
+    aws_secret_access_key: ENV['sF1mkX7I4GlrrQvljF2Xm6'],
     region: 'us-east-1'
   }
+
 
     case Rails.env
     when 'development'
