@@ -1,4 +1,8 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+  def passthru
+    pp :passthru
+  end
+
   def facebook
     callback_from :facebook
   end
@@ -8,7 +12,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   private
-
+  
   def callback_from(provider)
     provider = provider.to_s
 

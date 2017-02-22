@@ -5,11 +5,16 @@ Rails.application.routes.draw do
   post 'inquiry/confirm' => 'inquiry#confirm'   # 確認画面
   post 'inquiry/thanks' => 'inquiry#thanks'     # 送信完了画面
 
-#  devise_for :users
-  devise_for :users, controllers: {
-               omniauth_callbacks: 'users/omniauth_callbacks',
-               sessions: "sessions"
-             }
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+
+  get "/user/oauth/facebook/callback" => "users/omniauth_callbacks#facebook"
+  post "/user/oauth/facebook/callback" => "users/omniauth_callbacks#facebook"
+  get "/user/oauth/twitter/callback" => "users/omniauth_callbacks#twitter"
+  post "/user/oauth/twitter/callback" => "users/omniauth_callbacks#twitter"
+
+#  devise_for :users, controllers: {
+#               omniauth_callbacks: 'users/omniauth_callbacks'
+#             }
 
   resources :users, only: [:show,:index,:edit]
   resources :shops do
