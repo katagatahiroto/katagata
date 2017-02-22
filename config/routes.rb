@@ -7,10 +7,6 @@ Rails.application.routes.draw do
 
 #  devise_for :users
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-  get "/user/oauth/facebook/callback" => "users/omniauth_callbacks#facebook"
-  post "/user/oauth/facebook/callback" => "users/omniauth_callbacks#facebook"
-  get "/user/oauth/twitter/callback" => "users/omniauth_callbacks#twitter"
-  post "/user/oauth/twitter/callback" => "users/omniauth_callbacks#twitter"
 
   resources :users, only: [:show,:index,:edit]
   resources :shops do
