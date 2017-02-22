@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   post 'inquiry/thanks' => 'inquiry#thanks'     # 送信完了画面
 
 #  devise_for :users
-  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  devise_for :users, controllers: {
+               omniauth_callbacks: 'users/omniauth_callbacks',
+               sessions: "sessions"
+             }
 
   resources :users, only: [:show,:index,:edit]
   resources :shops do
