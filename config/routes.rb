@@ -6,11 +6,10 @@ Rails.application.routes.draw do
   post 'inquiry/thanks' => 'inquiry#thanks'     # 送信完了画面
 
 #  devise_for :users
-  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-  get "/user/oauth/facebook/callback" => "users/omniauth_callbacks#facebook"
-  post "/user/oauth/facebook/callback" => "users/omniauth_callbacks#facebook"
-  get "/user/oauth/twitter/callback" => "users/omniauth_callbacks#twitter"
-  post "/user/oauth/twitter/callback" => "users/omniauth_callbacks#twitter"
+  devise_for :users, controllers: {
+               omniauth_callbacks: 'users/omniauth_callbacks',
+               sessions: "sessions"
+             }
 
   resources :users, only: [:show,:index,:edit]
   resources :shops do
