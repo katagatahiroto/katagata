@@ -1,4 +1,8 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+  def passthru
+    pp :passthru
+  end
+
   def facebook
     callback_from :facebook
   end
