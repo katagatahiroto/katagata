@@ -32,6 +32,10 @@ class User < ActiveRecord::Base
   KATAKANA_REGEXP = /\p{Katakana}/
   validates :account_name, presence: true, format: {with: KATAKANA_REGEXP, allow_blank: true}, on: :update
 
+  # DB追加カラム
+  # validates :user_text, presence: true
+  # ここまで
+
 
 
   has_many :shops, dependent: :destroy

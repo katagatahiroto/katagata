@@ -42,6 +42,31 @@ class Shop < ActiveRecord::Base
   validates :docide_promptly, presence: true
   #validates :othertext, presence: true
 
+# 変更後のDB関係
+  #validates :airt_name, presence: true
+  #validates :female, presence: true
+  #validates :big_tags, presence: true
+  #validates :sub_tags, presence: true
+  #validates :state, presence: true
+  #validates :day_date, presence: true
+  #validates :price, presence: true
+  #validates :ref_price, presence: true
+  #validates :certificate, presence: true
+  #validates :color, presence: true
+  #validates :size, presence: true
+  #validates :material, presence: true
+  #validates :number, presence: true
+  #validates :nsk, presence: true
+  #validates :ticket_name_yes_no, presence: true
+  #validates :shipping_method, presence: true
+  #validates :postage, presence: true
+  #validates :docide_promptly, presence: true
+  #validates :close_date, presence: true
+  #validates :image, presence: true
+  #validates :comment_text, presence: true
+  #validates :state_info, presence: true
+# ここまでが変更後反映
+
   # before_save :set_close_datetime
 
   # def set_close_datetime
