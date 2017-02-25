@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
 
 
   def configure_permitted_parameters
-      devise_parameter_sanitizer.permit(:account_update , keys: [:name, :nickname, :tel, :number ,:address ,:littleaddress ,:subaddress ,:big_address ,:bankname, :branch_name, :account_type, :account_number, :account_name])
+      devise_parameter_sanitizer.permit(:account_update , keys: [:name, :nickname, :tel, :number ,:address ,:littleaddress ,:subaddress ,:big_address ,:bankname, :branch_name, :account_type, :account_number, :account_name, :user_text])
   end
 end
 
