@@ -21,7 +21,7 @@
           </tr>
           <tr>
             <td class="box999-show"><%= f.label :nickname,"ニックネーム（２〜８文字）" %></td>
-            <td class="tablebox111-show"><%= f.text_field :nickname, autofocus: true %><span style="color:#ff0000;">&emsp;<small>*必須(チケット記載)</small></span></td>
+            <td class="tablebox111-show"><%= f.text_field :nickname, autofocus: true %><span style="color:#ff0000;">&emsp;<small>*必須(商品記載)</small></span></td>
           </tr>
           <tr class="header">
           <th class="box1000-left">郵送先（住所）</th>
@@ -86,7 +86,7 @@
           </tr>
           <tr>
             <td class="box999-show"><%= f.label :subaddress, "市区町村" %></td>
-            <td class="tablebox111-show"><%= f.text_field :subaddress, autofocus: true %><span style="color:#ff0000;">&emsp;<small>*必須(チケット記載)</small></span></td>
+            <td class="tablebox111-show"><%= f.text_field :subaddress, autofocus: true %><span style="color:#ff0000;">&emsp;<small>*必須(商品記載)</small></span></td>
           </tr>
           <tr>
             <td class="box999-show"><%= f.label :littleaddress, "番地以下" %></td>
@@ -109,8 +109,8 @@
             <th class="tablebox111-right">記入欄</th>
           </tr>
           <tr>
-            <td class="box999-show">コメント欄</td>
-            <td class="tablebox111-show"><p><span style="color:#ff0000;"><small>*必須(ハイフンなしで記入)</small></span></p></td>
+            <td class="box999-show"><%= f.label :user_text, "コメント欄" %></td>
+            <td class="tablebox111-show"><%= f.text_area :user_text, autofocus: true %></td>
           </tr>
 </table>
 <table id="tablebox-show_right">
