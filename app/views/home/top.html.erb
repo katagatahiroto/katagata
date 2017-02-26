@@ -3,7 +3,7 @@
 <div align="center">
 <div class="serach_navimain clearfix">
   <div class="slider-contents-top>">
-    <h2><strong>オトクーナは、誰でも簡単に腕時計・ブランド品売買ができて、<br />
+    <h2><strong><br />オトクーナは、誰でも簡単に腕時計・ブランド品売買ができて、<br />
       安心・安全なお取引ができる腕時計・ブランド品仲介専門のサイトです。</strong></h2>
   </div>
 <br />
@@ -23,7 +23,7 @@
        </div>
      </div>
    </div>
-
+<br /><br />
    <div class="loopslider-underber">
         <h3><strong><span style="color:#FF367F  ;">憧れのラグジュアリーブランドから最先端ブランドまで、取り扱いブランドは業界No1水準。<br />
           バッグ・小物・腕時計・靴・アパレル・アクセサリーまで幅広くお取扱いいたします。</span></h3>
@@ -58,62 +58,45 @@
    </div>
 </div>
 
-<br /><br />
- <div class="top-contents-main">
-  <div class="top-contents-main-nabvi">
-    <h4><strong>新着ピックアップ商品</strong></h4>
-    <div class="top-contents-main-nabvi-tag"><%= image_tag"shops-osusume.png", :size => "100x100" %></div>
-  </div>
 <br />
-<div class="index-box">
-<%= image_tag"new.png", :size => "50x50", :class=> "icon-mini3" %>
-    <table>
-  <thead>
-    <tr>
-      <th class="tablebox1105-left">公演名</th>
-      <th class="tablebox5100">日時</th>
-      <th class="tablebox1105">場所</th>
-      <th class="tableboxticket">チケット情報</th>
-      <th class="tablebox1111">価格</th>
-      <th class="tablebox1100">詳細</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+
+    <% @shops.last(12).each do |shop| %>
+
+<div class="slider-under-index">
+   <div class="slider-under-contents-index">
+     <% unless shop.images.empty? %>
+       <img style="" id="img_01" src="<%= shop.images.first.image.url(:thumb) %>" data-zoom-image="<%= shop.images.first.image.url %>"
+       width="304" height= "266"  />
+      <div id="gal1" style="width: 400px float:left; ">
+
+        <% if shop.images.size > 1 %>
+        <% shop.images.each do |image| %>
+                  <% end %>
+                  <% end %>
+      </div>
+                  <% end %>
+     <h4><strong><%= shop.airt_name %></strong></h4>
+     <p><%= shop.item_name %><br />
+       <small><strong><span style="color:#FF367F  ;">￥</span></strong></small><strong><str<span style="color:#FF367F  ;"><%= number_with_delimiter(shop.price) %></span></strong>&emsp;&emsp;
+
+              <div style="display:inline-block;">
+                <strong><%= @selldisbuy %></strong>
+                        <span class="priceOther">参考価格：<span class="strike">￥<%= number_with_delimiter(shop.ref_price) %></span></span>&emsp;&emsp;&nbsp;<strong><div class="btn2"><%= link_to '詳細', shop %></div></strong></p>
+                        <br /><br /><br />
+   </div>
+</div>
 </div>
 
+    <% end %>
+    
+
 <br />
-  <tbody>
-    <% @shops.last(7).each do |shop| %>
-      <tr>
-        <td class="tablebox5011"><small><%= shop.airt_name.truncate(18) %></span>
-          <p><span style="color:#0000CC;"><%= shop.live_tour_name.truncate(24) %></span></p></small></td>
-        <td class="tablebox5100under"><small><%= shop.day_date %>&emsp;&emsp;&emsp;<%= shop.time_date %>〜</small></td>
-        <td class="tablebox5011"><small><span style="color:#0000CC;"><%= shop.plase.truncate(41) %></span></small></td>
-        <td class="tableboxticketunder">
-          <small>[<span style="color:#ff0000;">送料</span>]&nbsp;<%= shop.postage %>
-            &emsp;[<span style="color:#ff0000;">名義</span>]&nbsp;<%= shop.ticket_name %>
-            &emsp;[<span style="color:#ff0000;">席種</span>]&nbsp;<%= shop.seat %></small>
-        <p><small>[<span style="color:#ff0000;">発送方法</span>]&nbsp;<%= shop.shipping_method %>
-            &emsp;[<span style="color:#ff0000;">発送予定時期</span>]&nbsp;<%= shop.docide_promptly %></small></p>
-        <p><small>[<span style="color:#ff0000;">売手側からのチケット情報</span>]</small></p>
-        <p><small><%= shop.seat_in_detail.truncate(30) %></small></p></td>
-        <td class="tablebox6000"><small><%= shop.number_of_sheets %>枚
-          <p><span style="color:#ff0000;"><%= number_with_delimiter(shop.price) %></span>円/枚</span></p>
-        <p><%= shop.list_price %></span></p></small></td>
-        <td class="tablebox5000"><div id="favorite-mark"><%= render 'favorite_mark', shop: shop %></div>
-        <% # TODO : (仮)styleによる中央寄せ %>
-        <div id="favorite-count" style="text-align: center;"><%= render 'favorites/favorite_count', shop: shop, favorites: shop.favorites %></div>
-        <div class="btn2"><%= link_to '詳細', shop %></div></td>
-      </tr>
-    <% end %>
-  </tbody>
-    </table>
+
+<% @shops.last(12).each do |shop| %>
+<% end %>
+
+  
   </div>
-    <br />
-    <% @shops.last(5).each do |shop| %>
-    <% end %>
-  </div>
-</div>
 <br />
 <div align="center">
    <div class="photo-ticket-image">
@@ -121,3 +104,4 @@
    </div>
   </div>
 </div>
+<br />
