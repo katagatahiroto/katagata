@@ -15,57 +15,57 @@
        </ul>
      </div>
  </div>
+
 <br />
   <div class="mypage-main-date">
 <div class="index-box-mypage">
-    <table>
-  <thead>
-    <tr>
-      <th class="tablebox1105-left">公演名</th>
-      <th class="tablebox5100">日時</th>
-      <th class="tablebox1105">場所</th>
-      <th class="tableboxticket">チケット情報</th>
-      <th class="tablebox1111">価格</th>
-      <th class="tablebox1100">詳細</th>
-      <th class="tablebox1100">編集</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @shops.each do |shop| %>
-      <tr>
-        <td class="tablebox5011"><small><%= shop.airt_name.truncate(18) %></span>
-          <p><span style="color:#0000CC;"><%= shop.live_tour_name.truncate(24) %></span></p></small></td>
-        <td class="tablebox5100under"><small><%= shop.day_date %>&emsp;&emsp;&emsp;<%= shop.time_date %>〜</small></td>
-        <td class="tablebox5011"><small><span style="color:#0000CC;"><%= shop.plase.truncate(41) %></span></small></td>
-        <td class="tableboxticketunder">
-          <small>[<span style="color:#ff0000;">送料</span>]&nbsp;<%= shop.postage %>
-            &emsp;[<span style="color:#ff0000;">名義</span>]&nbsp;<%= shop.ticket_name %>
-            &emsp;[<span style="color:#ff0000;">席種</span>]&nbsp;<%= shop.seat %></small>
-        <p><small>[<span style="color:#ff0000;">発送方法</span>]&nbsp;<%= shop.shipping_method %>
-            &emsp;[<span style="color:#ff0000;">発送予定時期</span>]&nbsp;<%= shop.docide_promptly %></small></p>
-        <p><small>[<span style="color:#ff0000;">売手側からのチケット情報</span>]</small></p>
-        <p><small><%= shop.seat_in_detail.truncate(30) %></small></p></td>
-        <td class="tablebox6000"><small><%= shop.number_of_sheets %>枚
-          <p><span style="color:#ff0000;"><%= number_with_delimiter(shop.price) %></span>円/枚</span></p>
-        <p><%= shop.list_price %></span></p></small></td>
-        <td class="tablebox5000">&nbsp;<%= image_tag("e_title_shops.png", :size => "18x18", :align=>"center") %><br />
-        <div class="btn2"><%= link_to '詳細', shop %></div></td>
-        <td class="tablebox5000"><%= link_to '編集', "/shops/#{shop.id}/edit", method: :get, :class=>"black-btn" %>
+<br />
+
+    <% @shops.last(12).each do |shop| %>
+
+<div class="slider-under-index">
+   <div class="slider-under-contents-index">
+     <% unless shop.images.empty? %>
+       <img style="" id="img_01" src="<%= shop.images.first.image.url(:thumb) %>" data-zoom-image="<%= shop.images.first.image.url %>"
+       width="304" height= "266"  />
+      <div id="gal1" style="width: 400px float:left; ">
+
+        <% if shop.images.size > 1 %>
+        <% shop.images.each do |image| %>
+                  <% end %>
+                  <% end %>
+      </div>
+                  <% end %>
+     <h4><strong><%= shop.airt_name %></strong></h4>
+     <p><%= shop.item_name %><br />
+       <small><strong><span style="color:#FF367F  ;">￥</span></strong></small><strong><str<span style="color:#FF367F  ;"><%= number_with_delimiter(shop.price) %></span></strong>&emsp;&emsp;
+
+              <div style="display:inline-block;">
+                <strong><%= @selldisbuy %></strong>
+                        <span class="priceOther">参考価格：<span class="strike">￥<%= number_with_delimiter(shop.ref_price) %></span></span>&emsp;&emsp;&nbsp;<strong><div class="btn2"><%= link_to '詳細', shop %></div></strong></p>
+                        <%= link_to '編集', "/shops/#{shop.id}/edit", method: :get, :class=>"black-btn" %>
         <p><%= link_to '削除', "/shops/#{shop.id}", method: :delete, :class=>"red-btn", data: {
       confirm: '本当に削除しても宜しいでしょうか？',
-      disable_with: '削除中です..。。'} %></p></td>
-      </tr>
+      disable_with: '削除中です..。。'} %></p>
+                        <br /><br /><br />
+   </div>
+</div>
+</div>
+  </div>
     <% end %>
-  </tbody>
-    </table>
+<br />
+
+<% @shops.last(12).each do |shop| %>
+<% end %>
     <br />
-<div class="paginate">
+<div class="paginate-user">
     <%= paginate(@shops) %>
 </div>
-    <br>
+    <br />
+  </div>
 
+  </div>
 
     <% # 検討リスト --- %>
 <div class="index-box-mypage">
@@ -79,10 +79,10 @@
     <table>
   <thead>
     <tr>
-      <th class="tablebox1105-left">公演名</th>
-      <th class="tablebox5100">日時</th>
-      <th class="tablebox1105">場所</th>
-      <th class="tableboxticket">チケット情報</th>
+      <th class="tablebox1105-left">ブランド・商品名</th>
+      <th class="tablebox5100">残り時間</th>
+      <th class="tablebox1105">商品状態</th>
+      <th class="tableboxticket">商品・出品情報</th>
       <th class="tablebox1111">価格</th>
       <th class="tablebox1100">詳細</th>
       <th colspan="3"></th>
@@ -93,19 +93,19 @@
     <% @favorite_shops.each do |shop| %>
       <tr>
         <td class="tablebox5011"><small><%= shop.airt_name.truncate(18) %></span>
-          <p><span style="color:#0000CC;"><%= shop.live_tour_name.truncate(24) %></span></p></small></td>
-        <td class="tablebox5100under"><small><%= shop.day_date %>&emsp;&emsp;&emsp;<%= shop.time_date %>〜</small></td>
-        <td class="tablebox5011"><small><span style="color:#0000CC;"><%= shop.plase.truncate(41) %></span></small></td>
+          <p><span style="color:#0000CC;"><%= shop.item_name.truncate(24) %></span></p></small></td>
+          <td class="tablebox5100under"><small><small><%= shop.close_datetime %></small><br />(残り<%= shop.rest_time_code %>)</small></td>
+        <td class="tablebox5011"><small><span style="color:#0000CC;"><%= shop.state %></span></small></td>
         <td class="tableboxticketunder">
-          <small>[<span style="color:#ff0000;">送料</span>]&nbsp;<%= shop.postage %>
-            &emsp;[<span style="color:#ff0000;">名義</span>]&nbsp;<%= shop.ticket_name %>
-            &emsp;[<span style="color:#ff0000;">席種</span>]&nbsp;<%= shop.seat %></small>
-        <p><small>[<span style="color:#ff0000;">発送方法</span>]&nbsp;<%= shop.shipping_method %>
-            &emsp;[<span style="color:#ff0000;">発送予定時期</span>]&nbsp;<%= shop.docide_promptly %></small></p>
-        <p><small>[<span style="color:#ff0000;">売手側からのチケット情報</span>]</small></p>
-        <p><small><%= shop.seat_in_detail.truncate(30) %></small></p></td>
-        <td class="tablebox6000"><small><%= shop.number_of_sheets %>枚
-          <p><span style="color:#ff0000;"><%= number_with_delimiter(shop.price) %></span>円/枚</span></p>
+          <small>[<span style="color:#ff0000;">送料</span>]&nbsp;<%= shop.postage_i18n %>
+            &emsp;[<span style="color:#ff0000;">生産地</span>]&nbsp;<%= shop.madein %>製
+            &emsp;[<span style="color:#ff0000;">サイズ</span>]&nbsp;<%= shop.size %></small>
+        <p><small>[<span style="color:#ff0000;">発送方法</span>]&nbsp;<%= shop.shipping_method_i18n %>
+            &emsp;[<span style="color:#ff0000;">発送予定時期</span>]&nbsp;<%= shop.docide_promptly_i18n %></small></p>
+        <p><small>[<span style="color:#ff0000;">詳細情報</span>]</small></p>
+        <p><small><%= shop.comment_text.truncate(30) %></small></p></td>
+        <td class="tablebox6000"><small>
+          <p><span style="color:#ff0000;"><%= number_with_delimiter(shop.price) %></span>円</span></p>
         <p><%= shop.list_price %></span></p></small></td>
         <td class="tablebox5000">
         <div id="favorite-mark"><%= render 'favorite_mark', shop: shop %></div>
@@ -126,10 +126,9 @@
 
 
        <div class="bulebox">
-       <h4 class="bulebox">&nbsp;<%= link_to '　商品の出品へ', new_shop_path , class: "btn btn-large" %></h4>
+       <h4>&nbsp;<%= link_to '　商品の出品へ', new_shop_path , class: "btn btn-large" %></h4>
      </div>
 </div>
-
   </div>
 </div>
 <div class="mypage-main clearfix">
@@ -283,7 +282,7 @@ ID番号/
 
 今後もTicket Ringをどうぞよろしくお願いします。", class: "btn btn-large" %></strong>
 
-     </div>
+ </div>
    </div>
 </div>
 </div>
