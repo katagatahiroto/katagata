@@ -20,35 +20,118 @@ td.w100 { width: 100px; }
 <% end %>
 
 <div class="form-main clearfix">
-  <div class="sub-box">チケット情報</div>
+  <div class="sub-box">商品情報</div>
   <table>
     <tr>
-      <th><%= f.label :airt_name,"アーティスト名" %></th>
-      <td><%= f.text_field :airt_name, id: "airt_name",class: "price-text" , placeholder: "アーティスト名を登録する" ,autocomplete: "off"%>
+      <th><%= f.label :airt_name,"ブランド名" %></th>
+      <td><%= f.text_field :airt_name, id: "listname", class: "price-text" , placeholder: "ブランド名を登録する" ,autocomplete: "off"%>
       </td>
     </tr>
     <tr>
-      <th> <%= f.label :live_tour_name, "公演名" %></th>
+      <th> <%= f.label :item_name, "商品名" %></th>
       <td>
 	<!-- 入力フォーム -->
-	<%= f.text_field :live_tour_name, class: "price-text" , placeholder: "公演名を登録する" ,autocomplete: "off"%>
+	<%= f.text_field :item_name, class: "price-text" , placeholder: "商品名を登録する" ,autocomplete: "off"%>
       </td>
     </tr>
     <tr>
-      <th> <%= f.label :day_date, "公演日"%><br></th>
+      <th> <%= f.label :day_date, "商品取得日"%><br></th>
       <td> <%= f.text_field :day_date, class: "price-textday" ,:id => 'datepicker' , placeholder: "日にち選択  ここをクリックして下さい"%>
       </td>
     </tr>
     <tr>
-      <th> <%= f.label :day_date, "公演時間"%><br></th>
-      <td> <%= f.text_field :time_date, placeholder: "開始時刻"%></td>
+      <th> <%= f.label :female, "購入元" %> </th>
+      <td>
+  <div class="text-menu">
+    <ul>
+  <li><%= f.radio_button :female, :men %><div class="absolute">男性向きスタイル</div></li>
+  <li><%= f.radio_button :female, :women %><div class="absolute">女性向きスタイル</div></li>
+  <li><%= f.radio_button :female, :full %><div class="absolute">性別問わない</div><small><p>スタイル問わない</p></small></li>
+  <li><%= f.radio_button :female, :other %><div class="absolute">観賞用</div><small><p>古美術品関係など</p></small></li>
+    </ul>
+  </div>
+      </td>
     </tr>
     <tr>
-      <th><%= f.label :plase ,"会場（場所）" %></th>
-      <td> <%= f.text_field :plase,size: 60 %></td>
+      <th><%= f.label :big_tags,"商品カテゴリー" %></th>
+      <td><%= f.select :big_tags,
+       {
+ ーーーー出品する商品のカテゴリーを選択ーーーーー: "",
+ 財布・小物: "財布・小物類",
+ アクセサリ: "アクセサリー",
+ 腕時計: "腕時計",
+ トップス・ワンピース: "トップス",
+ アウタ: "アウター",
+ ボトムス・スーツ: "ボトムス・スーツ",
+ シューズ: "シューズ",
+ 古美術品・絵画: "古美術品関係（絵画含む）"
+ } %>
+      </td>
+    </tr>
+    <tr>
+      <th><%= f.label :sub_tags,"サブカテゴリー" %></th>
+      <td><%= f.select :sub_tags,
+      {
+ ーーーー出品する商品のカテゴリーを選択ーーーーー: "",
+ ーーーーーーーーー財布・小物ーーーーーーーーー: "",
+ 財布: "財布",
+ カードケース: "カードケース",
+ キーケース: "キーケース",
+ スカーフ・マフラ: "スカーフ・マフラー",
+ サングラス: "サングラス",
+ ネクタイ: "ネクタイ",
+ ーーーーーーーーーアクセサリーーーーーーーーー: "",
+ ネックレス: "ネックレス",
+ ブレスレット: "ブレスレット",
+ イヤリング・ピアス: "イヤリング・ピアス",
+ 指輪: "指輪",
+ ヘアアクセサリー: "ヘアアクセサリー",
+ ーーーーーーーーーー腕時計ーーーーーーーーーー: "",
+ 手巻き腕時計: "手巻き",
+ 自動巻き腕時計: "自動巻き",
+ クオーツ腕時計: "クオーツ",
+ ーーーーーーーーーーバッグーーーーーーーーーー: "",
+ ハンドバッグ: "ハンドバッグ",
+ ショルダーバッグ: "ショルダーバッグ",
+ トートバッグ: "トートバッグ",
+ ボディバッグ: "ボディバッグ",
+ ボストンバッグ: "ボストンバッグ",
+ イブニングバッグ: "イブニングバッグ",
+ クラッチバッグ: "クラッチバッグ",
+ バッグパック: "バックパック",
+ ビジネスバッグ: "ビジネスバッグ",
+ ーーーーーーーーーートップスーーーーーーーーーー: "",
+ シャツ: "シャツ",
+ ブラウス: "ブラウス",
+ ニット: "ニット",
+ カットソー: "カットソー",
+ カーディガン: "カーディガン",
+ ワンピース: "ワンピース",
+ ーーーーーーーーーーーアウターーーーーーーーーー: "",
+ アウター: "コート",
+ ジャケット: "ジャケット",
+ ブルゾン: "ブルゾン",
+ ーーーーーーーーボトムス・スーツーーーーーーーー: "",
+ パンツ: "パンツ",
+ スカート: "スカート",
+ スーツ: "スーツ",
+ スカートスーツ: "スカートスーツ",
+ ーーーーーーーーーーーシューズーーーーーーーーーー: "",
+ ブーツ: "ブーツ",
+ スニーカー: "スニーカー",
+ サンダル: "サンダル",
+ パンプス: "パンプス",
+ ミュール: "ミュール",
+ フラットシューズ: "フラットシューズ",
+ スリッポン: "スリッポン",
+ ドレスシューズ: "ドレスシューズ",
+ カジュアルシューズ: "カジュアルシューズ",
+ ーーーーーーー古美術品関係(絵画含む)ーーーーーーー: "",
+ 古美術品・絵画: "古美術品・絵画"
+ }  %>
+      </td>
     </tr>
   </table>
-
 
   <div class="sub-box">出品情報</div>
   <table>
@@ -63,23 +146,42 @@ td.w100 { width: 100px; }
       <th class="w100"> <%= f.label :price, "出品価格" %> </th>
       <td>
 	<%= f.text_field :price, class: "price-text" ,placeholder: "商品販売価格を記入してください", data: { autonumeric: { aSign: '¥ ', mDec: 0 } }%>円
+  <p>最低出品価格は<span style="color: red;">1,401円</span>〜です</p>
       </td>
     </tr>
     <tr>
-      <th> <%= f.label :number_of_sheets, "チケット枚数" %> </th>
+      <th class="w100"> <%= f.label :ref_price, "参考価格" %> </th>
+      <td>
+  <%= f.text_field :ref_price, class: "price-text" ,placeholder: "参考商品価格を記入してください", data: { autonumeric: { aSign: '¥ ', mDec: 0 } }%>円
+  <p>不明の場合は<span style="color: red;">『0』</span>を入力して下さい</p>
+      </td>
+    </tr>
+    <tr>
+      <th> <%= f.label :state, "商品の状態" %> </th>
+      <td> <%= f.select :state,
+             {ーーーー出品する商品の現在の状態選択ーーーーー: "",
+              NS・新品未使用: "N・新品未使用",
+               S・新品同様極上の中古品: "S・新品同様極上の中古品",
+               A・若干の使用感がある非常に状態の良い中古品: "A・若干の使用感がある、非常に状態の良い中古品",
+               B・適度な使用感がある一般的な中古品: "適度な使用感がある一般的な中古品",
+               C・使用感が目立つ中古品: "C・使用感が目立つ中古品",
+               D・問題点が多くあるボロボロの状態: "D・問題点が多くあるボロボロの状態"}%>
+      </td>
+    </tr>
+    <tr>
+      <th> <%= f.label :ticket_name_yes_no, "修復歴の有無" %> </th>
       <td> 
-	<%= f.text_field :number_of_sheets, id: "sizeform", class: "price-text" %>
+  <div class="text-menu-serach">
+    <ul>
+      <li><%= f.radio_button :ticket_name_yes_no, :yse %><div class="absolute">修復歴あり</div><small><p>商品状態への記入をお願いします</p></small></li>
+      <li><%= f.radio_button :ticket_name_yes_no, :no %><div class="absolute">修復歴なし</div></li>
+    </ul>
+  </div>
       </td>
     </tr>
     <tr>
-      <th> <%= f.label :seat, "席の種類" %> </th>
-      <td> 
-	<%= f.text_field :seat,  class: "price-text" , placeholder: "席の種類を入力　例：S席"%>
-      </td>
-    </tr>
-    <tr>
-      <th>  <%= f.label :seat_in_detail , "席の詳細内容" %> </th>
-      <td> <%= f.text_area :seat_in_detail ,cols: 10 %> </td>
+      <th>  <%= f.label :state_info , "商品の詳細な状態" %> </th>
+      <td> <%= f.text_area :state_info ,cols: 10 %> </td>
     </tr>
     <tr>
       <th> <%= f.label :shipping_method, "発送方法" %> </th>
@@ -110,21 +212,83 @@ td.w100 { width: 100px; }
 
   <div class="sub-box">商品情報</div>
 
-  <div class="text-main">
-    <div class="field">
-      <%= f.label :nsk, "購入元" %><br>
-    </div>
-    <div class="text-menu">
-      <br />
-      <ul>
-	<li><%= f.radio_button :nsk, :seiki %><div class="absolute">正規店・直営店</div><small><p>デパート・旗艦店・ECサイト含む</p></small></li>
-	<li><%= f.radio_button :nsk, :c2c %><div class="absolute">中古品</div><small><p>フリマサイト・質屋などの2次流通品</p></small></li>
-	<li><%= f.radio_button :nsk, :present %><div class="absolute">贈与・懸賞</div><small><p>友人・知人からのプレゼントや賞品</p></small></li>
-	<li><%= f.radio_button :nsk, :other %><div class="absolute">その他・不明</div><small><p>出処不明。詳細に記入</p></small></li>
-      </ul>
-    </div>
+  <table>
+    <tr>
+      <th class="w100"> <%= f.label :color, "カラー・デザイン" %> </th>
+      <td>
+  <%= f.text_field :color, id: "colorform", class: "price-text", placeholder: "カラー・デザインを記入する" %>
+      </td>
+    </tr>
+    <tr>
+      <th class="w100"> <%= f.label :madein, "ブランド国別(Made in)" %> </th>
+      <td>
+  <%= f.text_field :madein, id: "madeinform", class: "price-text", placeholder: "カラー・デザインを記入する" %>
+      </td>
+    </tr>
+    <tr>
+      <th class="w100"> <%= f.label :size, "サイズ" %> </th>
+      <td>
+  <%= f.text_field :size, class: "price-text" ,placeholder: "サイズを記入する。わからない場合は『不明』" %>
+      </td>
+    </tr>
+    <tr>
+      <th class="w100"> <%= f.label :material, "素材" %> </th>
+      <td>
+  <%= f.text_field :material, id: "materialform", class: "price-text" ,placeholder: "素材を記入する。わからない場合は『不明』" %>
+      </td>
+    </tr>
+    <tr>
+      <th class="w100"> <%= f.label :number, "型番" %> </th>
+      <td>
+  <%= f.text_field :number, class: "price-text" ,placeholder: "型番を記入する。わからない場合は『不明』" %>
+      </td>
+    </tr>
+    <tr>
+      <th> <%= f.label :accessories, "付属品の有無" %> </th>
+      <td>
+  <div class="text-menu-serach">
+    <ul>
+  <li><%= f.radio_button :accessories, :hi %><div class="absolute">付属品あり</div><small><p>箱などの付属品あり</p></small></li>
+  <li><%= f.radio_button :accessories, :low %><div class="absolute">付属品なし</div><small><p>特に何もなく商品のみ</p></small></li>
+    </ul>
   </div>
-  <br />
+      </td>
+    <tr>
+      <th class="w100"> <%= f.label :accessories_info, "付属品の詳細" %> </th>
+      <td>
+  <%= f.text_field :accessories_info, class: "price-text" ,placeholder: "付属品の詳細を記入する。ない場合は空欄で可能" %>
+      </td>
+    </tr>
+    <tr>
+      <th> <%= f.label :nsk, "購入元" %> </th>
+      <td>
+  <div class="text-menu">
+    <ul>
+  <li><%= f.radio_button :nsk, :seiki %><div class="absolute">正規店・直営店</div><small><p>デパート・旗艦店・ECサイト含む</p></small></li>
+  <li><%= f.radio_button :nsk, :c2c %><div class="absolute">中古品</div><small><p>フリマサイト・質屋などの2次流通品</p></small></li>
+  <li><%= f.radio_button :nsk, :present %><div class="absolute">贈与・懸賞</div><small><p>友人・知人からのプレゼントや賞品</p></small></li>
+  <li><%= f.radio_button :nsk, :other %><div class="absolute">その他・不明</div><small><p>出処不明。詳細に記入</p></small></li>
+    </ul>
+  </div>
+      </td>
+    </tr>
+    <tr>
+      <th> <%= f.label :certificate, "鑑定書類の有無" %> </th>
+      <td> 
+  <div class="text-menu-serach">
+    <ul>
+      <li><%= f.radio_button :certificate, :no_no %><div class="absolute">鑑定書・鑑別書なし</div><small><p>鑑別書類なし<span style="color:#ff0000;">＊要確認 </span></p></small></li>
+        <li><%= f.radio_button :certificate, :yes_yse %><div class="absolute">鑑定書類あり</div><small><p>鑑定書などの正規品判断書類あり</p></small></li>
+    </ul>
+    <p>&emsp;&emsp;販売価格を15000円以上に設定する場合は必ず鑑定する。</p>
+    <p>&emsp;&emsp;鑑定書・鑑別書・購入先での商品レシートなどが有効。</p>
+  </div>
+      </td>
+    </tr>
+  </table>
+
+<br />
+
   <div class="chexbox">
     <div class="text-main">
       <div class="field">
@@ -168,6 +332,15 @@ td.w100 { width: 100px; }
 	<li><%= f.radio_button :docide_promptly, :other_day %><div class="absolute">相談・未定</div><small><p>商品詳細にて記入をお願いします</p></small></li>
       </ul>
     </div>
+  </div>
+  <br />
+  <div class="text-main">
+     <div class="field">
+            <%= f.label :comment_text , "商品の詳細" %><br>
+     </div>
+     <div class="text-menu">
+            <%= f.text_area :comment_text ,placeholder: "商品の詳しい詳細などを記入して下さい。詳細画面にて全文表示されます。購入者へ向けて丁寧に書くコトにより、安心感が生まれ、購入される確率が上がります。例：①仕様　内側：オープンポケット×3、札入れ×1、カードホルダー×4、小銭入れ×1　例:②　着丈  49cm　肩幅  35.5cm　身幅  44.5cm　袖丈  59cm...など  " %>
+     </div>
   </div>
   <br />
   <br />

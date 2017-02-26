@@ -38,7 +38,7 @@
 <div class="dtlSumArea">
   <h1>
     <div class="dtlTit"><%= @shop.airt_name %></div>
-    <div class="dtlSubTit"><%= @shop.live_tour_name %></div>
+    <div class="dtlSubTit"><%= @shop.item_name %></div>
   </h1>
 
   <div class="dtlSpecBox">
@@ -49,8 +49,8 @@
           <th>CONDITION</th>
         </tr>
         <tr>
-          <td><span class="sizeNum"><%= @shop.day_date %></span></td>
-          <td><span class="rankNum"><%= @shop.plase %></span></td>
+          <td><span class="sizeNum"><%= @shop.madein %>製<br /><%= @shop.size %></span></td>
+          <td><span class="rankNum"><%= @shop.state %></span></td>
         </tr>
       </table>
     </div>
@@ -63,6 +63,8 @@
           <td>
             <!--pricedown-->
               <div><span class="priceNum"><span>￥</span><span class="priceAmount"><%= number_with_delimiter(@shop.price) %></span></span><span class="     placeTax">（税込）</span>
+                <br /><span class="priceNum"><span>￥</span>参考価格<%= number_with_delimiter(@shop.refprice) %></span>
+                <br /><%= number_with_delimiter(@selldis) %>
 
                      <div style="display:inline-block;"><span class="priceReclo">
                         締め切り時間 <%= @shop.close_datetime %>(残り<%= @shop.rest_time_code %>)</span>
@@ -88,8 +90,8 @@
     <h3>サイズ</h3>
   <table>
       <tr>
-        <th>長さ</th>
-        <td><%= @shop.nsk_i18n %></td>
+        <th>長さ(size)</th>
+        <td>基準サイズ&emsp;<%= @shop.madein %>製&emsp;<%= @shop.size %></td>
       </tr>
   </table>
   </div>
@@ -97,16 +99,16 @@
     <h3>コンディション</h3>
     <table>
       <tr>
-        <th>査定結果</th>
+        <th>状態</th>
         <td class="condition">
           <div class="condition_label">
-              <%= @shop.ticketing_state_i18n %><%= @shop.seat %>
+              <%= @shop.state %>
           </div>
         </td>
       </tr>
       <tr>
-        <th>詳細情報</th>
-        <td><%= @shop.seat_in_detail %></td>
+        <th>状態の詳細情報</th>
+        <td><%= @shop.state_info %></td>
       </tr>
     </table>
     </div>
@@ -114,16 +116,20 @@
     <h3>商品詳細</h3>
   <table>
       <tr>
+        <th>カラー・デザイン</th>
+        <td><%= @shop.color %></td>
+      </tr>
+      <tr>
         <th>素材</th>
-        <td><%= @shop.ticket_name %>&emsp;&nbsp;<%= @shop.ticket_name_yes_no_i18n %></td>
+        <td><%= @shop.material %></td>
       </tr>
       <tr>
-        <th>カラー</th>
-        <td><%= @shop.shipping_method_i18n %></td>
+        <th>付属品の有無</th>
+        <td><%= @shop.accessories %></td>
       </tr>
       <tr>
-        <th>付属品</th>
-        <td><%= @shop.docide_promptly_i18n %></td>
+        <th>付属品の詳細</th>
+        <td><%= @shop.accessories_info %></td>
       </tr>
       <tr>
         <th>購入元</th>
@@ -131,11 +137,19 @@
       </tr>
       <tr>
         <th>正規品判別書類の有無</th>
-        <td><%= @shop.nsk_i18n %><br /><%= @shop.nsk_i18n %></td>
+        <td><%= @shop.certificate %></td>
+      </tr>
+      <tr>
+        <th>型番</th>
+        <td><%= @shop.number %></td>
       </tr>
       <tr>
         <th>商品ID(番号)</th>
         <td><%= @shop.id %></td>
+      </tr>
+      <tr>
+        <th>その他の情報</th>
+        <td><%= @shop.comment_text %></td>
       </tr>
   </table>
   </div>
@@ -203,6 +217,10 @@
       <tr>
         <th>ID(番号)</th>
         <td><%= @shop.user.id %></td>
+      </tr>
+      <tr>
+        <th>出品者プロフィール</th>
+        <td><%= @shop.user_text %></td>
       </tr>
   </table>
   </div>
