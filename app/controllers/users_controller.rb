@@ -21,9 +21,9 @@ class UsersController < ApplicationController
       @money = current_user.momey
       @user_text = current_user.user_text
       @identification = current_user.identification
-      @shops = current_user.shops.page(params[:page]).per(5).order("created_at DESC")
+      @shops = current_user.shops.page(params[:page]).per(3).order("created_at DESC")
       #特定のユーザーが登録したお気に入りを全て取得する
-      @favorite_shops = current_user.favorite_shops.page(params[:favorite_page]).per(5).order("created_at DESC")
+      @favorite_shops = current_user.favorite_shops.page(params[:favorite_page]).per(3).order("created_at DESC")
     end
 
     def index

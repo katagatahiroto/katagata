@@ -110,20 +110,23 @@ class ShopsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def shop_params
       params.require(:shop).
-        permit(:airt_name, :female, :big_tags, :sub_tags, :state, :day_date, :price, :ref_price, :certificate, :color, :size, :material, :number, :nsk,
-          :ticket_name_yes_no, :shipping_method, :postage, :docide_promptly, :close_date, :comment_text, :state_info, :madein, :accessories,
-          :accessories_info, :item_name, :image, :image_cache, :remoe_image, images_attributes: [:image])
+        permit(:airt_name, :female, :big_tags, :sub_tags, :state, :day_date,
+               :price, :ref_price, :certificate, :color, :size, :material, :number, :nsk,
+               :ticket_name_yes_no, :shipping_method, :postage, :docide_promptly, :close_date, :close_datetime,
+               :comment_text, :state_info, :madein, :accessories,
+               :accessories_info, :item_name,
+               :image, :image_cache, :remoe_image, images_attributes: [:image])
     end
 
   def getprice #商品代金の合計(代金✖️枚数)
       a = @shop.price.to_i
-      b = @shop.number_of_sheets.to_i
+      b = 1
       @getprice = a * b
   end
 
   def buyprice #お支払い代金の合計
       a = @shop.price.to_i
-      b = @shop.number_of_sheets.to_i
+      b = 1
       @getprice = a * b
 
     if
@@ -149,7 +152,7 @@ class ShopsController < ApplicationController
 
   def otherprice #手数料
       a = @shop.price.to_i
-      b = @shop.number_of_sheets.to_i
+      b = 1
       @getprice = a * b
 
       if
@@ -175,7 +178,7 @@ class ShopsController < ApplicationController
 
   def taxprice #事務手数料一律300円
       a = @shop.price.to_i
-      b = @shop.number_of_sheets.to_i
+      b = 1
       @getprice = a * b
       @taxprice = (@getprice + 300) - @getprice
   end
@@ -207,12 +210,19 @@ class ShopsController < ApplicationController
   def selldis #参考価格からの値引率表示計算式
     a = @shop.price.to_i
     b = @shop.ref_price.to_i
+    off = "％OFF"
+    d = "定価以上の商品"
     if
       b == 0
-      @selldis == "不明"
+      @selldisbuy = "不明"
+    elsif
+      a <= b
+      c = 100 * a / b
+      selldis = 100 - c
+      @selldisbuy = selldis.to_s + off
     else
-      c = b/a
-      @selldis = 1 - c
+      a >= b
+      @selldisbuy = d
     end
   end
 
