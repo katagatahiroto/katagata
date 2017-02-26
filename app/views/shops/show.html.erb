@@ -49,29 +49,33 @@
           <th>CONDITION</th>
         </tr>
         <tr>
-          <td><span class="sizeNum"><%= @shop.madein %>製<br /><%= @shop.size %></span></td>
+          <td><span class="sizeNum"><%= @shop.madein %>製&emsp;<%= @shop.size.truncate(10) %></span></td>
           <td><span class="rankNum"><%= @shop.state %></span></td>
         </tr>
       </table>
     </div>
     <div class="dtlSpecRack">
       <table class="dtlSpec02">
+      <tbody>
         <tr>
           <th>PRICE</th>
         </tr>
         <tr>
           <td>
-            <!--pricedown-->
-              <div><span class="priceNum"><span>￥</span><span class="priceAmount"><%= number_with_delimiter(@shop.price) %></span></span><span class="     placeTax">（税込）</span>
-                <br /><span class="priceNum"><span>￥</span>参考価格<%= number_with_delimiter(@shop.refprice) %></span>
-                <br /><%= number_with_delimiter(@selldis) %>
+            <div>
+              <span class="priceNum"><span><small><strong>￥</strong></small></span><span class="priceAmount"><strong><%= number_with_delimiter(@shop.price) %></strong></span></span>&emsp;&emsp;
 
-                     <div style="display:inline-block;"><span class="priceReclo">
-                        締め切り時間 <%= @shop.close_datetime %>(残り<%= @shop.rest_time_code %>)</span>
-                     </div>
+              <div style="display:inline-block;"><span class="priceOtokuna">
+                <strong><%= @selldisbuy %></strong></span>
+                        <br>
+                        <span class="priceOther">参考価格：<span class="strike">￥<%= number_with_delimiter(@shop.ref_price) %></span></span>
               </div>
+            </div>
           </td>
         </tr>
+      </tbody>
+
+
       </table>
     </div>
   </div>
@@ -125,7 +129,7 @@
       </tr>
       <tr>
         <th>付属品の有無</th>
-        <td><%= @shop.accessories %></td>
+        <td><%= @shop.accessories_i18n %></td>
       </tr>
       <tr>
         <th>付属品の詳細</th>
@@ -137,7 +141,7 @@
       </tr>
       <tr>
         <th>正規品判別書類の有無</th>
-        <td><%= @shop.certificate %></td>
+        <td><%= @shop.certificate_i18n %></td>
       </tr>
       <tr>
         <th>型番</th>
@@ -219,8 +223,8 @@
         <td><%= @shop.user.id %></td>
       </tr>
       <tr>
-        <th>出品者プロフィール</th>
-        <td><%= @shop.user_text %></td>
+        <th>出品者の<br />プロフィール</th>
+        <td><%= @shop.user.user_text %></td>
       </tr>
   </table>
   </div>

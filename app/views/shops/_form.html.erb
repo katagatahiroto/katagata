@@ -178,8 +178,8 @@ td.w100 { width: 100px; }
   <div class="text-menu-serach">
   <br >
     <ul>
-      <li><%= f.radio_button :ticket_name_yes_no, :yse %><div class="absolute">修復歴あり</div><small><p>商品状態への記入をお願いします</p></small></li>
-      <li><%= f.radio_button :ticket_name_yes_no, :no %><div class="absolute">修復歴なし</div></li>
+      <li><%= f.radio_button :ticket_name_yes_no, :boo %><div class="absolute">修復歴あり</div><small><p>商品状態への記入をお願いします</p></small></li>
+      <li><%= f.radio_button :ticket_name_yes_no, :foo %><div class="absolute">修復歴なし</div></li>
     </ul>
   </div>
       </td>
@@ -229,7 +229,7 @@ td.w100 { width: 100px; }
     <tr>
       <th class="w100"> <%= f.label :madein, "ブランド国別(Made in)" %> </th>
       <td>
-  <%= f.text_field :madein, id: "madeinform", class: "price-text", placeholder: "カラー・デザインを記入する" %>
+  <%= f.text_field :madein, id: "madeinform", class: "price-text", placeholder: "MADE INを記入する" %>
       </td>
     </tr>
     <tr>
@@ -287,8 +287,8 @@ td.w100 { width: 100px; }
   <div class="text-menu-serach">
     <ul>
     <br />
-      <li><%= f.radio_button :certificate, :no_no %><div class="absolute">鑑定書・鑑別書なし</div><small><p>鑑別書類なし<span style="color:#ff0000;">＊要確認 </span></p></small></li>
-        <li><%= f.radio_button :certificate, :yes_yse %><div class="absolute">鑑定書類あり</div><small><p>鑑定書などの正規品判断書類あり</p></small></li>
+      <li><%= f.radio_button :certificate, :wowwow %><div class="absolute">鑑定書・鑑別書なし</div><small><p>鑑別書類なし<span style="color:#ff0000;">＊要確認 </span></p></small></li>
+        <li><%= f.radio_button :certificate, :wow %><div class="absolute">鑑定書類あり</div><small><p>鑑定書などの正規品判断書類あり</p></small></li>
     </ul>
     <p>&emsp;&emsp;販売価格を15000円以上に設定する場合は必ず鑑定する。</p>
     <p>&emsp;&emsp;鑑定書・鑑別書・購入先での商品レシートなどが有効。</p>
