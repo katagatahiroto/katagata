@@ -5,16 +5,29 @@ ja:
     group_id: グループ名
     user: ユーザー
     price: 販売（出品）価格
-    list_price: 種類
-    number_of_sheets: サイズ
     shipping_method: 発注方法（発送方法）
-    ticketing_state: 正規品判別書類の有り無し
     postage: 送料
     nsk: 販売商品の購入元
-    ticket_name: 素材
     ticket_name_yes_no: 修復履歴の有無
     docide_promptly: 商品の発送予定時期
-    seat: カラー
+    day_date: 覚えてる範囲での商品取得日
+    airt_name: 出品するブランド名
+    close_date: 終了日
+    female: 使用者のスタイルなど
+    big_tags: カテゴリー
+    sub_tags: 詳細なカテゴリー
+    state: 商品の状態
+    ref_price: 販売店の参考価格
+    certificate: 鑑定書などの正規品判別書類の有無
+    color: カラー・デザイン
+    size: サイズ
+    material: 素材
+    number: 型番
+    comment_text: その他の商品情報
+    state_info: 商品の詳細な状態説明
+    madein: 生産国(MADE IN)
+    accessories: 付属品の有無
+    item_name: 商品名
     name: 漢字（フルネーム）
     kana: カタカナでお名前(フルネーム)
     nickname: お好きなニックネーム
@@ -29,12 +42,7 @@ ja:
     account_number: 振込先、口座番号
     bankname: 振込先の金融機関名
     current_password: ご登録済みのパスワード
-    plase: 商品カテゴリー
-    live_tour_name: 商品の状態
-    day_date: 商品購入日
-    airt_name: 出品するブランド名
-    close_date: 終了日
-    othertext: 詳細な商品名
+    
 
   date:
     abbr_day_names:
@@ -232,10 +240,11 @@ ja:
     # 追加分
   enums:
     shop:
-      list_price:
-        men: 男性用
-        women: 女性用
-        others: 問わない
+      female:
+        men: MEN'S-STYLE
+        women: WOMEN'S-STYLE
+        full: STYLEを問わない
+        others: 観賞用(古美術品関係)など
       shipping_method:
         post: 郵送
         hand_sent: 手渡し
@@ -258,6 +267,9 @@ ja:
         within_3day: 2~3日以内
         within_7day: 4~7日以内
         other_day: 未定・不明(詳細にて)
+      accessories:
+        hi: 付属品あり
+        low: 付属品なし
     user:
       identification:
         ok: 本人確認提出済み
