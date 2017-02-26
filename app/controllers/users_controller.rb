@@ -19,6 +19,7 @@ class UsersController < ApplicationController
       @account_number = current_user.account_number
       @account_name = current_user.account_name
       @money = current_user.momey
+      @user_text = current_user.user_text
       @identification = current_user.identification
       @shops = current_user.shops.page(params[:page]).per(5).order("created_at DESC")
       #特定のユーザーが登録したお気に入りを全て取得する

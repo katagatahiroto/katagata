@@ -7,6 +7,7 @@ class ShopsController < ApplicationController
   before_action :buyprice, only: [:show]
   before_action :buyprice_sent, only: [:show]
   before_action :postageon, only: [:show]
+  before_action :selldis, only: [:show, :index]
 
 
   # GET /shops
@@ -109,15 +110,9 @@ class ShopsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def shop_params
       params.require(:shop).
-        permit(:live_tour_name, :airt_name, :plase,
-               :day_date, :time_date, :close_datetime,
-               :price, :list_price, :number_of_sheets, :serial_number,
-               :shipping_method, :ticketing_state, :postage, :nsk,
-               :ticket_name, :ticket_name_yes_no, :seat_in_detail,
-               :docide_promptly, :othertext, :seat, :image,
-               :image_cache, :remoe_image,
-               images_attributes: [:image]
-              )
+        permit(:airt_name, :female, :big_tags, :sub_tags, :state, :day_date, :price, :ref_price, :certificate, :color, :size, :material, :number, :nsk,
+          :ticket_name_yes_no, :shipping_method, :postage, :docide_promptly, :close_date, :comment_text, :state_info, :madein, :accessories,
+          :accessories_info, :item_name, :image, :image_cache, :remoe_image, images_attributes: [:image])
     end
 
   def getprice #商品代金の合計(代金✖️枚数)
@@ -206,6 +201,18 @@ class ShopsController < ApplicationController
     elsif
       sents == "postage_in"
       @postageon = "0"
+    end
+  end
+
+  def selldis #参考価格からの値引率表示計算式
+    a = @shop.price.to_i
+    b = @shop.ref_price.to_i
+    if
+      b == 0
+      @selldis == "不明"
+    else
+      c = b/a
+      @selldis = 1 - c
     end
   end
 
