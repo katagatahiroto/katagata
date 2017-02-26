@@ -14,10 +14,10 @@ class Shop < ActiveRecord::Base
 
   enum list_price: {men: 10 ,women: 20 ,full: 30 ,others: 40}
   enum shipping_method: {post: 30 ,hand_sent: 60}
-  enum ticketing_state: {have: 700 ,not_have: 800}
+  enum certificate: {wow: 700 ,wowwow: 800}
   enum postage: {postage_in: 91 , postage_out: 92}
   enum nsk: {seiki: 93 ,c2c: 94 ,present: 95 ,other: 96}
-  enum ticket_name_yes_no: {name_yes: 101 ,name_no: 102}
+  enum ticket_name_yes_no: {foo: 101 ,boo: 102}
   enum docide_promptly: {within_24_hours: 200 ,within_3day: 300 ,within_7day: 400 ,other_day:500}
   enum accessories: {hi: 111 ,low: 222}
   validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 1401 }
@@ -46,7 +46,7 @@ class Shop < ActiveRecord::Base
   validates :shipping_method, presence: true
   validates :postage, presence: true
   validates :docide_promptly, presence: true
-  validates :close_date, presence: true
+  # validates :close_date, presence: true
   validates :comment_text, presence: true
   validates :state_info, presence: true
   validates :madein, presence: true
