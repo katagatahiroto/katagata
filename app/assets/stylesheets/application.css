@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+element.style {
+    display: inline-block;
+}
+
 
 box1000-left
 html, body,
@@ -36,6 +40,13 @@ textarea{
   padding: 15px;
   margin: 0px auto;
   width: 400px;
+  height :140px;
+  font-size: 15px;
+}
+
+.text-area{
+  padding: 15px;
+  width: 500px;
   height :140px;
   font-size: 15px;
 }
@@ -123,14 +134,16 @@ input.time_datebox{
   left: -460px;
 }
 
-
+.strike{
+  text-decoration: line-through
+}
 /*---------top画面関係-----------*/
 
 .loopslider-underber{
   text-align: center;
   border-top: 5px solid #ffffff;
   padding-top: 10px;
-  width: 1070px;
+  width: 1024px;
 }
 
 .ticket-navi-paymentimage{
@@ -147,7 +160,28 @@ input.time_datebox{
   border-top: 5px solid #ffffff;
   border-bottom: 5px solid #ffffff;
   height: 500px;
-  width: 1070px;
+  width: 1024px;
+}
+
+
+.slider-under-index {
+  margin: 0 auto;
+  width: 1024px;
+}
+
+.slider-under-contents-index-center{
+  width: 310px;
+  text-align: left;
+  margin-left: 25px;
+  float: left;
+}
+
+
+.slider-under-contents-index {
+  width: 310px;
+  text-align: left;
+  margin-left: 25px;
+  float: left;
 }
 
 
@@ -1770,6 +1804,11 @@ th {
   padding-left: 25px
 }
 
+.bulebox{
+  width: 1024px;
+  margin: 0 auto;
+}
+
 .bulebox h4{
   border-radius: 25px;
   width: 160px;
@@ -1838,7 +1877,7 @@ th {
   padding-top: 10px;
   padding-left: 200px;
   position: relative;
-  bottom: 295px;
+  bottom: 455px;
   left: 390px;
 }
 
@@ -1848,10 +1887,16 @@ th {
 .mypage-main{
   width: 1024px;
   margin-top: 50px;
+  margin: 0 auto;
   padding-bottom: 50px;
   border-bottom: 3px solid #eee;
 
 }
+.index-box-mypage{
+  margin: 0 auto;
+  width: 1024px;
+}
+
 .mypage-header{
   height: 100px;
   padding: 10px;
@@ -1942,9 +1987,10 @@ background-color: #F5FFFA;
 
 
 .money{
+  width: 1024px;
   margin-top: 30px;
   margin-bottom: 30px;
-  margin-left: 30px;
+  margin: 0 auto;
 }
 
 
@@ -2024,12 +2070,13 @@ background-color: #F5FFFA;
 /* お気に入り */
 #favorite-mark {
   position: relative;
-  top: 10px;
+  top: 15px;
 }
 
 #favorite-count {
   position: relative;
-  bottom: 5px;
+  bottom: -5px;
+  left: -3px;
 }
 /* ポップアップメッセージ */
 #favorite-mark .unmark_popup {
@@ -2044,8 +2091,8 @@ background-color: #F5FFFA;
   position: absolute;
   text-align: center;
   width: 14em;
-  bottom: 40px;
-  left: -10px;
+  bottom: 10px;
+  left: 70px;
   background: none repeat scroll 0 0 #FFEDBE;
   border: 1px solid #FFD88C;
   padding: 0.5em;
@@ -2063,6 +2110,15 @@ background-color: #F5FFFA;
   padding-top: 3px;
   padding-left: 5px;
   height: 30px;
+  background-color: #C0C0C0;
+}
+
+.paginate-user{
+  padding-top: 3px;
+  padding-left: 5px;
+  height: 30px;
+  width: 1024px;
+  margin: 0 auto;
   background-color: #C0C0C0;
 }
 
@@ -2109,6 +2165,12 @@ background-color: #F5FFFA;
     height: 98px;
     margin-top: 4px;
     border: 1px solid #fff;
+}
+.priceNum {
+    color: #d14747;
+    font-size: 26px;
+    font-family: 'texgyreadventorbold';
+    letter-spacing: 0.5px;
 }
 
 
@@ -2186,7 +2248,7 @@ background-color: #F5FFFA;
 .dtlInfoArea-user {
     float: right;
     position: relative;
-    bottom: 1110px;
+    bottom: 1340px;
     right: 40px;
   }
 
@@ -2253,3 +2315,9 @@ background-color: #F5FFFA;
     padding: 15px;
     text-align: center;
 }
+
+.priceOtokuna {
+    margin: 0 10px 0 0;
+    font-size: 18px;
+}
+
