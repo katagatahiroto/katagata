@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170214074544) do
+ActiveRecord::Schema.define(version: 20170225204312) do
 
   create_table "favorites", force: :cascade do |t|
     t.integer  "user_id",    limit: 4, null: false
@@ -37,40 +37,48 @@ ActiveRecord::Schema.define(version: 20170214074544) do
   end
 
   create_table "shops", force: :cascade do |t|
-    t.string   "live_tour_name",     limit: 255,   default: ""
+    t.string   "state",              limit: 255,   default: ""
     t.string   "airt_name",          limit: 255,   default: ""
     t.time     "time_date"
     t.date     "day_date"
     t.datetime "close_datetime"
-    t.string   "plase",              limit: 255,   default: ""
+    t.string   "big_tags",           limit: 255,   default: ""
     t.integer  "user_id",            limit: 4
     t.string   "price",              limit: 255
-    t.integer  "list_price",         limit: 4
-    t.string   "number_of_sheets",   limit: 11
+    t.integer  "female",             limit: 4
+    t.string   "size",               limit: 11
     t.string   "serial_number",      limit: 11
-    t.string   "seat",               limit: 11
+    t.string   "color",              limit: 11
     t.integer  "shipping_method",    limit: 4
-    t.integer  "ticketing_state",    limit: 4
+    t.integer  "certificate",        limit: 4
     t.integer  "postage",            limit: 4
     t.integer  "nsk",                limit: 4
-    t.string   "ticket_name",        limit: 11
+    t.string   "material",           limit: 11
     t.integer  "ticket_name_yes_no", limit: 4
     t.string   "seat_in_detail",     limit: 255,   default: ""
     t.integer  "docide_promptly",    limit: 4
-    t.text     "othertext",          limit: 65535
+    t.text     "item_name",          limit: 65535
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image",              limit: 255
     t.string   "close_day",          limit: 255
+    t.string   "sub_tags",           limit: 255
+    t.string   "ref_price",          limit: 255
+    t.string   "number",             limit: 255
+    t.text     "comment_text",       limit: 65535
+    t.text     "state_info",         limit: 65535
+    t.string   "madein",             limit: 255
+    t.integer  "accessories",        limit: 4
+    t.string   "accessories_info",   limit: 255
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  limit: 255, default: "", null: false
-    t.string   "encrypted_password",     limit: 255, default: "", null: false
+    t.string   "email",                  limit: 255,   default: "", null: false
+    t.string   "encrypted_password",     limit: 255,   default: "", null: false
     t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          limit: 4,   default: 0,  null: false
+    t.integer  "sign_in_count",          limit: 4,     default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip",     limit: 255
@@ -79,8 +87,8 @@ ActiveRecord::Schema.define(version: 20170214074544) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email",      limit: 255
-    t.datetime "created_at",                                      null: false
-    t.datetime "updated_at",                                      null: false
+    t.datetime "created_at",                                        null: false
+    t.datetime "updated_at",                                        null: false
     t.string   "nickname",               limit: 255
     t.string   "name",                   limit: 255
     t.string   "kana",                   limit: 255
@@ -97,6 +105,7 @@ ActiveRecord::Schema.define(version: 20170214074544) do
     t.string   "account_name",           limit: 255
     t.string   "momey",                  limit: 255
     t.string   "identification",         limit: 255
+    t.text     "user_text",              limit: 65535
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
