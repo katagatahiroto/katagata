@@ -248,9 +248,9 @@ ja:
       shipping_method:
         post: 郵送
         hand_sent: 手渡し
-      ticketing_state:
-        have: 所持・書類あり
-        not_have: 書類なし
+      certificate:
+        wow: 所持・書類あり
+        wowwow: 書類なし
       postage:
         postage_in: 送料込み
         postage_out: 送料別（910円）
@@ -260,8 +260,8 @@ ja:
        present: 贈与・懸賞・賞品
        other: 出処不明・その他
       ticket_name_yes_no:
-        name_yes: 修正履歴無し
-        name_no: 修正履歴有り
+        foo: 修正履歴無し
+        boo: 修正履歴有り
       docide_promptly:
         within_24_hours: 24時間以内
         within_3day: 2~3日以内
