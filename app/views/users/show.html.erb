@@ -1,11 +1,11 @@
 <div class="serach_navimain clearfix">
 <% content_for :title do %>
-<%= @nickname %>さんの管理画面 | チケット売買ならチケリン
+<%= @nickname %>さんの管理画面 | ブランド品の売買ならオトクーナ
 <% end %>
 <div class="mypage-main clearfix">
   <div class="mypage-header clearfix">
      <div class="mypage-header-left">
-       <h2>★<%= @nickname %>さん★️出品チケット一覧</h2>
+       <h2>★<%= @nickname %>さん★️出品商品一覧</h2>
        <p><span style="color:#ff0000;">過去の出品データ含みます</span>&emsp;&emsp;ログイン時間&emsp;<%= Time.now.strftime("%Y年%m月%d日 %H時%M分")%></p>
      </div>
      <div class="mypage-header-right">
@@ -69,7 +69,7 @@
 
     <% # 検討リスト --- %>
 <div class="index-box-mypage">
-  <h2>★<%= @nickname %>さん★️検討チケット一覧</h2>
+  <h2>★<%= @nickname %>さん★️お気に入り商品一覧</h2>
   <%
     # NOTE : shops/index.html.erbのshops一覧とほぼ同じなので、
     #        (こちら側はsearch_form_forを削除している、ただしこれも仮)
