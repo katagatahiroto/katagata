@@ -13,7 +13,7 @@
       <h3><span style="color:#FFFFFF;">出品商品詳細情報</span></h3>
     </div>
     <div class="mypage-header-right">
-      <% if current_user && current_use.id == @shop.user_id %>
+      <% if current_user && current_user.id == @shop.user_id %>
       &emsp;
         <%= link_to "編集",edit_shop_path(@shop), class: "btn btn-blue" %>
 	<% end %>
