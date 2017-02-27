@@ -32,13 +32,15 @@ class ShopsController < ApplicationController
   # GET /shops/new
   def new
     @shop = Shop.new
+    
     5.times {@shop.images.build}
   end
 
   # GET /shops/1/edit
   def edit
     @shop = Shop.find(params[:id])
-    @shop.images.build
+    @images = @shop.images
+    (5-@images.size).times {@shop.images.build}
   end
 
   # POST /shops
@@ -50,10 +52,10 @@ class ShopsController < ApplicationController
       args[:close_datetime].gsub(/[年月]/,"/").sub(/時/,":").sub(/日/," ")
     @shop = current_user.shops.build(args)
     if @shop.save
-    redirect_to @shop, notice: "出品されました"
+      redirect_to @shop, notice: "出品されました"
     else
       @shops = Shop.all.order(created_at: :desc)
-    5.times {@shop.images.build}
+      5.times {@shop.images.build}
       render :edit
     end
 
@@ -66,7 +68,10 @@ class ShopsController < ApplicationController
     args[:close_datetime] =
       args[:close_datetime].gsub(/[年月]/,"/").sub(/時/,":").sub(/日/," ")
 
-    
+    params[:rm_img] && params[:rm_img].each_pair{|id,value|
+      next unless value == "1"
+      Image.find(id).delete
+    }
     if @shop.user_id == current_user.id && @shop.update(args)
         redirect_to @shop, notice: '出品内容を変更しました。'
     else
