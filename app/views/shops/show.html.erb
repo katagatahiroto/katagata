@@ -8,9 +8,19 @@
 
 
 <div class="box200 clearfix">
-  <div class="box300 clearfix">
-    <h3><span style="color:#FFFFFF;">出品商品詳細情報</span></h3>
+  <div class="mypage-header-right">
+    <div class="box300 mypage-header-right">
+      <h3><span style="color:#FFFFFF;">出品商品詳細情報</span></h3>
+    </div>
+    <div class="mypage-header-right">
+      <% if current_user && current_user.id == @shop.user_id %>
+      &emsp;
+        <%= link_to "編集",edit_shop_path(@shop), class: "btn btn-blue" %>
+	<% end %>
+	
+    </div>
   </div>
+  <div class="clear">&emsp;</div>
         <table id="tablebox-show_sub">
           <tr class="header">
             <th class="box1000-left">内容</th>
@@ -93,7 +103,7 @@
             </td>
           </tr>
         </table>
-
+	
         <table id="tablebox-show_sub-right">
           <tr class="header">
             <th class="box1000-left">内容</th>
@@ -190,7 +200,7 @@
             <%= form_tag("/shops/#{@shop.id}/questions", method: :post) do %>
            <textarea cols="30" name="text" placeholder="コメントする" rows="2" class="textarea-question"></textarea>
   <br /><br />
-           <input type="submit" value="質問する" class="submit-button">
+           <input type="submit" value="質問する" class="black-btn">
            <% end %>
            <% end %>
    </div>
