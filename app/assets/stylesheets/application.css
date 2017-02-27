@@ -17,7 +17,7 @@ form, div {
   color: #111111;
 }
 
-input {
+input[type="text"] {
   margin: 0;
   padding: 0;
   width: 250px;
@@ -746,6 +746,10 @@ li.ui-timepicker-selected .ui-timepicker-duration,
   clear: both;
   display: block;
 }
+.clear {
+  clear: both;
+}
+
 
 .header-menu-right li {
   float: left;
@@ -1928,6 +1932,23 @@ background-color: #F5FFFA;
 }
 
 .btn.btn-primary:hover {
+  opacity: 0.8;
+}
+
+.btn.btn-primary{
+  font-size: 18px;
+  background-color: pink;
+}
+
+.btn.btn-primary:hover {
+  opacity: 0.8;
+}
+.btn.btn-blue{
+  font-size: 20px;
+  background-color: blue;
+}
+
+.btn.btn-blue:hover {
   opacity: 0.8;
 }
 
