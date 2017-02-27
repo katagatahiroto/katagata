@@ -4,6 +4,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     pp :passthru
   end
 
+  def facebook
+    callback_from :facebook
+  end
+
   # def facebook
   #   callback_from :facebook
   # end
