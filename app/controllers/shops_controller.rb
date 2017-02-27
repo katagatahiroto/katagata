@@ -73,7 +73,8 @@ class ShopsController < ApplicationController
       Image.find(id).delete
     }
     if @shop.user_id == current_user.id && @shop.update(args)
-        redirect_to @shop, notice: '出品内容を変更しました。'
+      Image.where(image: nil).delete_all
+      redirect_to @shop, notice: '出品内容を変更しました。'
     else
       render :edit
     end
