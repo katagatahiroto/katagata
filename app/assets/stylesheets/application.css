@@ -1935,6 +1935,23 @@ background-color: #F5FFFA;
   opacity: 0.8;
 }
 
+.btn.btn-primary{
+  font-size: 18px;
+  background-color: pink;
+}
+
+.btn.btn-primary:hover {
+  opacity: 0.8;
+}
+.btn.btn-blue{
+  font-size: 20px;
+  background-color: blue;
+}
+
+.btn.btn-blue:hover {
+  opacity: 0.8;
+}
+
 .alert.alert-danger{
   width: 820px;
 }
