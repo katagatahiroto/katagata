@@ -12,8 +12,8 @@ CarrierWave.configure do |config|
       config.asset_host = 'https://s3.amazonaws.com/otoku-na'
 
     when 'development'
-      config.fog_directory = 'dev.dummy'
-      config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/dev.dummy'
+      config.fog_directory = 'otoku-na'
+      config.asset_host = 'https://s3.amazonaws.com/otoku-na'
 
     when 'test'
       config.fog_directory = 'test.dummy'
