@@ -7,10 +7,10 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
-  get "/user/oauth/facebook/callback" => "users/omniauth_callbacks#facebook"
-  post "/user/oauth/facebook/callback" => "users/omniauth_callbacks#facebook"
-  get "/user/oauth/twitter/callback" => "users/omniauth_callbacks#twitter"
-  post "/user/oauth/twitter/callback" => "users/omniauth_callbacks#twitter"
+  get "users/auth/facebook/callback" => "users/omniauth_callbacks#facebook"
+  post "users/auth/facebook/callback" => "users/omniauth_callbacks#facebook"
+  get "users/auth/twitter/callback" => "users/omniauth_callbacks#twitter"
+  post "users/auth/twitter/callback" => "users/omniauth_callbacks#twitter"
 
 #  devise_for :users, controllers: {
 #               omniauth_callbacks: 'users/omniauth_callbacks'
@@ -29,7 +29,7 @@ Rails.application.routes.draw do
 
   get   '/shops/mark/:shop_id' => 'shops#mark', as: 'favorites_mark'     # お気に入りの追加
   get   '/shops/unmark/:shop_id' => 'shops#unmark', as: 'favorites_unmark' # お気に入りの解除
-  #resources :favorite
+  #resources :favori:te%2F%2Fmsdnwork.aliadne.net%2Fusers%2Fauth%2Ffacebook%2Fcallback&response_type=code&scope=email&state=ea9ca7048cad2a5ecaeae1c922610882b542fb52f17d9874
   
   get 'home/puraibashi'
   get 'home/torihikihou'
