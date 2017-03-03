@@ -51,8 +51,13 @@ class ImageUploader < CarrierWave::Uploader::Base
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
    def filename
-    "#{Time.now.strftime('%Y%m%d%H%M%S')}.jpg" if original_filename.present?
-   #   "something.jpg" if original_filename
+     if original_filename.present?
+       if %r(uploads/tmp) =~ self.model.image.url
+         "#{Time.now.strftime('%Y%m%d%H%M%S')}.jpg"
+       else
+         self.model.image.url[/\/(\d+\.jpg)$/,1]
+       end
+     end
    end
-
+   
 end
