@@ -55,7 +55,7 @@ class ImageUploader < CarrierWave::Uploader::Base
        if %r(uploads/tmp) =~ self.model.image.url
          "#{Time.now.strftime('%Y%m%d%H%M%S')}.jpg"
        else
-         self.model.image.url[/\/(\d+\.jpg)$/,1]
+         File.basename self.model.image.url
        end
      end
    end
