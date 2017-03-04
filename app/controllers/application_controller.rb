@@ -6,6 +6,9 @@ class ApplicationController < ActionController::Base
   before_filter :set_ransack
 
 
+
+  helper_method  :logged_in?
+
   def set_ransack
     #@search = Article.search(params[:q])
    @ransack = Shop.ransack(params[:q]) #ransackメソッド推奨
@@ -24,5 +27,6 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
       devise_parameter_sanitizer.permit(:account_update , keys: [:name, :nickname, :tel, :number ,:address ,:littleaddress ,:subaddress ,:big_address ,:bankname, :branch_name, :account_type, :account_number, :account_name, :user_text])
   end
+
 end
 

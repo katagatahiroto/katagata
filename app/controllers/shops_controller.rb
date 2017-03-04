@@ -7,7 +7,8 @@ class ShopsController < ApplicationController
   before_action :buyprice, only: [:show]
   before_action :buyprice_sent, only: [:show]
   before_action :postageon, only: [:show]
-  before_action :selldis, only: [:show, :index]
+  before_action :selldis, only: [:show]
+  before_action :selldisindex, only: [:index]
 
 
   # GET /shops
@@ -33,13 +34,15 @@ class ShopsController < ApplicationController
   # GET /shops/new
   def new
     @shop = Shop.new
+    
     5.times {@shop.images.build}
   end
 
   # GET /shops/1/edit
   def edit
     @shop = Shop.find(params[:id])
-    @shop.images.build
+    @images = @shop.images
+    (5-@images.size).times {@shop.images.build}
   end
 
   # POST /shops
@@ -51,10 +54,10 @@ class ShopsController < ApplicationController
       args[:close_datetime].gsub(/[年月]/,"/").sub(/時/,":").sub(/日/," ")
     @shop = current_user.shops.build(args)
     if @shop.save
-    redirect_to @shop, notice: "出品されました"
+      redirect_to @shop, notice: "出品されました"
     else
       @shops = Shop.all.order(created_at: :desc)
-    5.times {@shop.images.build}
+      5.times {@shop.images.build}
       render :edit
     end
 
@@ -67,9 +70,13 @@ class ShopsController < ApplicationController
     args[:close_datetime] =
       args[:close_datetime].gsub(/[年月]/,"/").sub(/時/,":").sub(/日/," ")
 
-    
+    params[:rm_img] && params[:rm_img].each_pair{|id,value|
+      next unless value == "1"
+      Image.find(id).delete
+    }
     if @shop.user_id == current_user.id && @shop.update(args)
-        redirect_to @shop, notice: '出品内容を変更しました。'
+      Image.where(image: nil).delete_all
+      redirect_to @shop, notice: '出品内容を変更しました。'
     else
       render :edit
     end
@@ -100,6 +107,7 @@ class ShopsController < ApplicationController
     count =Favorite.where(shop_id: params[:shop_id]).count
     render :json => {count: (count>0 ? count : "　"),src: "/assets/favorite_unmark.png" }
   end
+
   
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -225,5 +233,24 @@ class ShopsController < ApplicationController
       @selldisbuy = d
     end
   end
+
+  # def selldisindex #参考価格からの値引率表示計算式
+  #   a = @shop.price.to_i
+  #   b = @shop.ref_price.to_i
+  #   off = "％OFF"
+  #   d = "定価以上の商品"
+  #   if
+  #     b == 0
+  #     @selldisbuyindex = "不明"
+  #   elsif
+  #     a <= b
+  #     c = 100 * a / b
+  #     selldis = 100 - c
+  #     @selldisbuyindex = selldis.to_s + off
+  #   else
+  #     a >= b
+  #     @selldisbuyindex = d
+  #   end
+  # end
 
 end

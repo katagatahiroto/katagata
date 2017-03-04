@@ -8,6 +8,7 @@ class HomeController < ApplicationController
     #   format.html # index.html.erb
     #   format.json { render json: @shops }
     # end
+    @selldisbuy
   end
 
   def about
@@ -31,6 +32,9 @@ class HomeController < ApplicationController
 #     end
 # end
 
+
+
 end
+
 
 
