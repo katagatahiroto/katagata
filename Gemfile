@@ -64,6 +64,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'gretel'
 gem 'sitemap_generator'
+gem 'fog'
 gem 'whenever', require: false
 group :production, :staging do
   gem 'rails_12factor'
