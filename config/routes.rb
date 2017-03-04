@@ -5,7 +5,14 @@ Rails.application.routes.draw do
   post 'inquiry/confirm' => 'inquiry#confirm'   # 確認画面
   post 'inquiry/thanks' => 'inquiry#thanks'     # 送信完了画面
 
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+
+  get "users/auth/facebook/callback" => "users/omniauth_callbacks#facebook"
+  post "users/auth/facebook/callback" => "users/omniauth_callbacks#facebook"
+  get "users/auth/twitter/callback" => "users/omniauth_callbacks#twitter"
+  post "users/auth/twitter/callback" => "users/omniauth_callbacks#twitter"
+
+  
   resources :users, only: [:show,:index,:edit]
   resources :shops do
   resources :questions, only: [:create]
