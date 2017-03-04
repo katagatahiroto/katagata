@@ -49,7 +49,7 @@
           <th>CONDITION</th>
         </tr>
         <tr>
-          <td><span class="sizeNum"><%= @shop.madein %>製&emsp;<%= @shop.size %></span></td>
+          <td><span class="sizeNum"><%= @shop.madein %>製&emsp;ー</span></td>
           <td><span class="rankNum"><%= @shop.state %></span></td>
         </tr>
       </table>
@@ -94,8 +94,136 @@
     <h3>サイズ</h3>
   <table>
       <tr>
-        <th>長さ(size)</th>
-        <td>基準サイズ&emsp;<%= @shop.madein %>製&emsp;<%= @shop.size %></td>
+        <th>生産国(MADE IN)<br />
+        長さ(size)</th>
+        <td>基準サイズ&emsp;<%= @shop.madein %>製<br />
+        <%= @shop.size %></td>
+      </tr>
+<div id="contents">
+   <div id="modal">
+     <div id="open01">
+       <a href="#" class="close_overlay">×</a>
+         <div class="modal_window">
+            <h2>サイズ表(ウィメンズ)</h2>
+            <p>アパレルアイテムのサイズは、日本と海外で異なる場合がございます。素材の性質やブランドによっても<br />誤差がありますので、目安としてご参照ください。<br /><br />
+              <strong>レディースシューズ</strong></p></p>
+              <%= image_tag("hatena1.png", :size => "700x400") %>
+              <br />
+              <br />
+<a href="#" class="black-btn">【×】CLOSE</a>
+</div><!--/.modal_window-->
+</div><!--/#open01-->
+
+<div id="open02">
+       <a href="#" class="close_overlay">×</a>
+         <div class="modal_window">
+            <h2>サイズ表(ウィメンズ)</h2>
+            <p>アパレルアイテムのサイズは、日本と海外で異なる場合がございます。素材の性質やブランドによっても<br />誤差がありますので、目安としてご参照ください。<br /><br />
+              <strong>トップス・ボトムス</strong></p></p>
+              <%= image_tag("hatena2.png", :size => "700x400") %>
+              <br />
+              <br />
+<a href="#" class="black-btn">【×】CLOSE</a>
+</div><!--/.modal_window-->
+</div><!--/#open02-->
+
+<div id="open03">
+       <a href="#" class="close_overlay">×</a>
+         <div class="modal_window">
+            <h2>サイズ表(メンズ)</h2>
+            <p>アパレルアイテムのサイズは、日本と海外で異なる場合がございます。素材の性質やブランドによっても<br />誤差がありますので、目安としてご参照ください。<br /><br />
+              <strong>メンズシューズ</strong></p></p>
+              <%= image_tag("hatena3.png", :size => "700x400") %>
+              <br />
+              <br />
+<a href="#" class="black-btn">【×】CLOSE</a>
+</div><!--/.modal_window-->
+</div><!--/#open03-->
+
+<div id="open04">
+       <a href="#" class="close_overlay">×</a>
+         <div class="modal_window">
+            <h2>サイズ表(メンズ)</h2>
+            <p>アパレルアイテムのサイズは、日本と海外で異なる場合がございます。素材の性質やブランドによっても<br />誤差がありますので、目安としてご参照ください。<br /><br />
+              <strong>トップス・ボトムス</strong></p></p>
+              <%= image_tag("hatena4.png", :size => "700x400") %>
+              <br />
+              <br />
+<a href="#" class="black-btn">【×】CLOSE</a>
+</div><!--/.modal_window-->
+</div><!--/#open04-->
+
+<div id="open05">
+       <a href="#" class="close_overlay">×</a>
+         <div class="modal_window">
+            <h2>サイズ表(メンズ)</h2>
+            <p>アパレルアイテムのサイズは、日本と海外で異なる場合がございます。素材の性質やブランドによっても<br />誤差がありますので、目安としてご参照ください。<br /><br />
+              <strong>シャツ</strong></p></p>
+              <%= image_tag("hatena5.png", :size => "700x400") %>
+              <br />
+              <br />
+<a href="#" class="black-btn">【×】CLOSE</a>
+</div><!--/.modal_window-->
+</div><!--/#open05-->
+
+
+<div id="open06">
+       <a href="#" class="close_overlay">×</a>
+         <div class="modal_window">
+            <h2>商品の状態(ランク)</h2>
+            <p>オトクーナでは、コンディションに合わせて、「N」「NS」「S」「A」「B」「C」の6段階に選別しております。<br /><br />
+            <div align="left">
+            <strong>&emsp;&emsp;コンディション</strong><br /></p>
+&emsp;&emsp;N：新品商品<br />
+&emsp;&emsp;NS使用はしてないが、新品基準を満たしていない商品<br />
+&emsp;&emsp;S：新品同様の使用感がまったく感じられない極上中古品<br />
+&emsp;&emsp;A：若干の使用感はあるが、非常に状態の良い中古品<br />
+&emsp;&emsp;B：適度な使用感がある一般的な中古品<br />
+&emsp;&emsp;C：使用感が目立つ中古品<br />
+&emsp;&emsp;※ランクはアイテム本体についてのものであり、付属品等に関してはこの限りではありません。<br />
+&emsp;&emsp;※ランクは売り手側による判断のものになりますので、コンディションがご心配な場合はご購入前に質問してください。<br />
+&emsp;&emsp;※ランク違い等のクレームによる返品・交換等は一切受け付けておりません。<br />
+&emsp;&emsp;※コンデションの詳細（ダメージ等）は記載情報が全てではありません。記載情報以外にもダメージ等がございますが予めご了承ください。<br />
+              <br />
+              <br />
+            </div>
+<a href="#" class="black-btn">【×】CLOSE</a>
+</div><!--/.modal_window-->
+</div><!--/#open06-->
+
+<div id="open07">
+       <a href="#" class="close_overlay">×</a>
+         <div class="modal_window">
+            <h2>有効な正規品判別書類</h2>
+            <p>オトクーナでは高額な商品に対して、商品に正規品判別書類を同封することを義務づけてます。<br />参考書類としてご参照ください。<br /><br />
+            <div align="left">
+              <strong>&emsp;&emsp;有効な正規品判別書類</strong></p>
+              &emsp;&emsp;・各種鑑定書類<br />
+              &emsp;&emsp;・各種鑑別書類(ダイヤモンド・真珠など)<br />
+              &emsp;&emsp;・購入したブランド品店舗でのレシート・領収書<br />
+              &emsp;&emsp;・直営店などで修復した際のレシート・領収書<br />
+              &emsp;&emsp;・その他、判別を確認できるものなど
+              <br /><br />
+              &emsp;&emsp;高額商品の正規品鑑定書類が無い商品の購入にはお気を付けください。
+              <br />
+              <br />
+            </div>
+<a href="#" class="black-btn">【×】CLOSE</a>
+</div><!--/.modal_window-->
+</div><!--/#open07-->
+
+      <tr>
+      <th><span style="color: #bc2414;">参考サイズ表</span><br />
+      (WOMEN)</th>
+      <td><a href="#open01" class="black-btn">シューズ<%= image_tag("hatena.png", :size => "14x14", :class=>"hatena") %></a><br />
+        <a href="#open02" class="black-btn">トップス・ボトムス<%= image_tag("hatena.png", :size => "14x14", :class=>"hatena") %></a></td>
+      </tr>
+      <tr>
+      <th><span style="color: #bc2414;">参考サイズ表</span><br />
+      (MEN)</th>
+      <td><a href="#open03" class="black-btn">シューズ<%= image_tag("hatena.png", :size => "14x14", :class=>"hatena") %></a><br />
+        <a href="#open04" class="black-btn">トップス・ボトムス<%= image_tag("hatena.png", :size => "14x14", :class=>"hatena") %></a>&emsp;&emsp;
+        <a href="#open05" class="black-btn">シャツ<%= image_tag("hatena.png", :size => "14x14", :class=>"hatena") %></a></td>
       </tr>
   </table>
   </div>
@@ -106,7 +234,7 @@
         <th>状態</th>
         <td class="condition">
           <div class="condition_label">
-              <%= @shop.state %>
+              <a href="#open06" class="black-btn"><%= @shop.state %>&nbsp;<%= image_tag("hatena.png", :size => "14x14", :class=>"hatena") %></a>
           </div>
         </td>
       </tr>
@@ -141,7 +269,7 @@
       </tr>
       <tr>
         <th>正規品判別書類の有無</th>
-        <td><%= @shop.certificate_i18n %></td>
+        <td><%= @shop.certificate_i18n %>&emsp;&emsp;<a href="#open07" class="black-btn">有効な判別書類<%= image_tag("hatena.png", :size => "14x14", :class=>"hatena") %></a></td>
       </tr>
       <tr>
         <th>型番</th>
@@ -263,6 +391,9 @@
        <h1><%= link_to '購入', users_path ,:class=>"button-buybuy",:style=>'color:#FFFFFF;' %></h1>
  </div>
 </div>
+
+</div><!--/#modal-->
+</div><!--/#contents-->
 
 <script type="text/javascript">
   $(document).ready(function () {
