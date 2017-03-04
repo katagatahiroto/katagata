@@ -45,9 +45,9 @@
                 <strong><%= @selldisbuy %></strong>
                         <span class="priceOther">参考価格：<span class="strike">￥<%= number_with_delimiter(shop.ref_price) %></span></span>&emsp;&emsp;&nbsp;<strong><div class="btn2"><%= link_to '詳細', shop %></div></strong></p>
                         <%= link_to '編集', "/shops/#{shop.id}/edit", method: :get, :class=>"black-btn" %>
-        <p><%= link_to '削除', "/shops/#{shop.id}", method: :delete, :class=>"red-btn", data: {
+        <%= link_to '削除', "/shops/#{shop.id}", method: :delete, :class=>"red-btn", data: {
       confirm: '本当に削除しても宜しいでしょうか？',
-      disable_with: '削除中です..。。'} %></p>
+      disable_with: '削除中です..。。'} %>
                         <br /><br /><br />
    </div>
 </div>
