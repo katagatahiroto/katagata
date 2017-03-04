@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable, :confirmable
     #:recoverable, :rememberable, :trackable, :validatable # メール認証をしない場合はこちら
+  devise :omniauthable, :omniauth_providers => [:facebook, :twitter]
   
   validates :name, presence: true, on: :update
   validates :nickname, presence: true, on: :update, length: { in: 2..8 }
