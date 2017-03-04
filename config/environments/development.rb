@@ -1,3 +1,4 @@
+# coding: utf-8
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
   # In the development environment your application's code is reloaded on
@@ -48,9 +49,8 @@ Rails.application.configure do
     :port => 587,
     :domain => 'smtp.gmail.com',
     :user_name => "korosuke1105@gmail.com", #ご自身のgmailアドレス
-    :password => "katagata5011", #ご自身のgmailアドレスのパスワード
+    :password => "highlows0223", #ご自身のgmailアドレスのパスワード
     :authentication => 'login'
   }
   # config.assets.prefix = "/dev-assets"
-
 end

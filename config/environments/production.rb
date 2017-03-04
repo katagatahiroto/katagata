@@ -1,3 +1,4 @@
+# coding: utf-8
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -83,6 +84,7 @@ Rails.application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   # Do not dump schema after migrations.
+
   config.active_record.dump_schema_after_migration = false
 
   config.action_mailer.default_url_options = { host: 'www.otoku-na.com' }
@@ -95,7 +97,7 @@ Rails.application.configure do
     :domain => 'smtp.muumuu-mail.com',
     :user_name => "otoku-na@highlows.jp", #ご自身のgmailアドレス
     :password => "highlows0223", #ご自身のgmailアドレスのパスワード
-    :authentication => 'login'
+    :authentication => 'plain'
   }
 
 end
