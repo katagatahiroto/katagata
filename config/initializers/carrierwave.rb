@@ -1,20 +1,23 @@
-# CarrierWave.configure do |config|
-#     # config.storage = :fog
-#   config.fog_provider = 'fog/aws'
-#   config.fog_credentials = {
-#     provider: 'AWS',
-#     aws_access_key_id: ENV['AKIAIPO3YKGXQSOBE2TA'],
-#     aws_secret_access_key: ENV['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'],
-#     region: 'us-east-1'
-#   }
-# config.fog_public     = true # public-read
+CarrierWave.configure do |config|
+  config.fog_credentials = {
+    provider: 'AWS',
+    aws_access_key_id: 'AKIAIVQAVTAH2A4SXQTQ',
+    aws_secret_access_key: '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',
+    region: 'us-east-1'
+  }
 
-# config.remove_previously_stored_files_after_update = false
+  case Rails.env
+    when 'production'
+      config.fog_directory = 'otoku-na'
+      config.asset_host = 'https://s3.amazonaws.com/otoku-na'
 
+    when 'development'
+      config.fog_directory = 'otoku-na'
+      config.asset_host = 'https://s3.amazonaws.com/otoku-na'
 
-#     case Rails.env
-#     when 'production'
-#         config.fog_directory  = 'otoku-na'
-#         config.asset_host = 'https://s3.amazonaws.com/otoku-na'
-#     end
-# end
+    when 'test'
+      config.fog_directory = 'test.dummy'
+      config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/test.dummy'
+  end
+end
+
