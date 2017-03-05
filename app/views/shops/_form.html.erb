@@ -1,9 +1,9 @@
-<div class="serach_navimain clearfix">
 <style type="text/css">
 
 td.w100 { width: 100px; }
 
 </style>
+<div class="serach_navimain_index clearfix">
 
 <%= form_for(@shop) do |f| %>
 
@@ -35,13 +35,9 @@ td.w100 { width: 100px; }
       </td>
     </tr>
     <tr>
-      <th> <%= f.label :day_date, "商品取得日"%><br></th>
-      <td> <%= f.text_field :day_date, class: "price-textday" ,:id => 'datepicker' , placeholder: "日にち選択  ここをクリックして下さい"%>
+      <th> <%= f.label :day_date, "商品取得日"%></th>
+      <td> <%= f.text_field :day_date, class: "price-text" ,:id => 'datepicker' , placeholder: "日にち選択  ここをクリックして下さい"%>
       </td>
-    </tr>
-    <tr>
-      <th> <%= f.label :day_date, "公演時間"%><br></th>
-      <td> <%= f.text_field :time_date, placeholder: "開始時刻"%></td>
     </tr>
     <tr>
       <th> <%= f.label :female, "スタイル" %> </th>
@@ -144,7 +140,7 @@ td.w100 { width: 100px; }
     <tr>
       <th class="w100"><%= f.label :close_datetime, "締め切り" %> </th>
       <td>
-	&emsp;<%= f.text_field :close_datetime, placeholder: "月日", class: "datetimepicker" , id: "datetimepicker" %>
+	<%= f.text_field :close_datetime, placeholder: "月日", class: "datetimepicker" , id: "datetimepicker" %>
       </td>
     </tr>
     <tr>
@@ -186,7 +182,7 @@ td.w100 { width: 100px; }
       </td>
     </tr>
     <tr>
-      <th>  <%= f.label :state_info , "商品の詳細な状態" %> </th>
+      <th>  <%= f.label :state_info , "詳細な状態" %> </th>
       <td> <%= f.text_area :state_info ,cols: 10 %> </td>
     </tr>
     <tr>
@@ -222,13 +218,13 @@ td.w100 { width: 100px; }
 
   <table>
     <tr>
-      <th class="w100"> <%= f.label :color, "カラー・デザイン" %> </th>
+      <th class="w100"> <%= f.label :color, "カラー" %> </th>
       <td>
   <%= f.text_field :color, id: "colorform", class: "price-text", placeholder: "カラー・デザインを記入する" %>
       </td>
     </tr>
     <tr>
-      <th class="w100"> <%= f.label :madein, "ブランド国別(Made in)" %> </th>
+      <th class="w100"> <%= f.label :madein, "生産国" %> </th>
       <td>
   <%= f.text_field :madein, id: "madeinform", class: "price-text", placeholder: "MADE INを記入する" %>
       </td>
@@ -283,7 +279,7 @@ td.w100 { width: 100px; }
       </td>
     </tr>
     <tr>
-      <th> <%= f.label :certificate, "鑑定書類の有無" %> </th>
+      <th> <%= f.label :certificate, "鑑定書類有無" %> </th>
       <td> 
   <div class="text-menu-serach">
     <ul>
@@ -325,9 +321,7 @@ td.w100 { width: 100px; }
     </div>
   </div>
   </div>
-  </div>
   <br />
-
 
 
   <div class="sub-box">その他事項</div>
@@ -364,6 +358,5 @@ td.w100 { width: 100px; }
     disable_with: '出品中です..。。'} %>
   </div>
   <% end %>
-  </div>
   </div>
   </div>
