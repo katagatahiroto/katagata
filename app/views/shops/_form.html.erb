@@ -302,26 +302,29 @@ td.w100 { width: 100px; }
   <div class="chexbox">
     <div class="text-main">
       <div class="field">
-	<%= f.label :price, "画像" %><br>
+  <%= f.label :出品予定の商品画像, "画像" %><br>
       </div>
       <br />
-      <% if @shop.image? %>
-      <div class="thumbnail">
-        <%= image_tag @shop.image.url %>
-      </div>
-      <% end %>
+<div class="clear">&emsp;</div>
       <p>&emsp;<%= f.label :出品予定の商品画像（任意） %>・<span style="color:#ff0000;">著作権のある写真の無断使用は厳禁です。</span></p>
       &emsp;
+      <% cnt = 0 %>
       <%= f.fields_for :images do |image| %>
-	 <%= image.file_field :image %>
-	 <% end %>
-      <% if @shop.persisted? && @shop.image? %>
-      <label>
-        <p>&emsp;<%= f.check_box :remove_image ,:class => "absolute-chex"%>&emsp;&emsp;削除する</p>
-      </label>
-      <% end %>
-      
+      <% if @images && @images[cnt] && @images[cnt].image.url %>
+    <div class="ticketphoto">
+           <img id="img_01" src="<%= @images[cnt].image.url(:thumb) %>" width="90"  /></a>
+           <br />
+           <p>&emsp;<%= check_box_tag("rm_img[#{@images[cnt].id}]",1,false,class: "chkbox")%>
+              削除</p>
     </div>
+      <% cnt += 1 %>
+      <% else %>
+         <%= image.file_field :image  %>
+      <% end %>      
+      <% end %>      
+    </div>
+  </div>
+  </div>
   </div>
   <br />
 
