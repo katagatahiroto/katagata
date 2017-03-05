@@ -76,13 +76,14 @@
       </div>
                   <% end %>
      <h4><strong><%= shop.airt_name %></strong></h4>
-     <p><%= shop.item_name %><br />
-       <small><strong><span style="color:#FF367F  ;">￥</span></strong></small><strong><str<span style="color:#FF367F  ;"><%= number_with_delimiter(shop.price) %></span></strong>&emsp;&emsp;
-
+    <%= shop.item_name %><br />
+       <strong><span style="color:#FF367F  ;">￥</span></strong><strong><span style="color:#FF367F  ;"><%= number_with_delimiter(shop.price) %></span></strong>&emsp;&emsp;
               <div style="display:inline-block;">
-                <strong><%= @selldisbuy %></strong>
-                        <span class="priceOther">参考価格：<span class="strike">￥<%= number_with_delimiter(shop.ref_price) %></span></span>&emsp;&emsp;&nbsp;<strong><div class="btn2"><%= link_to '詳細', shop %></div></strong></p>
+                <div id="favorite-mark"><%= render 'favorite_mark', shop: shop %></div>
+        <div id="favorite-count" ><%= render 'favorites/favorite_count', shop: shop, favorites: shop.favorites %></div>
+                        <span class="priceOther">参考価格：<span class="strike">￥<%= number_with_delimiter(shop.ref_price) %></span></span>&emsp;&emsp;&nbsp;<strong><div class="btn2"><%= link_to '詳細', shop %></div></strong>
                         <br /><br /><br />
+        
    </div>
 </div>
 </div>
