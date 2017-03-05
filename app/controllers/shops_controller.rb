@@ -108,7 +108,7 @@ class ShopsController < ApplicationController
     render :json => {count: (count>0 ? count : "　"),src: "/assets/favorite_unmark.png" }
   end
 
-  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_shop
