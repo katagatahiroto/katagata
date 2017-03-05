@@ -72,4 +72,3 @@ gem 'sprockets-rails'
 gem 'fog'
 
 
-
