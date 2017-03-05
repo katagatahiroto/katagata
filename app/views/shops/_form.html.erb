@@ -65,7 +65,8 @@ td.w100 { width: 100px; }
  財布・小物: "財布・小物類",
  アクセサリ: "アクセサリー",
  腕時計: "腕時計",
- トップス・ワンピース: "トップス",
+ バッグ: "バッグ",
+ トップス・ワンピース: "トップス・ワンピース",
  アウタ: "アウター",
  ボトムス・スーツ: "ボトムス・スーツ",
  シューズ: "シューズ",
@@ -235,19 +236,19 @@ td.w100 { width: 100px; }
     <tr>
       <th class="w100"> <%= f.label :size, "サイズ" %> </th>
       <td>
-  <%= f.text_field :size, class: "price-text" ,placeholder: "サイズを記入する。わからない場合は『不明』" %>
+  <%= f.text_field :size, class: "price-text" ,placeholder: "わからない場合は『不明』" %>
       </td>
     </tr>
     <tr>
       <th class="w100"> <%= f.label :material, "素材" %> </th>
       <td>
-  <%= f.text_field :material, id: "materialform", class: "price-text" ,placeholder: "素材を記入する。わからない場合は『不明』" %>
+  <%= f.text_field :material, id: "materialform", class: "price-text" ,placeholder: "わからない場合は『不明』" %>
       </td>
     </tr>
     <tr>
       <th class="w100"> <%= f.label :number, "型番" %> </th>
       <td>
-  <%= f.text_field :number, class: "price-text" ,placeholder: "型番を記入する。わからない場合は『不明』" %>
+  <%= f.text_field :number, class: "price-text" ,placeholder: "わからない場合は『不明』" %>
       </td>
     </tr>
     <tr>
@@ -264,7 +265,7 @@ td.w100 { width: 100px; }
     <tr>
       <th class="w100"> <%= f.label :accessories_info, "付属品の詳細" %> </th>
       <td>
-  <%= f.text_field :accessories_info, class: "price-text" ,placeholder: "付属品の詳細を記入する。ない場合は空欄で可能" %>
+  <%= f.text_field :accessories_info, class: "price-text" ,placeholder: "ない場合は空欄で可" %>
       </td>
     </tr>
     <tr>
@@ -290,8 +291,7 @@ td.w100 { width: 100px; }
       <li><%= f.radio_button :certificate, :wowwow %><div class="absolute">鑑定書・鑑別書なし</div><small><p>鑑別書類なし<span style="color:#ff0000;">＊要確認 </span></p></small></li>
         <li><%= f.radio_button :certificate, :wow %><div class="absolute">鑑定書類あり</div><small><p>鑑定書などの正規品判断書類あり</p></small></li>
     </ul>
-    <p>&emsp;&emsp;販売価格を15000円以上に設定する場合は必ず鑑定する。</p>
-    <p>&emsp;&emsp;鑑定書・鑑別書・購入先での商品レシートなどが有効。</p>
+    
   </div>
       </td>
     </tr>
