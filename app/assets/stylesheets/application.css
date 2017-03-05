@@ -899,6 +899,12 @@ header{
   margin: 0 auto;
 }
 
+.serach_navimain_index{
+  background-color: #F5F5F5;
+  width: 844px;
+  margin: 0 auto;
+}
+
 .submit-box{
   margin-left: 250px;
   margin-top: -40px;
@@ -1358,7 +1364,6 @@ z-index: 3;
 
 .sub-box{
 height: 50px;
-width: 700px;
 font-size: 1.4em;
 font-weight: bold;
 padding: 5px 30px;
