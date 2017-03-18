@@ -267,6 +267,10 @@ config.secret_key = '0339b89ccab85db0b6d0e7b1cc179102175213ede403569d368c7bc5993
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
   
-  config.omniauth :facebook, '172948356529176', '2ec354d2a4e2516923173042db0dcf22'
+  # dezawa　APP
+  config.omniauth :facebook, '483502712037285', 'cddf9da785dafe867a5a6b3701abd006'
+  # katagta APP
+  #  config.omniauth :facebook, '172948356529176', '2ec354d2a4e2516923173042db0dcf22'
   config.omniauth :twitter, 'es19TmZbaoX3fVypXfCCKsWJ3', 'CVxbYld9g5fsAG9yQqxnvYnUZqdVv2mfkkBZLdzaamKuj67UNY'
+  OmniAuth.config.full_host = 'http://msdnwork.aliadne.net'
 end
