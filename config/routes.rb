@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   post "users/auth/facebook/callback" => "users/omniauth_callbacks#facebook"
   get "users/auth/twitter/callback" => "users/omniauth_callbacks#twitter"
   post "users/auth/twitter/callback" => "users/omniauth_callbacks#twitter"
+  get "user/auth/facebook/callback" => "users/omniauth_callbacks#facebook"
+  post "user/auth/facebook/callback" => "users/omniauth_callbacks#facebook"
+  get "user/auth/twitter/callback" => "users/omniauth_callbacks#twitter"
+  post "user/auth/twitter/callback" => "users/omniauth_callbacks#twitter"
 
 #  devise_for :users, controllers: {
 #               omniauth_callbacks: 'users/omniauth_callbacks'

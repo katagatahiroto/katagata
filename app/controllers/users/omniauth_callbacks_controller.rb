@@ -20,13 +20,19 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     provider = provider.to_s
 
     @user = User.find_for_oauth(request.env['omniauth.auth'])
-
+    logger.debug "User.find_for_oauth #{@user.id}"
     if @user.persisted?
       flash[:notice] = I18n.t('devise.omniauth_callbacks.success', kind: provider.capitalize)
+
+      #ret = sign_in(@user)
+
       session[:user_id] = @user.id
       current_user = @user
-      sign_in_and_redirect @user
+      redirect_to user_path(@user), notice: 'Signed in successfully.'
+      set_flash_message(:notice, :success, :kind => "sign in successfuly") 
+      #sign_in_and_redirect @user
     else
+      flash[:notice] = I18n.t('devise.omniauth_callbacks.fail', kind: provider.capitalize)
       session["devise.#{provider}_data"] = request.env['omniauth.auth']
       redirect_to new_user_registration_url
     end
