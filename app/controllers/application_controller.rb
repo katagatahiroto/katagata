@@ -10,8 +10,8 @@ class ApplicationController < ActionController::Base
   helper_method  :logged_in?
   
   def set_ransack
-   pp [current_user.name, user_signed_in?]
-pp session.keys
+    logger.debug  [(current_user && current_user.name), user_signed_in?].inspect
+    logger.debug session.keys
     #@search = Article.search(params[:q])
    @ransack = Shop.ransack(params[:q]) #ransackメソッド推奨
    @ransack_airt_name = @ransack.result.page(params[:page])
