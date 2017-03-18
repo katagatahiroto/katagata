@@ -29,18 +29,20 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   private
   
   def authorization
-pp request.env['omniauth.auth']
+    provider = request.env['omniauth.auth']["provider"]
     if current_user
-      user = user.omniauth request.env['omniauth.auth']
+      @user = user.omniauth request.env['omniauth.auth']
     else
-      user = User.from_omniauth request.env['omniauth.auth']
+      @user = User.from_omniauth request.env['omniauth.auth']
     end
 
-    if user.persisted?
+    if @user.persisted?
+      pp "成功"
       flash[:notice] = I18n.t('devise.omniauth_callbacks.success', kind: provider.capitalize)
       sign_in_and_redirect @user, event: :authentication
     else
       # 失敗時処理
+      pp "失敗時処理"
       provider = request.env['omniauth.auth']["provider"]
       session["devise.#{provider}_data"] = request.env['omniauth.auth']
       redirect_to new_user_registration_url

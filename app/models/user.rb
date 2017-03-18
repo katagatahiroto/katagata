@@ -60,15 +60,34 @@ class User < ActiveRecord::Base
       # emailの提供は必須とする
       user = User.where('email = ?', auth.info.email).first
       if user.blank?
-        user = User.new
+        user = 
+          User.create( {uid: auth.uid, name: auth.info.name,email: auth.info.email,
+                         oauth_token: auth.credentials.token, 
+                         oauth_expires_at: Time.at(auth.credentials.expires_at),
+                         confirmed_at: Time.now,
+                         confirmation_sent_at: Time.now ,
+                         password: "dumy_password",
+                         nickname: "nickname", number: "1234567", big_address: "big_address",
+                         subaddress: "subaddress", littleaddress: "littleaddress",
+                         tel: "01234567",
+                         bankname: "my bunk",branch_name: "branch_name",
+                         account_type: "dumy",account_number: "1234567",
+                         account_name: "ｱｶｳﾝﾄ ﾅﾏｴ"
+                         }
+                       )
+      else
+        user.update(uid: auth.uid, name: auth.info.name,email: auth.info.email,
+                      oauth_token: auth.credentials.token,
+                      oauth_expires_at: Time.at(auth.credentials.expires_at),
+                      nickname: "nickname", number: "1234567", big_address: "big_address",
+                      subaddress: "subaddress", littleaddress: "littleaddress",
+                      tel: "01234567",
+                      bankname: "my bunk",branch_name: "branch_name",
+                      account_type: "dumy",account_number: "1234567",
+                      account_name: "ｱｶｳﾝﾄ ﾅﾏｴ"
+                    )
       end
-      user.uid   = auth.uid
-      user.name  = auth.info.name
-      user.email = auth.info.email
-      #user.icon  = auth.info.image
-      user.oauth_token      = auth.credentials.token
-      user.oauth_expires_at = Time.at(auth.credentials.expires_at)
-      user.save
+pp user.errors.messages
       user
     end
 
