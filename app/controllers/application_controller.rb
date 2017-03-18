@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   helper_method  :logged_in?
   
   def set_ransack
-   pp [current_user, user_signed_in?,session]
+   pp [current_user.name, user_signed_in?]
 pp session.keys
     #@search = Article.search(params[:q])
    @ransack = Shop.ransack(params[:q]) #ransackメソッド推奨
@@ -34,9 +34,9 @@ pp session.keys
      @current_user ||= User.find(session[:user_id])
    end
 
-  # def logged_in?
-  #   !!session[:user_id]
-  # end
+   def logged_in?
+     !!session[:user_id]
+   end
 
   # def authenticate
   #   return if logged_in?
