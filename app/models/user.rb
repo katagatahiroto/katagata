@@ -49,14 +49,50 @@ class User < ActiveRecord::Base
         uid:      auth.uid,
         provider: auth.provider,
         email:    User.dummy_email(auth),
-        password: Devise.friendly_token[0, 20],
-        confirmed_at: Time.now ,
-        confirmation_sent_at: Time.now
+        password: Devise.friendly_token[0, 20]
+       # confirmed_at: Time.now ,
+       # confirmation_sent_at: Time.now
       )
     end
 
     user
   end
+
+    def self.from_omniauth(auth)
+      # emailの提供は必須とする
+      user = User.where('email = ?', auth.info.email).first
+      if user.blank?
+        user = 
+          User.create( {uid: auth.uid, name: auth.info.name,email: auth.info.email,
+                         oauth_token: auth.credentials.token, 
+                         oauth_expires_at: Time.at(auth.credentials.expires_at),
+                         confirmed_at: Time.now,
+                         confirmation_sent_at: Time.now ,
+                         password: "dumy_password",
+                         nickname: "nickname", number: "1234567", big_address: "big_address",
+                         subaddress: "subaddress", littleaddress: "littleaddress",
+                         tel: "01234567",
+                         bankname: "my bunk",branch_name: "branch_name",
+                         account_type: "dumy",account_number: "1234567",
+                         account_name: "ｱｶｳﾝﾄ ﾅﾏｴ"
+                         }
+                       )
+      else
+        user.update(uid: auth.uid, name: auth.info.name,email: auth.info.email,
+                      oauth_token: auth.credentials.token,
+                      oauth_expires_at: Time.at(auth.credentials.expires_at),
+                      nickname: "nickname", number: "1234567", big_address: "big_address",
+                      subaddress: "subaddress", littleaddress: "littleaddress",
+                      tel: "01234567",
+                      bankname: "my bunk",branch_name: "branch_name",
+                      account_type: "dumy",account_number: "1234567",
+                      account_name: "ｱｶｳﾝﾄ ﾅﾏｴ"
+                    )
+      end
+      user
+    end
+
+
   private
 
   def self.dummy_email(auth)
