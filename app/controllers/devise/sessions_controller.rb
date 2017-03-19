@@ -23,14 +23,12 @@ class Devise::SessionsController < DeviseController
 
   # DELETE /resource/sign_out
   def destroy
-    logger.debug("#######:destroy #{session[:user_id]},#{current_user}")
     signed_out = (Devise.sign_out_all_scopes ? sign_out : sign_out(resource_name))
     set_flash_message! :notice, :signed_out if signed_out
     session[:user_id] = current_user = nil
 
     yield if block_given?
-    session[:user_id] = current_user = nil
-    logger.debug(":destroy #{session[:user_id]},#{current_user}")
+    #session[:user_id] = current_user = nil
     respond_to_on_destroy
   end
 

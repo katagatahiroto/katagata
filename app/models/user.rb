@@ -87,7 +87,6 @@ class User < ActiveRecord::Base
                       account_name: "ｱｶｳﾝﾄ ﾅﾏｴ"
                     )
       end
-pp user.errors.messages
       user
     end
 

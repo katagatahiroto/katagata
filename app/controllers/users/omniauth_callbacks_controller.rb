@@ -1,7 +1,7 @@
 # coding: utf-8
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def passthru
-    pp :passthru
+     :passthru
   end
 
   def facebook
@@ -37,10 +37,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     end
 
     if @user.persisted?
-      pp "成功"
       session[:user_id] = @user.id
       flash[:notice] = I18n.t('devise.omniauth_callbacks.success', kind: provider.capitalize)
-      sign_in_and_redirect @user, event: :authentication
+      #sign_in_and_redirect @user#, event: :authentication
+      redirect_to "/"
     else
       # 失敗時処理
       pp "失敗時処理"
