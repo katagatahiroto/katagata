@@ -30,8 +30,8 @@ class ApplicationController < ActionController::Base
       devise_parameter_sanitizer.permit(:account_update , keys: [:name, :nickname, :tel, :number ,:address ,:littleaddress ,:subaddress ,:big_address ,:bankname, :branch_name, :account_type, :account_number, :account_name])
   end
    def current_user
-     return unless session[:user_id]
-     @current_user ||= User.find(session[:user_id])
+     super || @current_user ||= 
+       (session[:user_id]  && User.find(session[:user_id]) )
    end
 
    def logged_in?
